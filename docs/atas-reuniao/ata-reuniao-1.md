@@ -1,3 +1,3 @@
 | Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
 | :----: | :--: | :--------------------: | :-------------------: |
-| 0.1 | 23/05/2024 | Mudei isso e aquilo | Fulano de Tal |
+| 0.1 | 14/05/2024 | Informações iniciais a respeito do projeto e da equipe | Luis Guilherme Borges |
