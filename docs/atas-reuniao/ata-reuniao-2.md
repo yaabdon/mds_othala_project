@@ -1,3 +1,6 @@
+
+| Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
+| :----: | :--: | :--------------------: | :-------------------: |
 | 0.3 | 15/04/2024 | Declaração de posição do Produto (1.2) | Heyttor Augusto de Assis Silva |
 | 0.3 | 15/04/2024 | Declaração de posição do Produto (1.2) | João Pedro Araújo de Freitas Lyra |
 | 0.3 | 15/04/2024 | Edição da Visão Geral do Produto (1.1)  e Bibliografia, diagrama da visão geral do produto | Yasmin Sousa Abdon |
