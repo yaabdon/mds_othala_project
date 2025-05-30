@@ -1,0 +1,20 @@
+import { DataSource } from "typeorm";
+import { User } from "../entities/User";
+import { UsersRepository } from "./UsersRepository";
+import { Repository  } from "typeorm";
+
+export class ClassUsersRepository implements UsersRepository{
+    private repo: Repository<User>;
+
+    constructor(private dataSource:  DataSource){
+        this.repo = this.dataSource.getRepository(User)
+    }
+
+    async findByName(name: string): Promise<User | undefined> {
+        return this.repo.findOne({where: {name}})
+    }
+    async save(user: Partial<User>): Promise<User | undefined> {
+        return await this.repo.save(user)
+    }
+
+}
