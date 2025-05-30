@@ -10,6 +10,12 @@ export class ClassUsersRepository implements UsersRepository{
         this.repo = this.dataSource.getRepository(User)
     }
 
+    async findById(id: string): Promise<User> {
+        const findUser = this.repo.findOneBy({ id })
+        return findUser;
+    }
+
+
     async findByName(name: string): Promise<User | undefined> {
         return this.repo.findOne({where: {name}})
     }

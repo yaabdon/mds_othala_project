@@ -24,7 +24,7 @@ export class CreateUsers1748184270306 implements MigrationInterface {
                     },
                     {
                         name: "password",
-                        type: "number",
+                        type: "varchar",
                         isNullable: false
                     }
                 ]
