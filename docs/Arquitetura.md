@@ -196,8 +196,10 @@ A arquitetura da aplicação Omega(Ω) será organizada em camadas, promovendo a
 **Camada de Apresentação – Interface com Usuários:**
 
 A camada de apresentação é responsável pela interação direta com os usuários, exibindo informações e coletando entradas. No contexto do Omega(Ω), esta camada será desenvolvida utilizando tecnologias web modernas para criar uma interface intuitiva e responsiva.
-Protótipos de Baixa Fidelidade:
+
+**Protótipos de Baixa Fidelidade:**
 ---imagem--
+
 **Explicação do Protótipo:** 
 
 Este protótipo simplificado mostra os elementos básicos da tela de login: campos para nome de usuário e senha, e botões para "Entrar" e "Cadastre-se". O objetivo é capturar a funcionalidade principal e a disposição dos elementos sem se preocupar com detalhes estéticos. A interação com o usuário ocorrerá através da inserção de dados e cliques nos botões, que disparam as ações correspondentes na lógica de negócios.
@@ -246,16 +248,15 @@ Essa combinação assegura rapidez no desenvolvimento, facilidade de manutençã
 - Progressão só ocorre mediante conclusão dos exercícios anteriores;
 - Público alvo específico - O conteúdo deve ser acessível para adultos em processo de alfabetização.
 
-- Arquitetura Monolítica:
-O sistema será implementado como uma única aplicação backend, com todos os módulos integrados.Vamos fazer tudo em um único backend para deixar mais fácil de programar, testar e colocar no ar. Isso reduz o número de partes que temos que cuidar, diminui custos e agiliza o desenvolvimento.
-Sem separação em microserviços ou serviços desacoplados.Separar o sistema em vários serviços deixaria tudo mais complicado: mais códigos para manter, mais comunicação entre partes, e mais chances de erro. Como o app é pequeno e está começando agora, é melhor manter tudo junto e simples.
-Todos os dados (usuários, progresso, exercícios, respostas, etc.) devem ser armazenados no PostgreSQL pois PostgreSQL é robusto e confiável: Ideal para dados estruturados como progresso, questões, respostas, etc.
+**Arquitetura Monolítica:**
+- O sistema será implementado como uma única aplicação backend, com todos os módulos integrados.Vamos fazer tudo em um único backend para deixar mais fácil de programar, testar e colocar no ar. Isso reduz o número de partes que temos que cuidar, diminui custos e agiliza o desenvolvimento.
+- Sem separação em microserviços ou serviços desacoplados.Separar o sistema em vários serviços deixaria tudo mais complicado: mais códigos para manter, mais comunicação entre partes, e mais chances de erro. Como o app é pequeno e está começando agora, é melhor manter tudo junto e simples.
+- Todos os dados (usuários, progresso, exercícios, respostas, etc.) devem ser armazenados no PostgreSQL pois PostgreSQL é robusto e confiável: Ideal para dados estruturados como progresso, questões, respostas, etc.
 Modelagem relacional facilita integridade de dados: Regras como chaves estrangeiras, constraints e joins garantem dados consistentes. Fácil manutenção: Uma base relacional bem estruturada é mais fácil de escalar verticalmente em um sistema monolítico.
-Escalabilidade Limitada- O sistema foi planejado para uso monolítico, portanto escalabilidade horizontal é restrita.Monólitos não escalam por serviço: Não é possível escalar só o backend ou só o banco, tudo vem junto.
+- Escalabilidade Limitada: O sistema foi planejado para uso monolítico, portanto escalabilidade horizontal é restrita.Monólitos não escalam por serviço: Não é possível escalar só o backend ou só o banco, tudo vem junto.
 Desempenho limitado por servidor único: Todo o app roda no mesmo processo (ou container).
-Ambiente único de deploy- O sistema será hospedado em um único servidor ou container. Simplicidade de deploy, um único processo, mais fácil de monitorar, fazer backup, e escalar verticalmente. Menor custo pois não precisa de orquestradores (ex: Kubernetes), nem múltiplos ambientes (API, auth, frontend separado).
-Controle de versão básico- Uso de Git, mas sem necessidade de pipelines automatizados complexos.
--
+- Ambiente único de deploy: O sistema será hospedado em um único servidor ou container. Simplicidade de deploy, um único processo, mais fácil de monitorar, fazer backup, e escalar verticalmente. Menor custo pois não precisa de orquestradores (ex: Kubernetes), nem múltiplos ambientes (API, auth, frontend separado).
+- Controle de versão básico: Uso de Git, mas sem necessidade de pipelines automatizados complexos.
 
 ---
 
