@@ -35,4 +35,3 @@ Foram discutidos dois possíveis nomes para o produto: **"A a Z"** e **"Omega"**
 ## Observações
 
 Nada a relatar.
-
