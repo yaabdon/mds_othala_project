@@ -6,9 +6,9 @@ export const styles = StyleSheet.create({
   button: {
     justifyContent:'center',
     alignItems:'center',
-    backgroundColor: "#1351B4", 
-    padding: 15,
-    borderRadius: 25,
+    backgroundColor: "#FFC123", 
+    padding: 10,
+    borderRadius: 10,
     width:200,
   },
   buttonText: {
