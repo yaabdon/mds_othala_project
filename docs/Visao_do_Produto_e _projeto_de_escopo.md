@@ -34,7 +34,7 @@
 | 15/04/2025  | 0.3    | Montagem do diagrama de ciclo de vida (2.1)                                                      | Guilherme Ferreira Brandão, João Pedro Araújo de Freitas Lyra, Rivadalvio Joaquim da Silva Filho          |
 | 15/04/2025  | 0.3    | Objetivo do Produto (1.3)                                                                        | João Pedro Araújo de Freitas Lyra, Yasmin Sousa Abdon                                                     |
 | 15/04/2025  | 0.3    | Nomeação do projeto                                                                               | Votação com todos os integrantes                                                                          |
-| 15/04/2025  | 0.3    | Tecnologias a serem utilizadas (1.4)                                                             | Vitória Aquere Matos, Leticia Carvalho dos Santos, João Pedro Araújo de Freitas Lyra, Guilherme Ferreira Brandão |
+| 15/04/2025  | 0.3    | Tecnologias a serem utilizadas (1.4)                                                             | Vitória Aquere Matos, Leticia Carvalho dos Santos, João Pedro Araújo de Freitas Lyra, Guilherme Ferreira Brandão, Ingrid Alves Rocha |
 | 14/05/2025  | 1.0    | Organização do Projeto (2.2)                                                                     | Leticia Carvalho dos Santos                                                                               |
 | 14/05/2025  | 1.0    | Planejamento das fases (2.3)                                                                     | João Pedro Araújo de Freitas Lyra                                                                         |
 | 14/05/2025  | 1.0    | Matriz de comunicação (2.4)                                                                      | Heyttor Augusto de Assis Silva                                                                            |
@@ -331,6 +331,43 @@ Analisar o aplicativo de alfabetização com o propósito de avaliar sua usabili
 
 ### 6.1 Estratégia de testes contendo:
 #### 6.1.1  Níveis de Testes Abordados
+
+| Nível de Teste      | Descrição                                       | Prioridade | Objetivo                                                                                              |
+|---------------------|-------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------|
+| Testes Unitários    | Testes isolados de componentes individuais      | Alta       | Validar o funcionamento correto das funções e métodos específicos que implementam a lógica educacional |
+| Testes de Integração| Verificação da comunicação entre módulos        | Média      | Garantir que os diferentes componentes da aplicação funcionem corretamente quando integrados          |
+| Testes de Sistema   | Avaliação do sistema como um todo               | Baixa      | Verificar o funcionamento completo da aplicação em um ambiente próximo ao de produção                 |
+| Testes de Aceitação | Validação dos requisitos de negócio             | Média      | Confirmar que a aplicação atende às expectativas                                                     |
+#### 6.1.2 Tipos de Testes Abordados
+
+| Tipo de Teste          | Descrição                                 | Técnicas Aplicadas                                           | Ferramentas                         |
+|------------------------|--------------------------------------------|--------------------------------------------------------------|-------------------------------------|
+| Testes Funcionais      | Verificação das funcionalidades específicas| Particionamento de equivalência, análise de valor limite     | JUnit, TestNG                       |
+| Testes de Usabilidade  | Avaliação da experiência do usuário        | Testes com usuários representativos, heurísticas de Nielsen  | Ferramentas de gravação de sessão  |
+| Testes de Desempenho   | Análise do tempo de resposta e uso de recursos | Testes de carga, testes de estresse                        | JMeter, Gatling                     |
+| Testes de Segurança    | Verificação de vulnerabilidades            | OWASP Top 10, análise estática de código                     | SonarQube, OWASP ZAP                |
+| Testes de Acessibilidade | Validação da acessibilidade para diferentes perfis | WCAG 2.1, testes com tecnologias assistivas         | Lighthouse, Axe                     |
+
+#### 6.1.3 Ambientes de Testes
+
+| Ambiente             | Propósito                                                  | Configuração                                                    | Responsável      |
+|----------------------|------------------------------------------------------------|-----------------------------------------------------------------|------------------|
+| Desenvolvimento      | Execução de testes unitários durante o desenvolvimento     | Ambiente local com frameworks de teste                          | Desenvolvedores  |
+| Integração Contínua  | Execução automática de testes após cada commit             | Pipeline CI/CD com Jenkins/GitHub Actions + SonarQube           | DevOps e QA      |
+| Pré-produção         | Testes integrados em ambiente similar ao de produção       | Configuração espelhando o ambiente de produção                  | Equipe de QA     |
+| Dispositivos Físicos | Testes em diferentes hardwares e sistemas operacionais     | Conjunto de smartphones com diferentes especificações e versões de SO | Equipe de QA     |
+
+#### 6.1.4 Métricas de Análise do SonarQube
+
+| Métrica                | Descrição                                        | Meta                  | Impacto                                      |
+|------------------------|--------------------------------------------------|-----------------------|-----------------------------------------------|
+| Cobertura de Código    | Percentual de código coberto por testes unitários| ≥ 80%                 | Garantir que a maioria do código foi testada |
+| Bugs                   | Problemas que representam falhas no código       | 0 (críticos e altos)  | Evitar erros durante a execução              |
+| Vulnerabilidades       | Potenciais brechas de segurança                  | 0 (críticas e altas)  | Proteger dados dos usuários                  |
+| Code Smells            | Problemas de manutenibilidade                    | < 20 por 1000 linhas  | Facilitar manutenção futura                  |
+| Duplicação de Código   | Código repetido                                  | < 5%                  | Melhorar manutenibilidade                    |
+| Complexidade Ciclomática| Complexidade de caminhos de execução            | < 10 por método       | Facilitar manutenção e testes                |
+| Débito Técnico         | Tempo estimado para resolver issues              | < 5% do tempo de desenvolvimento | Manter qualidade ao longo do tempo  |
 
 
 ### Métricas do SonarQube
