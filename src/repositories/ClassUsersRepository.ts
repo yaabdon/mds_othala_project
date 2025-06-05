@@ -23,4 +23,10 @@ export class ClassUsersRepository implements UsersRepository{
         return await this.repo.save(user)
     }
 
+    async findByIdAndDelete(id: string): Promise<User | null> {
+    const user = await this.repo.findOneBy({ id });
+    if (!user) return null;
+    await this.repo.remove(user);
+    return user;
+}
 }
