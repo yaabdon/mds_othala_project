@@ -3,6 +3,7 @@ import { Button } from '../../components/Button';
 import { useState } from 'react';
 import {styles} from "./styles";
 import { useNavigation } from '@react-navigation/native';
+import { BackButton } from '@/src/components/BackButton';
 
 export  function Login() {
   const [user, setUser] = useState('');
@@ -14,8 +15,12 @@ export  function Login() {
   };
 
   return (
+
+        <> 
+         <View style={styles.backButton}> 
+              <BackButton />
+                   </View>
     <View style={styles.container}>
-        
         <View style={styles.card}>
             <Text style={styles.loginText}>Login</Text>
             <TextInput 
@@ -44,6 +49,7 @@ export  function Login() {
             </View>
         </View>
     </View>
+    </>
   );
 }
 

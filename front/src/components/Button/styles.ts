@@ -6,10 +6,10 @@ export const styles = StyleSheet.create({
   button: {
     justifyContent:'center',
     alignItems:'center',
-    backgroundColor: "#FFC123", 
+    backgroundColor: "#84DBC7", 
     padding: 10,
-    borderRadius: 10,
-    width:200,
+    borderRadius: 20,
+    width:250,
   },
   buttonText: {
     color: "#FFFFFF",

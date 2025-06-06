@@ -1,18 +1,23 @@
+import { BackButton } from "@/src/components/BackButton";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#rgbrgba(255, 193, 35, 0.29)",
+    height:'100%',
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
+    paddingBottom:150,
+  },
+  backButton:{
+    position: 'absolute',
+    top: 40,
+    left: 20,
+    zIndex: 1,
   },
   card: {
     width: "90%",
     height: "50%",
-    backgroundColor: "#fff",
-    elevation: 8,
-    borderRadius: 12,
     alignItems: "center",
   },
 
@@ -21,7 +26,7 @@ export const styles = StyleSheet.create({
     padding: 30,
     fontSize: 30,
     fontWeight: "bold",
-    color: "#FFC123",
+    color: '#84DBC7',
   },
   cadastroInput: {
     width: "70%",
@@ -35,8 +40,13 @@ export const styles = StyleSheet.create({
     fontSize: 13,
   },
   entrar: {
-    color: "#FFC123",
+    color: '#84DBC7',
     fontSize: 13,
     fontWeight:'bold'
+  },
+
+    button:{
+    padding:50
+
   },
 });

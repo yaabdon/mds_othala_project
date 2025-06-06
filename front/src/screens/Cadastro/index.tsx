@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { styles } from "./styles";
 import { Button } from '../../components/Button';
 import { useNavigation } from '@react-navigation/native';
+import { BackButton } from '../../components/BackButton';
 
 export function Cadastro() {
   const [name, setName] = useState('');
@@ -16,6 +17,10 @@ export function Cadastro() {
   };
 
   return (
+    <>
+     <View style={styles.backButton}> 
+          <BackButton />
+               </View>
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.cadastroText}>Cadastro</Text>
@@ -46,19 +51,21 @@ export function Cadastro() {
           onChangeText={setConfirmPassword}
         />
           
+          <View style={styles.button}> 
           <Button
             title='Cadastrar'
             onPreess={handleRegister}
           />
-      
+           </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
           <Text style={styles.jatemConta}>Já tem conta?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <Text style={styles.entrar}>Entrar</Text>
+            <Text style={styles.entrar}>  Entrar</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
+    </>
   );
 }
 
