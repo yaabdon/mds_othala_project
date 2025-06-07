@@ -38,7 +38,7 @@ export  function Login() {
             <View style={styles.button}> 
             <Button 
             title='Login'
-            onPreess={handleLogin}
+            onPreess={() => {handleLogin(); navigation.navigate('Home')}}
             />
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
