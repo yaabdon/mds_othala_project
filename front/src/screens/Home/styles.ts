@@ -1,18 +1,25 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  background: {
+  flex: 1,
+  width: '100%',
+  height: '100%',
+},
+
   container: {
     flex: 1,
     backgroundColor: "#000000",
     justifyContent: "center",
     alignItems: "center",
   },
-   backButton:{
+  backButton:{
     position: 'absolute',
     top: 40,
     left: 20,
     zIndex: 1,
   },
+
   header: {
     width: '100%',
     height: 109,
@@ -49,22 +56,30 @@ export const styles = StyleSheet.create({
     marginTop: 150,
   },
 
-  cardP: {
-    width: '48%',
-    height: 200,
-    backgroundColor: '#5C8F84',
-    paddingLeft: 10,
-    borderRadius: 8,
-    alignItems: 'flex-start',
-    marginVertical: 30, 
-    position: 'relative'
-  },
+ cardP: {
+  width: '48%',
+  height: 220,
+  backgroundColor: '#5C8F84',
+  paddingLeft: 5,
+  borderRadius: 8,
+  alignItems: 'flex-start',
+  marginVertical: 30,
+  position: 'relative',
+},
+startButton: {
+  paddingVertical: 6,
+  paddingHorizontal: 12,
+  marginTop: 10,
+  borderRadius: 30,
+  right:20,
+},
+
 
   homeGirl: {
-      width: 150,
+      width: 180,
       height: 210,
       position: 'absolute',
-      bottom: 55,
+      bottom: 70,
       left: 80,
   },
 
@@ -94,20 +109,21 @@ export const styles = StyleSheet.create({
 
   cardM: {
     width: '48%',
-    height: 200,
+    height: 220,
     backgroundColor: '#F2E3B5',
-    paddingLeft: 10,
+    paddingLeft: 5,
     borderRadius: 8,
     alignItems: 'flex-start',
     marginVertical: 30, 
 
   },
+  
     homeMan: {
-      width: 150,
+      width: 180,
       height: 210,
       position: 'absolute',
-      bottom: 55,
-      left: 40,
+      bottom: 65,
+      left: 30,
   },
 
 
@@ -133,5 +149,6 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 30
   }
+  
 
 });
