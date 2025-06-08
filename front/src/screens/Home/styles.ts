@@ -1,17 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  background: {
-  flex: 1,
-  width: '100%',
-  height: '100%',
-},
 
   container: {
-    flex: 1,
-    backgroundColor: "#000000",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#fff",
+    height:'100%'
   },
   backButton:{
     position: 'absolute',
@@ -25,7 +18,6 @@ export const styles = StyleSheet.create({
     height: 109,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '',
     paddingTop: 65,
   },
 

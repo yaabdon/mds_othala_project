@@ -1,17 +1,37 @@
-import { View, Text , TextInput, TouchableOpacity} from 'react-native';
+import { View, Text , TextInput, TouchableOpacity, Alert} from 'react-native';
 import { Button } from '../../components/Button';
 import { useState } from 'react';
 import {styles} from "./styles";
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '@/src/components/BackButton';
+import { api } from '../../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Loading } from '@/src/components/Loading';
 
 export  function Login() {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(true); 
   const navigation = useNavigation<any>();
 
-  const handleLogin = () => {
-    // logica de login
+  //Basicamente vou na rota all users procuro o usuário digitado e senha digitado e comparo , se for  igual a libero a Home
+  const handleLogin = async () => {
+    setIsLoading(true); // começa o loading
+    try {
+      const response = await api.get('/allusers');
+      const users = response.data;
+      const found = users.find((u: any) => u.name === user && u.password === password);
+      if (found) {
+        await AsyncStorage.setItem('auth', 'true');
+        navigation.navigate('Home');
+      } else {
+        Alert.alert('Erro', 'Usuário ou senha inválidos');
+      }
+    } catch (e) {
+      Alert.alert('Erro', 'Erro !!!');
+    } finally {
+      setIsLoading(false); // termina o loading
+    }
   };
 
   return (
@@ -25,11 +45,17 @@ export  function Login() {
             <Text style={styles.loginText}>Login</Text>
             <TextInput 
             placeholder='Usuário'
-            style={styles.loginInput}>
-            </TextInput>
+            style={styles.loginInput}
+            value={user}
+            onChangeText={setUser}
+            />
             <TextInput 
             placeholder='Senha'
-            style={styles.loginInput}></TextInput>
+            style={styles.loginInput}
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
+            />
             <View>
             <TouchableOpacity style={styles.esqueciSenha}>
             <Text style={styles.esqueciSenhaText}>Esqueceu a senha?</Text>
@@ -37,8 +63,8 @@ export  function Login() {
             </View>
             <View style={styles.button}> 
             <Button 
-            title='Login'
-            onPreess={() => {handleLogin(); navigation.navigate('Home')}}
+              title='Login'
+              onPress={handleLogin}
             />
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>

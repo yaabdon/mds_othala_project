@@ -24,7 +24,7 @@ export  function PreLogin() {
      <Text style={styles.textOmega}> Omega Ω</Text>
 
     <View style={styles.button}> 
-     <Button title='Entrar' onPreess={() => navigation.navigate('Login')}/>
+     <Button title='Entrar' onPress={() => navigation.navigate('Login')}/>
     </View>    
 
 

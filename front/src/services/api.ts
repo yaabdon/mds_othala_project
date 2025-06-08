@@ -1,5 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: ""
+  //Substitua aqui pelo o ip da sua Maquina, Vc descobre o ip quando dá um npm start no front
+ baseURL: "http://192.168.1.7:3000"
 });

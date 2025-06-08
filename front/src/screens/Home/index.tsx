@@ -1,18 +1,29 @@
-import { View, Image, Text, ImageBackground } from "react-native";
+import { View, Image, Text } from "react-native";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '@/src/components/BackButton';
 import { StartButton } from "@/src/components/StartButton";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect } from 'react';
 
 export function Home() {
   const navigation = useNavigation<any>();
 
+  useEffect(() => {
+    const checkAuth = async () => {
+      const auth = await AsyncStorage.getItem('auth');
+      if (auth !== 'true') {
+        navigation.replace('Login');
+      }
+    };
+    checkAuth();
+  }, []);
+
   return (
-    <ImageBackground
-    >
+      <View style={styles.container}>
       <View style={styles.backButton}> 
         <BackButton />
-      </View>
+           </View>
           
       <View style={styles.header}>
         <View style={styles.logo}>
@@ -68,6 +79,6 @@ export function Home() {
         </View>
 
       </View>
-    </ImageBackground>
+   </View>
   );
 }
