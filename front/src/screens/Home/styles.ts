@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  background: {
+  flex: 1,
+  width: '100%',
+  height: '100%',
+},
+
   container: {
     flex: 1,
     backgroundColor: "#000000",
@@ -13,6 +19,7 @@ export const styles = StyleSheet.create({
     left: 20,
     zIndex: 1,
   },
+
   header: {
     width: '100%',
     height: 109,
@@ -49,16 +56,24 @@ export const styles = StyleSheet.create({
     marginTop: 150,
   },
 
-  cardP: {
-    width: '48%',
-    height: 200,
-    backgroundColor: '#5C8F84',
-    paddingLeft: 10,
-    borderRadius: 8,
-    alignItems: 'flex-start',
-    marginVertical: 30, 
-    position: 'relative'
-  },
+ cardP: {
+  width: '48%',
+  height: 200,
+  backgroundColor: '#5C8F84',
+  paddingLeft: 5,
+  borderRadius: 8,
+  alignItems: 'flex-start',
+  marginVertical: 30,
+  position: 'relative',
+},
+
+startButton: {
+  paddingVertical: 6,
+  paddingHorizontal: 12,
+  marginTop: 30,
+
+  borderRadius: 10,
+},
 
   homeGirl: {
       width: 150,
@@ -96,12 +111,13 @@ export const styles = StyleSheet.create({
     width: '48%',
     height: 200,
     backgroundColor: '#F2E3B5',
-    paddingLeft: 10,
+    paddingLeft: 5,
     borderRadius: 8,
     alignItems: 'flex-start',
     marginVertical: 30, 
 
   },
+  
     homeMan: {
       width: 150,
       height: 210,
@@ -133,5 +149,6 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 30
   }
+  
 
 });
