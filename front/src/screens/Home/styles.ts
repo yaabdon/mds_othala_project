@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     marginTop: 150,
   },
 
- cardP: {
+cardP: {
   width: '48%',
   height: 220,
   backgroundColor: '#5C8F84',

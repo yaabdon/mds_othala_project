@@ -9,7 +9,6 @@ export function Home() {
 
   return (
     <ImageBackground
-
     >
       <View style={styles.backButton}> 
         <BackButton />
