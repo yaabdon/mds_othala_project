@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Build/output
+dist/
+build/
+
+# Ambiente
+.env
+
+# Logs
+logs/
+*.log
+
+# SO
+.DS_Store
