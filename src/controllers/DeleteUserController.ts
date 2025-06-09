@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { ClassUsersRepository } from 'repositories/ClassUsersRepository'; 
-import { AppDataSource } from 'database';
+import { ClassUsersRepository } from '../repositories/ClassUsersRepository'; 
+import { AppDataSource } from '../database';
 
 
 export class DeleteUserController {

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { CreateUserController } from "./controllers/CreateUserController";
 import { UpdateUserController } from "./controllers/UpdateUserController";
-import { DeleteUserController } from "controllers/DeleteUserController";
+import { DeleteUserController } from "./controllers/DeleteUserController";
 
 const routes = Router();
 const deleteUserController = new DeleteUserController();
