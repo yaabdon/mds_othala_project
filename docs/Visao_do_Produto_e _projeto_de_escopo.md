@@ -81,7 +81,9 @@
 ### 1.1 Problema
 
  O Grupo **OTHALA** ficou responsável por desenvolver uma aplicação que estivesse relacionada com o ODS (Objetivo de Desenvolvimento Sustentável) 4, garantir educação inclusiva, equitativa e de qualidade, promovendo oportunidades de aprendizado para jovens e adultos da faixa entre 15 e 21 anos.   
+ 
 - **Contexto:** Ainda existe um índice preocupante de jovens e adultos que não possuem educação básica, carecendo de alfabetização e domínio das operações de matemática básica, de acordo com o censo de 2022 do IBGE, cerca de 7% da população, equivalente a 11,4 milhões de brasileiros, não são alfabetizados (IBGE, 2022), além de também no âmbito das ciências exatas, Pisa (Programa Internacional de Avaliação de Alunos) apontou que a matemática no Brasil é considerada “o maior gargalo brasileiro” no campo do ensino (Agência Brasil, 2023). Dentro deste contexto, além de mostrar um sério problema no sistema da educação brasileira, é perceptível a exclusão de milhões de cidadãos de direitos básicos, como o acesso ao conhecimento, à cidadania e ao mercado de trabalho.
+  
 - **Problema:** Dado essa existência da falta de educação básica que acarreta em uma série de problemas sociais em conjunto com a não participação de uma parcela do mercado consumidor brasileiro. Propõe-se como parte de uma solução mais ampla, pois apenas um produto de software não seria o suficiente para dar uma solução total a este problema complexo, uma aplicação em celular, pois este é o tipo de tecnologia mais comum de se ter, que funcionará dentro de um sistema de divisão em níveis com atividades que interagem com o usuário, progresso gradual e educação positiva buscando seguir a visão do filósofo Paulo Freire sobre o aprender humano, para criar uma aplicação interativa com o usuário que busca ensinar como ler desde de a identificação de fonemas, reconhecimento de símbolos e quantidades, até as quatro operações básicas da matemática até às centenas e ler frases simples.
 
 ---imagem---
@@ -369,20 +371,36 @@ Analisar o aplicativo de alfabetização com o propósito de avaliar sua usabili
 | Complexidade Ciclomática| Complexidade de caminhos de execução            | < 10 por método       | Facilitar manutenção e testes                |
 | Débito Técnico         | Tempo estimado para resolver issues              | < 5% do tempo de desenvolvimento | Manter qualidade ao longo do tempo  |
 
+#### 6.1.5 Plano de Testes Unitários
 
-### Métricas do SonarQube
+| Componente                     | Casos de Teste                                                                                   | Mocks Necessários                                 | Critérios de Aceitação                                                  |
+|-------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------|-------------------------------------------------------------------------|
+| Módulo de Reconhecimento de Fonemas | Identificação de fonemas consonantais, vocálicos, validação de pronúncia                          | API de áudio, serviço de feedback                 | 100% de assertividade no reconhecimento de fonemas básicos             |
+| Módulo de Alfabetização       | Formação de sílabas, construção de palavras, leitura de frases simples                          | Banco de dados de palavras, sistema de pontuação  | Progressão correta entre níveis de dificuldade                         |
+| Módulo de Matemática Básica   | Reconhecimento numérico, operações básicas (adição, subtração, multiplicação, divisão)           | Gerador de problemas, calculadora                 | Cálculos corretos e verificação de resultados                          |
+| Sistema de Progressão         | Avanço entre níveis, desbloqueio de conteúdo, relatórios de progresso                           | Perfil de usuário, histórico de atividades        | Correto controle de acesso aos níveis baseado no desempenho            |
+| Interface do Usuário          | Renderização de elementos, resposta a interações, feedback visual e sonoro                      | Simulador de eventos de UI, renderizador          | Conformidade com diretrizes de design e acessibilidade                |
 
-- **Cobertura de Código:** ≥ 80%  
-- **Bugs Críticos:** 0  
-- **Vulnerabilidades:** 0  
-- **Code Smells:** < 20 por 1000 linhas  
-- **Duplicação de Código:** < 5%  
+### 6.2 Roteiro de Teste
+
+| ID do Teste | Nome do Teste               | Objetivo do Teste                                                     | Nível     | Tipo                          | Pré-condições                          | Critério de Aceitação                                                                                 | Resultado/Evidência | Reparos Executados | Ciclos Executados |
+|-------------|-----------------------------|------------------------------------------------------------------------|-----------|-------------------------------|----------------------------------------|--------------------------------------------------------------------------------------------------------|---------------------|---------------------|--------------------|
+| T01         | Cadastro de novo usuário    | Verificar se o usuário pode se cadastrar com dados válidos            | Sistema   | Funcional                     | App instalado, acesso à tela de cadastro | Usuário é redirecionado à tela inicial e recebe mensagem de boas-vindas                                |                     |                     |                    |
+| T02         | Login com credenciais válidas| Verificar se o login funciona com e-mail e senha corretos              | Sistema   | Funcional                     | Conta já cadastrada                    | Redirecionamento para o dashboard com os dados do usuário                                              |                     |                     |                    |
+| T03         | Login com credenciais inválidas| Validar o tratamento de erro em tentativa de senha incorreta         | Sistema   | Funcional                     | Conta existente com senha conhecida    | Mensagem de erro é exibida e usuário permanece na tela de login                                       |                     |                     |                    |
+| T04         | Execução de Lição completa  | Garantir que a lição salva progresso após concluída                   | Sistema   | Funcional                     | Usuário logado, lição disponível        | Ao finalizar a lição, progresso é salvo e registrado no perfil                                         |                     |                     |                    |
+| T05         | Feedback interativo         | Verificar se o app oferece retorno visual e sonoro após resposta correta | Sistema | Funcional                     | Lição ativa com perguntas              | Resposta correta aciona som positivo e animação; resposta errada gera alerta                          |                     |                     |                    |
+| T06         | Teste de Responsividade     | Avaliar se o layout adapta-se a diferentes tamanhos de tela           | Sistema   | Não Funcional (portabilidade)| Simulação em celular, tablet e web     | Elementos do layout se ajustam sem sobreposição ou corte de conteúdo                                   |                     |                     |                    |
+| T07         | Teste de Acessibilidade     | Garantir contraste adequado e legibilidade para usuários com baixa visão | Sistema | Não Funcional (usabilidade) | App em modo escuro/claro              | Textos visíveis, com contraste e espaçamento adequados                                                 |                     |                     |                    |
+| T08         | Teste de desempenho do login| Medir tempo de resposta após clicar em "Entrar"                        | Sistema   | Não Funcional (desempenho)   | Backend operacional e servidor ativo   | Tempo de resposta inferior a 2 segundos para login com rede estável                                   |                     |                     |                    |
+| T09         | Registro de progresso       | Validar se o progresso em matemática e leitura é registrado no perfil | Integração| Funcional                     | Conta logada, atividades feitas        | Percentuais atualizados no painel do usuário após concluir atividades                                  |                     |                     |                    |
+| T10         | Erro de campo obrigatório   | Verificar se o sistema detecta cadastro com campos vazios             | Sistema   | Funcional                     | Tela de cadastro aberta                | Exibição de mensagem de erro clara para cada campo vazio                                               |                     |                     |                    |
 
 ---
 
 ## Referências Bibliográficas
 
-- IBGE. Censo 2022: [link](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desigualdades-persistem)  
-- TOKARNIA, Mariana. Pisa e Matemática no Brasil: [link](https://agenciabrasil.ebc.com.br/educacao/noticia/2023-12/resultados-do-pisa-reforcam-gargalo-no-ensino-de-matematica-no-brasil)
+- **IBGE.** Censo 2022: taxa de analfabetismo cai de 9,6% para 7,0% em 12 anos, mas desigualdades persistem. Agência de Notícias IBGE, Rio de Janeiro, 17 maio 2024. Disponível em: [link](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desigualdades-persistem)  Acesso em: 15 abr. 2025
+- **TOKARNIA, Mariana.** *Resultados do Pisa reforçam gargalo no ensino de matemática no Brasil.* Agência Brasil, Rio de Janeiro, 5 dez. 2023. Disponível em: [link](https://agenciabrasil.ebc.com.br/educacao/noticia/2023-12/resultados-do-pisa-reforcam-gargalo-no-ensino-de-matematica-no-brasil) Acesso em: 15 abr. 2025.
 
 ---
