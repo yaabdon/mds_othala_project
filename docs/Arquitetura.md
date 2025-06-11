@@ -46,21 +46,30 @@
 ## Sumário
 
 1. [Introdução](#1-introdução)  
-   1.1 [Propósito](#11-propósito)  
+   1.1 [Propósito](#11-proposito)  
    1.2 [Escopo](#12-escopo)  
 
-2. [Representação Arquitetural](#2-representação-arquitetural)  
-   2.1 [Definições](#21-definições)  
+2. [Representação Arquitetural](#2-representacao-arquitetural)  
+   2.1 [Definições](#21-definicoes)  
    2.2 [Justificativa](#22-justificativa)  
    2.3 [Detalhamento](#23-detalhamento)  
-   2.4 [Metas e Restrições](#24-metas-e-restrições-arquiteturais)  
-   2.5 [Visão de Casos de Uso](#25-visão-de-casos-de-uso-escopo-do-produto)  
-   2.6 [Visão Lógica](#26-visão-lógica)  
-   2.7 [Visão de Implementação](#27-visão-de-implementação)  
-   2.8 [Visão de Implantação](#28-visão-de-implantação)  
-   2.9 [Restrições Adicionais](#29-restrições-adicionais)  
+   2.4 [Metas e Restrições](#24-metas-e-restricoes-arquiteturais)  
+   2.5 [Visão de Casos de Uso](#25-visao-de-casos-de-uso-escopo-do-produto)  
+   2.6 [Visão Lógica](#26-visao-logica)  
+   2.6.1 [Organização dos Módulos](#261-organizacao-dos-modulos)  
+   2.6.2 [Comunicação entre Módulos](#262-comunicacao-entre-modulos)  
+   2.6.3 [Frontend ↔ Banco de Dados (PostgreSQL)](#263-frontend--banco-de-dados-postgresql)  
+   2.6.4 [Componentes Internos do Frontend](#264-componentes-internos-do-frontend)  
+   2.6.5 [Diagrama de Estados](#265-diagrama-de-estados)  
+   2.6.6 [Diagrama de Atividades da Aplicação](#266-diagrama-de-atividades-de-aplicacao)  
+   2.6.7 [Diagrama de Classes](#267-diagrama-de-classes)  
+   2.7 [Visão de Implementação](#27-visao-de-implementacao)  
+   2.8 [Visão de Implantação](#28-visao-de-implantacao)  
+   2.9 [Restrições Adicionais](#29-restricoes-adicionais)  
 
 3. [Bibliografia](#bibliografia)
+
+
 
 ---
 
@@ -91,7 +100,9 @@ Essa arquitetura foi escolhida pela sua agilidade e simplicidade, facilitando o 
 Foi escolhida a utilização da Arquitetura Monolítica em Camadas (ou N-Camadas) em razão das características da aplicação mobile desenvolvida pela equipe. Trata-se de um sistema com baixa complexidade e sem a necessidade de escalabilidade independente entre funcionalidades — requisitos típicos de arquiteturas baseadas em microsserviços. Dessa forma, optou-se por uma estrutura monolítica, mais consolidada e fortemente integrada, que atende adequadamente à estabilidade e previsibilidade da aplicação, sem demandar inovação contínua ou rápida evolução tecnológica. As camadas se comunicam de forma interna, por meio de chamadas diretas através de rotas. O aplicativo, portanto, opera de forma autônoma no dispositivo do usuário, com acesso local aos dados e à lógica da aplicação.
 A arquitetura do software foi dividida em três camadas principais seguindo como base o modelo monolítico: a primeira camada interface do usuário, a segunda de lógica, funções e integrações, e a terceira camada de acesso aos dados. Essa divisão segue o princípio da separação de responsabilidades e favorece a coesão e manutenção do sistema. Como pode ser visto na figura abaixo:
 
----- imagem---
+![image](https://github.com/user-attachments/assets/96e1a053-2674-431c-8e55-fa7559fede99)
+
+*Figura 1: Camadas do Sistema Monolítico Mobile*
 
 A **camada de Interface do Usuário** responsável pela parte visual do aplicativo, é composta por telas, botões, campos de formulário e outros componentes gráficos desenvolvidos com React Native, responsável por interagir diretamente com o usuário, sendo assim, qualquer e toda ação iniciada pelo usuário, como pressionar um botão de envio ou preencher um campo de resposta, é captada por essa camada e, logo após, encaminhada diretamente para a segunda camada de Funções Lógicas e Integrações, que como o nome aponta é feito por callbacks.
 
@@ -180,11 +191,17 @@ O sistema é subdividido nos seguintes módulos principais:
 - Função: Os componentes compartilham dados via props ou contextos globais, reagindo a interações do usuário.
 
 ### 2.6.5 diagrama de estados
---- imagem--
+
+![image](https://github.com/user-attachments/assets/f2a0bdee-3680-4b36-85fb-87c6f5add0fd)
+
 ### 2.6.6 diagrama de atividades de aplicação
---- imagem--
+
+![image](https://github.com/user-attachments/assets/86990bb2-01c0-44cc-a3b2-83c351305eea)
+
+
 ### 2.6.7 Diagrama de classes
----imagem--
+
+![image](https://github.com/user-attachments/assets/af918c47-de5a-4640-9731-44c08b3d4671)
 
 ---
 
@@ -195,8 +212,9 @@ A arquitetura da aplicação Omega(Ω) será organizada em camadas, promovendo a
 **Diagrama de Pacotes**
 
 Apresenta-se a seguir um diagrama de pacotes que ilustra a estrutura em camadas da aplicação Omega(Ω).
-   
----imagem--
+
+![image](https://github.com/user-attachments/assets/6e71989c-de42-474a-9d1c-ed1690ce2c09)
+
 
 **Camada de Apresentação – Interface com Usuários:**
 
@@ -204,7 +222,13 @@ A camada de apresentação é responsável pela interação direta com os usuár
 
 **Protótipos de Baixa Fidelidade:**
 
----imagem--
+![image](https://github.com/user-attachments/assets/dc633f63-67b2-436e-bdaf-345cc6bd53f4) ![image](https://github.com/user-attachments/assets/948b6dd3-bc35-4eab-b6b7-605c82ac5ed3)
+
+*Imagem 1 - Protótipo A e B - Tela de Login e Criação de conta*
+
+![image](https://github.com/user-attachments/assets/bba215a8-2640-4b9a-9013-e6b5600d3ac2)
+
+*Imagem 2 - Protótipo C - Tela de Questão*
 
 **Explicação do Protótipo:** 
 
