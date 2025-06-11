@@ -54,23 +54,23 @@
 
 ## Sumário
 
-1. [Visão Geral do Produto](#visão-geral-do-produto)  
-   1.1 [Problema](#problema)  
-   1.2 [Declaração de Posição do Produto](#declaração-de-posição-do-produto)  
-   1.3 [Objetivos do Produto](#objetivos-do-produto)  
-   1.4 [Tecnologias Utilizadas](#tecnologias-utilizadas)  
-2. [Visão Geral do Projeto](#visão-geral-do-projeto)  
-   2.1 [Ciclo de Vida](#ciclo-de-vida)  
-   2.2 [Organização do Projeto](#organização-do-projeto)  
-   2.3 [Planejamento das Fases](#planejamento-das-fases)  
-   2.4 [Matriz de Comunicação](#matriz-de-comunicação)  
-   2.5 [Gerenciamento de Riscos](#gerenciamento-de-riscos)  
-   2.6 [Critérios de Replanejamento](#critérios-de-replanejamento)  
-3. [Processo de Desenvolvimento de Software](#processo-de-desenvolvimento-de-software)  
-4. [Declaração de Escopo do Projeto](#declaração-de-escopo-do-projeto)  
-5. [Métricas e Medições](#métricas-e-medições)  
-6. [Testes de Software](#testes-de-software)  
-7. [Referências Bibliográficas](#referências-bibliográficas)  
+1. [Visão Geral do Produto](#1-visao-geral-do-produto)  
+   1.1 [Problema](#11-problema)  
+   1.2 [Declaração de Posição do Produto](#12-declaracao-de-posicao-do-produto)  
+   1.3 [Objetivos do Produto](#13-objetivos-do-produto)  
+   1.4 [Tecnologias Utilizadas](#14-tecnologias-utilizadas)  
+2. [Visão Geral do Projeto](#2-visao-geral-do-projeto)  
+   2.1 [Ciclo de Vida](#21-ciclo-de-vida)  
+   2.2 [Organização do Projeto](#22-organização-do-projeto)  
+   2.3 [Planejamento das Fases](#23-planejamento-das-fases)  
+   2.4 [Matriz de Comunicação](#24-matriz-de-comunicacao)  
+   2.5 [Gerenciamento de Riscos](#25-gerenciamento-de-riscos)  
+   2.6 [Critérios de Replanejamento](#26-criterios-de-replanejamento)  
+3. [Processo de Desenvolvimento de Software](#3-processo-de-desenvolvimento-de-software)  
+4. [Declaração de Escopo do Projeto](#4-declaracao-de-escopo-do-projeto)  
+5. [Métricas e Medições](5-#metricas-e-medioces)  
+6. [Testes de Software](#6-testes-de-software)  
+7. [Referências Bibliográficas](#7-referencias-bibliograficas)  
 
 ---
 
@@ -86,7 +86,7 @@
   
 - **Problema:** Dado essa existência da falta de educação básica que acarreta em uma série de problemas sociais em conjunto com a não participação de uma parcela do mercado consumidor brasileiro. Propõe-se como parte de uma solução mais ampla, pois apenas um produto de software não seria o suficiente para dar uma solução total a este problema complexo, uma aplicação em celular, pois este é o tipo de tecnologia mais comum de se ter, que funcionará dentro de um sistema de divisão em níveis com atividades que interagem com o usuário, progresso gradual e educação positiva buscando seguir a visão do filósofo Paulo Freire sobre o aprender humano, para criar uma aplicação interativa com o usuário que busca ensinar como ler desde de a identificação de fonemas, reconhecimento de símbolos e quantidades, até as quatro operações básicas da matemática até às centenas e ler frases simples.
 
----imagem---
+![image](https://github.com/user-attachments/assets/601a6261-3ba6-40da-84cf-21d06c68940e)
 
 ### 1.2 Declaração de Posição do Produto
 
@@ -116,7 +116,8 @@
 ### 2.1 Ciclo de Vida
 
 Utilização de metodologias ágeis (Scrum + XP) com desenvolvimento incremental, sprints, backlog e testes contínuos.
----pedir a imagem---
+
+![image](https://github.com/user-attachments/assets/7e336917-3c3e-4ac6-930c-48dcddff4e54)
 
 ### 2.2 Organização do Projeto
 
@@ -243,7 +244,9 @@ O processo de desenvolvimento é cíclico e iterativo, seguindo os seguintes est
 - VSCode: ambiente de desenvolvimento utilizado por toda a equipe.
 - GitHub: plataforma de versionamento e colaboração no código.
 - Docker: utilizado para criação de ambientes consistentes e padronizados.
-- 
+
+  ![image](https://github.com/user-attachments/assets/334a23b6-f38f-472e-9063-d184fb557bf7)
+
 ---
 
 ## 4.DECLARAÇÃO DE ESCOPO DO PROJETO
