@@ -45,22 +45,22 @@
 
 ## Sumário
 
-1. [Introdução](#introdução)  
-   1.1 [Propósito](#propósito)  
-   1.2 [Escopo](#escopo)  
+1. [Introdução](#1-introdução)  
+   1.1 [Propósito](#11-propósito)  
+   1.2 [Escopo](#12-escopo)  
 
-2. [Representação Arquitetural](#representação-arquitetural)  
-   2.1 [Definições](#definições)  
-   2.2 [Justificativa](#justificativa)  
-   2.3 [Detalhamento](#detalhamento)  
-   2.4 [Metas e Restrições](#metas-e-restrições)  
-   2.5 [Visão de Casos de Uso](#visão-de-casos-de-uso)  
-   2.6 [Visão Lógica](#visão-lógica)  
-   2.7 [Visão de Implementação](#visão-de-implementação)  
-   2.8 [Visão de Implantação](#visão-de-implantação)  
-   2.9 [Restrições Adicionais](#restrições-adicionais)  
+2. [Representação Arquitetural](#2-representação-arquitetural)  
+   2.1 [Definições](#21-definições)  
+   2.2 [Justificativa](#22-justificativa)  
+   2.3 [Detalhamento](#23-detalhamento)  
+   2.4 [Metas e Restrições](#24-metas-e-restrições-arquiteturais)  
+   2.5 [Visão de Casos de Uso](#25-visão-de-casos-de-uso-escopo-do-produto)  
+   2.6 [Visão Lógica](#26-visão-lógica)  
+   2.7 [Visão de Implementação](#27-visão-de-implementação)  
+   2.8 [Visão de Implantação](#28-visão-de-implantação)  
+   2.9 [Restrições Adicionais](#29-restrições-adicionais)  
 
-3. [Bibliografia](#bibliografia)  
+3. [Bibliografia](#bibliografia)
 
 ---
 
@@ -104,14 +104,16 @@ Ao utilizar esse sistema em camadas com separação clara entre responsabilidade
 ### 2.4 Metas e Restrições Arquiteturais
 
 **Métricas de Qualidade e performance**
--Tempo de resposta: 95% das requisições da API devem ser respondidas em até 2 segundos.
--Tempo de carregamento da tela inicial: O APP deve ser iniciado em um tempo de 3 segundos ou menos.
--Taxa de erro: A taxa de erros das requisições HTTP  para API devem ser inferiores  a 5% das requisições totais.
+
+- Tempo de resposta: 95% das requisições da API devem ser respondidas em até 2 segundos.
+- Tempo de carregamento da tela inicial: O APP deve ser iniciado em um tempo de 3 segundos ou menos.
+- Taxa de erro: A taxa de erros das requisições HTTP  para API devem ser inferiores  a 5% das requisições totais.
 
 **Métricas de Uso e Funcionais**
--Taxa de conclusão das questões: Percentual de questões respondidas .
--Tempo médio de sessão: Monitorar quanto os usuários passam no app em média.
--Autenticação: 100% das ações devem exigir o usuário autenticado
+
+- Taxa de conclusão das questões: Percentual de questões respondidas .
+- Tempo médio de sessão: Monitorar quanto os usuários passam no app em média.
+- Autenticação: 100% das ações devem exigir o usuário autenticado
 
 
 ### 2.5 Visão de Casos de Uso (escopo do produto)
@@ -191,13 +193,17 @@ O sistema é subdividido nos seguintes módulos principais:
 A arquitetura da aplicação Omega(Ω) será organizada em camadas, promovendo a separação de responsabilidades e facilitando a manutenção e o desenvolvimento. A seguir, apresentamos os pacotes que compõem o código da aplicação, subdivididos por camada:
 
 **Diagrama de Pacotes**
-   Apresenta-se a seguir um diagrama de pacotes que ilustra a estrutura em camadas da aplicação Omega(Ω).
+
+Apresenta-se a seguir um diagrama de pacotes que ilustra a estrutura em camadas da aplicação Omega(Ω).
+   
 ---imagem--
+
 **Camada de Apresentação – Interface com Usuários:**
 
 A camada de apresentação é responsável pela interação direta com os usuários, exibindo informações e coletando entradas. No contexto do Omega(Ω), esta camada será desenvolvida utilizando tecnologias web modernas para criar uma interface intuitiva e responsiva.
 
 **Protótipos de Baixa Fidelidade:**
+
 ---imagem--
 
 **Explicação do Protótipo:** 
@@ -211,6 +217,7 @@ A **camada** de lógica de negócios (também conhecida como camada de serviço 
 **Comunicação com o Banco de Dados:**
 
 Esta camada é responsável pela persistência e recuperação de dados da aplicação. Ela abstrai os detalhes específicos do banco de dados, permitindo que a camada de lógica de negócios interaja com os dados de forma mais simples e desacoplada.
+
 **Pacotes Principais:**
 
 - repositories: Contêm a lógica para acessar e manipular os dados no banco de dados. 
@@ -224,10 +231,12 @@ Esta camada é responsável pela persistência e recuperação de dados da aplic
 A implantação do software Omega (Ω) será feita em uma infraestrutura moderna, simples e relativamente escalável, que atende às necessidades do sistema e ao perfil dos usuários finais, garantindo desempenho, segurança e disponibilidade.
 
 **Infraestrutura de Hardware:**
+
 O sistema será hospedado preferencialmente em servidores na nuvem, utilizando provedores como AWS, Azure ou Google Cloud. Essa escolha permite escalabilidade conforme o crescimento da base de usuários, alta disponibilidade, facilidade de manutenção e suporte a múltiplos acessos simultâneos, essenciais para um aplicativo mobile educativo com amplo alcance.
 Os usuários finais acessarão o aplicativo em seus dispositivos móveis (smartphones Android), plataforma prioritária pela acessibilidade e popularidade na faixa etária entre 15 e 21 anos. O processamento local no dispositivo será leve, com a maior parte das operações críticas e armazenamento centralizados no backend na nuvem.
 
 **Tecnologias Utilizadas**
+
 - Frontend: React Native com Typescript, para desenvolvimento multiplataforma rápido, criando uma interface interativa e responsiva, adaptada ao público com diferentes níveis de letramento.
 - Backend: Typescript, que facilita manutenção, integração com APIs e manipulação eficiente dos dados do usuário e do conteúdo educacional.
 - Ambiente de Desenvolvimento: VSCode e GitHub para versionamento e colaboração, e Docker para ambientes padronizados entre desenvolvimento, testes e produção.
@@ -235,6 +244,7 @@ Os usuários finais acessarão o aplicativo em seus dispositivos móveis (smartp
 Essa combinação assegura rapidez no desenvolvimento, facilidade de manutenção, segurança, escalabilidade e bom desempenho.
 
 **Banco de Dados**
+
  O PostgreSQL foi escolhido por ser um banco relacional robusto e escalável, com ampla comunidade e suporte. Ele permite armazenar dados estruturados importantes como perfis de usuários, progresso, avaliações e histórico. Além disso, oferece recursos avançados para garantir integridade, suporte a transações e consultas complexas, essenciais para relatórios e análises pedagógicas que otimizam a experiência do usuário e as decisões do produto.
  
 
@@ -243,12 +253,14 @@ Essa combinação assegura rapidez no desenvolvimento, facilidade de manutençã
 ## 2.9 Restrições Adicionais
 
 **Restrições Negociais**
+
 - O software é acessível diretamente pela Internet e exige login do usuário ;
 - Não é permitido ao usuário pular níveis;
 - Progressão só ocorre mediante conclusão dos exercícios anteriores;
 - Público alvo específico - O conteúdo deve ser acessível para adultos em processo de alfabetização.
 
 **Arquitetura Monolítica:**
+
 - O sistema será implementado como uma única aplicação backend, com todos os módulos integrados.Vamos fazer tudo em um único backend para deixar mais fácil de programar, testar e colocar no ar. Isso reduz o número de partes que temos que cuidar, diminui custos e agiliza o desenvolvimento.
 - Sem separação em microserviços ou serviços desacoplados.Separar o sistema em vários serviços deixaria tudo mais complicado: mais códigos para manter, mais comunicação entre partes, e mais chances de erro. Como o app é pequeno e está começando agora, é melhor manter tudo junto e simples.
 - Todos os dados (usuários, progresso, exercícios, respostas, etc.) devem ser armazenados no PostgreSQL pois PostgreSQL é robusto e confiável: Ideal para dados estruturados como progresso, questões, respostas, etc.
