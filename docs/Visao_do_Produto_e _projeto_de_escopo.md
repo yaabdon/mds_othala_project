@@ -54,23 +54,23 @@
 
 ## Sumário
 
-1. [Visão Geral do Produto](#1-visao-geral-do-produto)  
+1. [Visão Geral do Produto](#1visao-geral-do-produto)  
    1.1 [Problema](#11-problema)  
    1.2 [Declaração de Posição do Produto](#12-declaracao-de-posicao-do-produto)  
    1.3 [Objetivos do Produto](#13-objetivos-do-produto)  
    1.4 [Tecnologias Utilizadas](#14-tecnologias-utilizadas)  
-2. [Visão Geral do Projeto](#2-visao-geral-do-projeto)  
+2. [Visão Geral do Projeto](#2visao-geral-do-projeto)  
    2.1 [Ciclo de Vida](#21-ciclo-de-vida)  
    2.2 [Organização do Projeto](#22-organização-do-projeto)  
    2.3 [Planejamento das Fases](#23-planejamento-das-fases)  
    2.4 [Matriz de Comunicação](#24-matriz-de-comunicacao)  
    2.5 [Gerenciamento de Riscos](#25-gerenciamento-de-riscos)  
    2.6 [Critérios de Replanejamento](#26-criterios-de-replanejamento)  
-3. [Processo de Desenvolvimento de Software](#3-processo-de-desenvolvimento-de-software)  
-4. [Declaração de Escopo do Projeto](#4-declaracao-de-escopo-do-projeto)  
-5. [Métricas e Medições](5-#metricas-e-medioces)  
-6. [Testes de Software](#6-testes-de-software)  
-7. [Referências Bibliográficas](#7-referencias-bibliograficas)  
+3. [Processo de Desenvolvimento de Software](#3processo-de-desenvolvimento-de-software)  
+4. [Declaração de Escopo do Projeto](#4declaracao-de-escopo-do-projeto)  
+5. [Métricas e Medições](#5metricas-e-medioces)  
+6. [Testes de Software](#6testes-de-software)  
+7. [Referências Bibliográficas](#7referencias-bibliograficas)  
 
 ---
 
@@ -401,7 +401,7 @@ Analisar o aplicativo de alfabetização com o propósito de avaliar sua usabili
 
 ---
 
-## Referências Bibliográficas
+## 7.REFERÊNCIAS BIBLIOGRÁFICAS
 
 - **IBGE.** Censo 2022: taxa de analfabetismo cai de 9,6% para 7,0% em 12 anos, mas desigualdades persistem. Agência de Notícias IBGE, Rio de Janeiro, 17 maio 2024. Disponível em: [link](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desigualdades-persistem)  Acesso em: 15 abr. 2025
 - **TOKARNIA, Mariana.** *Resultados do Pisa reforçam gargalo no ensino de matemática no Brasil.* Agência Brasil, Rio de Janeiro, 5 dez. 2023. Disponível em: [link](https://agenciabrasil.ebc.com.br/educacao/noticia/2023-12/resultados-do-pisa-reforcam-gargalo-no-ensino-de-matematica-no-brasil) Acesso em: 15 abr. 2025.
