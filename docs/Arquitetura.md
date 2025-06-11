@@ -45,11 +45,11 @@
 
 ## Sumário
 
-1. [Introdução](#1-introdução)  
+1. [Introdução](#1-introducao)  
    1.1 [Propósito](#11-proposito)  
    1.2 [Escopo](#12-escopo)  
 
-2. [Representação Arquitetural](#2-representacao-arquitetural)  
+3. [Representação Arquitetural](#2-representacao-arquitetural)  
    2.1 [Definições](#21-definicoes)  
    2.2 [Justificativa](#22-justificativa)  
    2.3 [Detalhamento](#23-detalhamento)  
@@ -67,7 +67,7 @@
    2.8 [Visão de Implantação](#28-visao-de-implantacao)  
    2.9 [Restrições Adicionais](#29-restricoes-adicionais)  
 
-3. [Bibliografia](#bibliografia)
+4. [Bibliografia](#bibliografia)
 
 
 
