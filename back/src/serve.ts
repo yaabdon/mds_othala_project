@@ -3,10 +3,18 @@ import express from "express";
 import { routes } from "./routes";
 import { AppDataSource } from "./database";
 
-const app = express();
+const app = express(); // <- ESSENCIAL
 
-app.use(express.json()); 
-app.use(routes);         
+app.use(express.json());
+app.use(routes);
 
-app.listen(3000, () => console.log("Server is running on port 3000"));
+const PORT = process.env.PORT || 3000;
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+}
+
+export default app;
 
