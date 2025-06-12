@@ -1,36 +1,84 @@
-import {Text, View} from "react-native";
-import {styles} from "./styles";
-import { Button } from "@/src/components/Button";
-
+import { View, Image, Text } from "react-native";
+import { styles } from "./styles";
+import { useNavigation } from '@react-navigation/native';
+import { BackButton } from '@/src/components/BackButton';
+import { StartButton } from "@/src/components/StartButton";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect } from 'react';
 
 export function Home() {
+  const navigation = useNavigation<any>();
 
- function handleEntrar ()  {
+  useEffect(() => {
+    const checkAuth = async () => {
+      const auth = await AsyncStorage.getItem('auth');
+      if (auth !== 'true') {
+        navigation.replace('Login');
+      }
+    };
+    checkAuth();
+  }, []);
 
-  console.log('O botão entrar foi clicado!!');
-
-  }
-
-    
   return (
-<>
- 
-        <View style={styles.container}>
+      <View style={styles.container}>
+      <View style={styles.backButton}> 
+        <BackButton />
+           </View>
+          
+      <View style={styles.header}>
+        <View style={styles.logo}>
+          <Image
+            source={require('../../assets/logo_img.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
+        </View> 
+      </View>
+      
+      <View>
+        <Text style={styles.textRecepcao}>Seja Bem-Vindo</Text>
+        <Text style={styles.text}>Escolha sua jornada e bons estudos</Text>
+      </View>
 
-        <Text style={styles.text}> Omega Ω </Text>
+      <View style={styles.cardContainer}>
 
-          <View style={styles.button}>
-            <Button 
-             title="Entrar"
-            onPreess={handleEntrar}
-            />
-          </View>
+        <View style={styles.cardP}>
+          <Image
+            source={require('../../assets/Home_girl.png')}
+            style={styles.homeGirl}
+            resizeMode="contain"
+          />
+          <Text style={styles.textJourneyPortuguese}>Jornada</Text>
+          <Text style={styles.textPort}>de</Text>
+          <Text style={styles.textPort}>Português</Text>
+          <Text style={styles.textTempP}>3-10 min</Text>
 
+          <StartButton
+            onPress={() => navigation.navigate('Portugues')}
+            color='#73D7C0'
+            style={styles.startButton}
+          />
+        </View>
 
+        <View style={styles.cardM}>
+          <Image
+            source={require('../../assets/Home_man.png')}
+            style={styles.homeMan}
+            resizeMode="contain"
+          />
+          <Text style={styles.textJourneyMath}>Jornada</Text>
+          <Text style={styles.textMath}>de</Text>
+          <Text style={styles.textMath}>Matemática</Text>
+          <Text style={styles.textTempM}>3-10 min</Text>
 
-        </View>    
-        </>
+          <StartButton
+            onPress={() => navigation.navigate('Matematica')}
+            color='#3F414E'
+            style={styles.startButton}
+          />
+        </View>
 
-  )
-
-};
+      </View>
+   </View>
+  );
+}
