@@ -67,9 +67,21 @@
    2.5 [Gerenciamento de Riscos](#25-gerenciamento-de-riscos)  
    2.6 [Critérios de Replanejamento](#26-criterios-de-replanejamento)  
 3. [Processo de Desenvolvimento de Software](#3processo-de-desenvolvimento-de-software)  
-4. [Declaração de Escopo do Projeto](#4declaracao-de-escopo-do-projeto)  
-5. [Métricas e Medições](#5metricas-e-medioces)  
-6. [Testes de Software](#6testes-de-software)  
+4. [Declaração de Escopo do Projeto](#4declaracao-de-escopo-do-projeto)
+   4.1[Backlog do produto](#41-backlog-do-produto)
+   4.2[Perfis](#42-perfis)
+   4.3[Cenários](#43-cenarios)	
+   4.4[Tabela de Backlog do produto](#44-backlog)
+5. [Métricas e Medições](#5metricas-e-medioces)
+   5.1[GQM de medições](#51-gqm-de-medicoes)
+6. [Testes de Software](#6testes-de-software)
+   6.1[Estratégia de testes contendo](#61-estrategia-de-testes-contendo)
+    6.1.1[Níveis de Testes Abordados](#611-niveis-de-testes-abordados)
+    6.1.2[Tipos de Testes Abordados](#612-tipos-de-testes-abordados)
+    6.1.3[Ambientes de Testes](#613-ambientes-de-testes)
+    6.1.4[Métricas de Análise do SonarQube](#614-metricas-de-analise-do-sonarqube)
+    6.1.5[Plano de Testes Unitários](#615-plano-de-testes-unitarios)
+   6.2[Roteiro de teste](#62-roteiro-de-teste)
 7. [Referências Bibliográficas](#7referencias-bibliograficas)  
 
 ---
@@ -132,12 +144,17 @@ Utilização de metodologias ágeis (Scrum + XP) com desenvolvimento incremental
 
 ### 2.3 Planejamento das Fases e/ou Iterações do Projeto
 
-| Sprint   | Produto (Entrega)                                                                                                                                                    | Data Início | Data Fim  | Entregável(eis)    | Responsáveis                              | % Conclusão                                         |
-|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-----------|--------------------|--------------------------------------------|-----------------------------------------------------|
-| Sprint 1 | Definiu-se que se trata de um app mobile, de combate ao analfabetismo e anumerismo.                                                                                  | 14/04/2025  | 14/05/2025| Documentação       | João Pedro Araújo de Freitas Lyra          | Divisão de tarefas e início efetivo do projeto      |
-| Sprint 2 | MVP e Planejamento do Projeto                                                                                                                                        | 14/05/2025  | —         | —                  | —                                          | —                                                   |
-| Sprint 3 | Reunião com parte dos integrantes para definir metodologias para agilizar o desenvolvimento. Primeiro commit das pastas de organização do trabalho.                  | 21/05/2025  | —         | —                  | —                                          | —                                                   |
-| Sprint 4 | —                                                                                                                                                                     | —           | —         | —                  | —                                          | —                                                   |
+| Sprint   | Produto (Entrega)                                                                                                                                                                                                                         | Data Início | Data Fim   | Entregável(eis)      | Responsáveis                                                                                                                                       | % Conclusão                       |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| Sprint 1 | Definiu-se que se trata de um app mobile, de combate ao analfabetismo e anumerismo.                                                                                                                | 14/04/2025  | 14/05/2025 | Documentação          | João Pedro Araújo de Freitas Lyra                                                                                                                  | 11,10%                           |
+| Sprint 2 | MVP e Planejamento do Projeto                                                                                                                                                                       | 14/05/2025  | 16/05/2025 | Documentação          | João Pedro Araújo de Freitas Lyra; Guilherme Ferreira Brandão                                                                                      | 11,10%                           |
+| Sprint 3 | Reunião com parte dos integrantes para definir metodologias de desenvolvimento. Primeiro commit da estrutura de pastas do projeto.                                                                | 21/05/2025  | 25/05/2025 | Projeto / Documentação| João Pedro Araújo de Freitas Lyra; Guilherme Ferreira Brandão                                                                                      | 11,10%                           |
+| Sprint 4 | Cadastro e Login                                                                                                                                                                                   | 26/05/2025  | 01/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,10%                           |
+| Sprint 5 | Realização de atividades / Teste da Sprint 4                                                                                                                                                        | 02/06/2025  | 08/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,10%                           |
+| Sprint 6 | Sistema de Progresso / Teste da Sprint 5                                                                                                                                                            | 09/06/2025  | 15/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,10%                           |
+| Sprint 7 | Gerenciamento de Conteúdo / Teste da Sprint 6                                                                                                                                                       | 16/06/2025  | 22/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,10%                           |
+| Sprint 8 | Teste final e geração do APK / Teste da Sprint 7                                                                                                                                                    | 23/06/2025  | 29/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,10%                           |
+| Sprint 9 | Ajustes finais                                                                                                                                                                                     | 30/06/2025  | 30/06/2025 | Projeto               | Arthur, Guilherme, Heyttor, Ingrid, Rivadalvio, Nayra, Carlos, João Pedro, Leticia, Luis, Pedro, Yasmin                                           | 11,20%                           |
 
 ### 2.4 Matriz de Comunicação
 
@@ -282,18 +299,19 @@ O backlog do produto foi construído com base em pesquisas sobre a temática da 
 
 *Tabela : Backlog do produto*
 
-| Nº  | Sprint | Requisito               | Tipo        | Priorização | Descrição                                                                              |
-|-----|--------|--------------------------|-------------|-------------|----------------------------------------------------------------------------------------|
-| 1.1 | 1      | Cadastro de Usuário      | Funcional   | Must        | Cadastro por e-mail e senha                                                            |
-| 1.2 | 1      | Login                    | Funcional   | Must        | Login por e-mail e senha                                                               |
-| 2.1 | 2      | Questões de Português    | Funcional   | Must        | Três níveis: gramática, pontuação e interpretação                                     |
-| 2.2 | 2      | Questões de Matemática   | Funcional   | Must        | Três níveis: tabuada, fração/divisão, expressões numéricas                            |
-| 3.1 | 3      | Sistema de Progresso     | Funcional   | Must        | Salvar progresso do usuário                                                            |
-| 3.2 | 3      | Sistema de Correção      | Funcional   | Must        | Feedback de acertos/erros com cores e repetição se necessário                          |
-| 4.1 | 4      | Painel do Administrador  | Funcional   | Should      | Gerenciar conteúdos                                                                    |
-| 4.2 | 4      | Aba de Créditos          | Não Funcional | Should      | Informações sobre as fontes das questões                                               |
-| 5.1 | 5      | Testes Finais / APK      | Funcional   | Must        | Testes gerais, geração do APK                                                          |
-| 5.2 | 5      | Modo Offline             | Não Funcional | Could       | Funcionamento parcial sem internet                                                     |
+| Numeração  | Sprint | Nome do requisito       | Tipo de requisito Must, Should, Could      | Priorização | Descrição sucinta do requisito                                                                                                                                                             | User stories (U.S.) associadas Identifique as U.S. associadas ao requisito                                                                                     |
+|----------------------------------|--------|----------------------------|--------------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| 1.1                              | 1      | Cadastro de Usuário        | Funcional                | Must        | O sistema deve permitir que o aluno crie uma conta com email e senha                                                                                                                        | Como aluno, quero poder me cadastrar para acessar o conteúdo do aplicativo.                                       |
+| 1.2                              | 1      | Login de Usuário           | Funcional                | Must        | O sistema deve permitir autenticação por email e senha.                                                                                                                                     | Como aluno, quero poder fazer login para continuar meus estudos.                                                  |
+| 2.1                              | 2      | Questões de português      | Funcional                | Must        | Deve ter 3 questões em cada um dos 3 níveis em português. 1- estrutura gramatical. 2- pontuação e 3 - interpretação básica de texto                                                         | Como aluno, quero poder realizar questões de português.                                                            |
+| 2.2                              | 2      | Questões de matemática     | Funcional                | Must        | Deve ter 3 questões em cada um dos 3 níveis em matemática. 1 - multiplicação (tabuada). 2 - divisão/fração. 3 - expressão numérica (soma, subtração, divisão, multiplicação)               | Como aluno, quero poder realizar questões e aprender matemática básica.                                           |
+| 3.1                              | 3      | Sistema de progresso       | Funcional                | Must        | Deve ser possível recomeçar da atividade onde o usuário parou na última interação com o aplicativo.                                                                                        | Como aluno, quero poder ter continuidade nos estudos com um sistema de progressão.                                |
+| 3.2                              | 3      | Sistema de correção        | Funcional                | Must        | Ao término de cada nível, será dado ao usuário um feedback sobre as atividades, erros e acertos, corretos grifados em verde, errados grifados em vermelho. Se a taxa de acerto < 2, reinício do nível. | Como aluno, quero saber quais questões acertei e quais errei.                                                     |
+| 4.1                              | 4      | Painel do administrador    | Funcional                | Should      | O administrador deve poder adicionar, editar ou remover atividades dentro dos níveis. Não há acesso direto aos dados do usuário, apenas ao sistema de questões.                          | Como administrador, quero atualizar os conteúdos do aplicativo.                                                   |
+| 4.2                              | 4      | Aba de créditos            | Não funcional            | Should      | O aplicativo deve ter uma aba que indica os créditos de cada questão.                                                                                                                       | Como aluno, quero saber o material bibliográfico das questões que realizo para aprofundar os estudos              |
+| 5.1                              | 5      | Testes finais, geração do APK | Funcional             | Must        | O aplicativo deve funcionar perfeitamente sem bugs ou erros. Após testes finais, será gerado o APK para distribuição.                                                                      | Como aluno, quero baixar o aplicativo no meu celular (Android) e usá-lo sem bugs, com boa experiência de uso.     |
+| 5.2                              | 5      | Modo Offline               | Não funcional            | Could       | O aplicativo deve funcionar parcialmente sem conexão, salvando a progressão do usuário.                                                                                                     | Como aluno, quero poder estudar mesmo sem internet.                                                               |
+
 
 ---
 
@@ -342,7 +360,8 @@ Analisar o aplicativo de alfabetização com o propósito de avaliar sua usabili
 | Testes Unitários    | Testes isolados de componentes individuais      | Alta       | Validar o funcionamento correto das funções e métodos específicos que implementam a lógica educacional |
 | Testes de Integração| Verificação da comunicação entre módulos        | Média      | Garantir que os diferentes componentes da aplicação funcionem corretamente quando integrados          |
 | Testes de Sistema   | Avaliação do sistema como um todo               | Baixa      | Verificar o funcionamento completo da aplicação em um ambiente próximo ao de produção                 |
-| Testes de Aceitação | Validação dos requisitos de negócio             | Média      | Confirmar que a aplicação atende às expectativas                                                     |
+| Testes de Aceitação | Validação dos requisitos de negócio             | Média      | Confirmar que a aplicação atende às expectativas  |
+
 #### 6.1.2 Tipos de Testes Abordados
 
 | Tipo de Teste          | Descrição                                 | Técnicas Aplicadas                                           | Ferramentas                         |
