@@ -23,7 +23,7 @@ export  function Login() {
       const found = users.find((u: any) => u.name === user && u.password === password);
       if (found) {
         await AsyncStorage.setItem('auth', 'true');
-        navigation.navigate('Home');
+        navigation.navigate('Regras');
       } else {
         Alert.alert('Erro', 'Usuário ou senha inválidos');
       }
