@@ -54,7 +54,7 @@ export function Home() {
           <Text style={styles.textTempP}>3-10 min</Text>
 
           <StartButton
-            onPress={() => navigation.navigate('Portugues')}
+            onPress={() => navigation.navigate('QuestPort')}
             color='#73D7C0'
             style={styles.startButton}
           />
@@ -72,7 +72,7 @@ export function Home() {
           <Text style={styles.textTempM}>3-10 min</Text>
 
           <StartButton
-            onPress={() => navigation.navigate('Matematica')}
+            onPress={() => navigation.navigate('QuestMat')}
             color='#3F414E'
             style={styles.startButton}
           />
