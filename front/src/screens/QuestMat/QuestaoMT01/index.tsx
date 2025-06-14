@@ -15,6 +15,8 @@ import { styles } from './styles';
 export function QuestaoMT01() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
+
 
   const correctKey = 'b';
   const options = [
@@ -27,6 +29,12 @@ export function QuestaoMT01() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+
+    if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
   }
 
   function handleNext() {
@@ -112,6 +120,10 @@ export function QuestaoMT01() {
             </TouchableOpacity>
           );
         })}
+        
+        {/* Mensagem de feedback */}
+          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+
 
         {selected && (
           <Button
