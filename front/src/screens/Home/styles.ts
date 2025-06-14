@@ -80,7 +80,7 @@ startButton: {
     textAlign: 'left',
     marginTop: 50, 
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#FFFFFF',
     lineHeight: 20
   }, 
 
@@ -89,7 +89,7 @@ startButton: {
     textAlign: 'left',
     marginTop: 0, 
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#FFFFFF',
     lineHeight: 20
   },
 
@@ -124,7 +124,7 @@ startButton: {
     textAlign: 'left',
     marginTop: 50, 
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: '#A88C67',
     lineHeight: 20
 
   },
@@ -133,7 +133,7 @@ startButton: {
     textAlign: 'left',
     marginTop: 0, 
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: '#A88C67',
     lineHeight: 20
 
   },
