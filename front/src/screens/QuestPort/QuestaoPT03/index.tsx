@@ -10,7 +10,7 @@ export  function QuestaoPT03() {
   return (
     <View style={styles.container}>
       <BackButton />
-      <Text> Portugues </Text>
+      <Text> Portugues3 </Text>
       <Button title="Próxima" onPress={() => navigation.navigate('QuestaoPT04')} />
     </View>
   );

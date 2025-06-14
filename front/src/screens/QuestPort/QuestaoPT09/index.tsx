@@ -9,7 +9,7 @@ export  function QuestaoPT09() {
   return (
     <View style={styles.container}>
       <BackButton />
-      <Text> Portugues </Text>
+      <Text> Portugues9 </Text>
     </View>
   );
 }

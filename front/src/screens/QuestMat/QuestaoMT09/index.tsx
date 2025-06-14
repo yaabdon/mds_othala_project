@@ -10,7 +10,7 @@ export  function QuestaoMT09() {
   return (
     <View style={styles.container}>
       <BackButton />
-      <Text> Portugues </Text>
+      <Text> Matematica9 </Text>
       {/* Última questão, pode customizar aqui se quiser */}
     </View>
   );

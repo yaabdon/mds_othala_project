@@ -10,7 +10,7 @@ export  function QuestaoMT07() {
   return (
     <View style={styles.container}>
       <BackButton />
-      <Text> Portugues </Text>
+      <Text> Matematica7 </Text>
       <Button title="Próxima" onPress={() => navigation.navigate('QuestaoMT08')} />
     </View>
   );
