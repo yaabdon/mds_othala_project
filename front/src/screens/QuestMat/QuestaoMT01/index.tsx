@@ -42,7 +42,7 @@ export function QuestaoMT01() {
   }
 
   function handleOpenDoc() {
-    Linking.openURL('https://seus-docs-aqui.doc');
+    Linking.openURL('https://seus-docs-aquui.doc');
   }
 
   return (
@@ -120,7 +120,7 @@ export function QuestaoMT01() {
             </TouchableOpacity>
           );
         })}
-        
+
         {/* Mensagem de feedback */}
           {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
 
