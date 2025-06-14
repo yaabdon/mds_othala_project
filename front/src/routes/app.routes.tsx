@@ -46,6 +46,7 @@ export function AppRoutes() {
       <Stack.Screen name="QuestaoPT07"  component={QuestaoPT07} />
       <Stack.Screen name="QuestaoPT08"  component={QuestaoPT08} />
       <Stack.Screen name="QuestaoPT09"  component={QuestaoPT09} />
+      
       <Stack.Screen name="QuestaoMT01"  component={QuestaoMT01} />
       <Stack.Screen name="QuestaoMT02"  component={QuestaoMT02} />
       <Stack.Screen name="QuestaoMT03"  component={QuestaoMT03} />
