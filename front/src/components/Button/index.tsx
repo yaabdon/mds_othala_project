@@ -4,13 +4,14 @@ import { styles } from "./styles";
 type Props =  {
   title: string;
   onPress: () => void;
+  disabled?: boolean;
 }
 
-export function Button({title, onPress}:Props) {
+export function Button({title, onPress, disabled = false}:Props) {
   return (
     <View >
-      <TouchableOpacity style={styles.button}onPress={onPress} >
-        <Text style={styles.buttonText}>{title}</Text>
+      <TouchableOpacity style={[styles.button, disabled && styles.buttonDisabled]}onPress={disabled ? undefined: onPress} >
+        <Text style={[styles.buttonText, disabled && styles.buttonDisabledText]}>{title}</Text>
       </TouchableOpacity>
      
     </View>
