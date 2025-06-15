@@ -12,9 +12,11 @@ import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { styles } from './styles';
 
-export  function QuestaoMT06() {
-const navigation = useNavigation<any>();
+export function QuestaoMT06() {
+  const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
+
 
   const correctKey = 'a';
   const options = [
@@ -111,6 +113,10 @@ const navigation = useNavigation<any>();
           );
         })}
 
+        {/* Mensagem de feedback */}
+          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+
+
         {selected && (
           <Button
             title="Próxima"
@@ -121,7 +127,6 @@ const navigation = useNavigation<any>();
     </View>
   );
 }
-
 
 
 

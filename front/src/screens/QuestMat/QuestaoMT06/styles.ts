@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     width: 170,
     height: 100,
     resizeMode: 'contain',
-    marginRight: -60,  // Se quiser "empurrar" mais pra direita
+    marginRight: -60,  
     marginTop: 10,     
   },
 
@@ -118,4 +118,13 @@ export const styles = StyleSheet.create({
   optionIncorrect: {
     backgroundColor: '#FF4545',
   },
+  // MENSAGEM DE FEEDBACK
+  feedbackMessage: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginTop: 20,
+  color: '#000000',  
+},
+
 });

@@ -112,6 +112,10 @@ const navigation = useNavigation<any>();
           );
         })}
 
+        {/* Mensagem de feedback */}
+          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+
+
         {selected && (
           <Button
             title="Próxima"
