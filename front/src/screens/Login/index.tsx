@@ -8,6 +8,7 @@ import { api } from '../../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Loading } from '@/src/components/Loading';
 
+
 export  function Login() {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');

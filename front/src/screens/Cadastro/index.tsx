@@ -37,6 +37,7 @@ export function Cadastro() {
 };
 
   return (
+    
     <>
      <View style={styles.backButton}> 
           <BackButton />
