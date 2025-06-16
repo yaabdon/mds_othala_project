@@ -86,13 +86,15 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  // CENA
+  // IMAGEM DA CENA
   sceneImage: {
     width: width * 0.9,
     height: width * 0.4,
     marginBottom: 8,
     resizeMode: 'contain',
   },
+
+  // TEXTO DA CENA
   sceneText: {
     color: '#808080',
     marginTop: 6,

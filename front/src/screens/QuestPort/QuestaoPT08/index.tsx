@@ -68,7 +68,7 @@ export function QuestaoPT08() {
         </View>
       </View>
 
-      {/* Professor + Barra */}
+      {/* Avatar + Barra */}
       <View style={styles.professorBarContainer}>
         <Image
           source={require('../../../assets/Home_girl.png')}
@@ -83,6 +83,12 @@ export function QuestaoPT08() {
           <View style={styles.levelDot} />
           <Text style={styles.levelText}>Nível 2: Interpretação de texto</Text>
         </View>
+
+        {/* Imagem da cena */}
+        <Image
+          source={require('../../../assets/Q9_por.png')}
+          style={styles.sceneImage}
+        />
 
         {/* Cena textual */}
         <Text style={styles.sceneText}>
@@ -115,7 +121,7 @@ export function QuestaoPT08() {
           );
         })}
 
-        {/* Mensagem e botão */}
+        {/* Feedback */}
         {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
         {selected && <Button title="Próxima" onPress={handleNext} />}
       </ScrollView>

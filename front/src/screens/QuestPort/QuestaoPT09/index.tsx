@@ -38,7 +38,7 @@ export function QuestaoPT09() {
   }
 
   function handleNext() {
-    navigation.navigate('ProximaQuestao');
+    navigation.navigate('QuestaoPT10');
   }
 
   function handleOpenDoc() {
@@ -84,7 +84,13 @@ export function QuestaoPT09() {
           <Text style={styles.levelText}>Nível 3: Interpretação: opinião x fato</Text>
         </View>
 
-        {/* Cena */}
+        {/* Imagem da cena */}
+        <Image
+          source={require('../../../assets/Q8_por.png')}
+          style={styles.sceneImage}
+        />
+
+        {/* Cena textual */}
         <Text style={styles.sceneText}>
           O cachorro é o melhor amigo do homem.{"\n"}
           Ele é fiel e ajuda em casa.

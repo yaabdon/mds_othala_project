@@ -87,12 +87,19 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
+  // IMAGEM DA CENA
+  sceneImage: {
+    width: width * 0.9,
+    height: width * 0.4,
+    marginBottom: 8,
+    resizeMode: 'contain',
+  },
+
   // TEXTO DA CENA
-  paragraph: {
-    fontSize: 16,
-    color: '#444',
-    marginBottom: 20,
-    lineHeight: 22,
+  sceneText: {
+    color: '#808080',
+    marginTop: 6,
+    marginBottom: 26,
     textAlign: 'center',
   },
 
@@ -132,11 +139,4 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     color: '#000',
   },
-  sceneText: {
-  color: '#808080',
-  marginTop: 6,
-  marginBottom: 26,
-  textAlign: 'center',
-},
-
 });
