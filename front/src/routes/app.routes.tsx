@@ -33,7 +33,7 @@ const Stack = createNativeStackNavigator();
 export function AppRoutes() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} >
-      <Stack.Screen name="QuestaoMT09"  component={QuestaoMT09} />
+      
       <Stack.Screen name="PreLogin"   component={PreLogin}  />  
       <Stack.Screen name="Login"      component={Login}     />  
       <Stack.Screen name="Cadastro"   component={Cadastro}  />
@@ -57,6 +57,7 @@ export function AppRoutes() {
       <Stack.Screen name="QuestaoMT06"  component={QuestaoMT06} />
       <Stack.Screen name="QuestaoMT07"  component={QuestaoMT07} />
       <Stack.Screen name="QuestaoMT08"  component={QuestaoMT08} />
+      <Stack.Screen name="QuestaoMT09"  component={QuestaoMT09} />
       
 
       
