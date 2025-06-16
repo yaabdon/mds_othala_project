@@ -76,8 +76,8 @@ const navigation = useNavigation<any>();
         />
         <View style={styles.decorativeBar} />
       </View>
-
-      <ScrollView contentContainerStyle={styles.content}>
+      {/* CONTEÚDO */}
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -129,7 +129,7 @@ const navigation = useNavigation<any>();
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }
