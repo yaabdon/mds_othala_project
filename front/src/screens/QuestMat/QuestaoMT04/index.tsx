@@ -16,6 +16,8 @@ import { styles } from './styles';
 export  function QuestaoMT04() {
 const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
+  
 
   const correctKey = 'b';
   const options = [
@@ -28,6 +30,11 @@ const navigation = useNavigation<any>();
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+      if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
   }
 
   function handleNext() {
@@ -69,8 +76,8 @@ const navigation = useNavigation<any>();
         />
         <View style={styles.decorativeBar} />
       </View>
-
-      <ScrollView contentContainerStyle={styles.content}>
+      {/* CONTEÚDO */}
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -122,7 +129,7 @@ const navigation = useNavigation<any>();
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

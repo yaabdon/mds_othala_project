@@ -81,8 +81,8 @@ export function QuestaoPT04() {
       </View>
 
       
-
-      <ScrollView contentContainerStyle={styles.content}>
+      {/* CONTEÚDO */}
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -130,7 +130,7 @@ export function QuestaoPT04() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

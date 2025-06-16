@@ -76,8 +76,8 @@ export function QuestaoMT03() {
         />
         <View style={styles.decorativeBar} />
       </View>
-
-      <ScrollView contentContainerStyle={styles.content}>
+      {/* Conteúdo da Questão */}
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -131,7 +131,7 @@ export function QuestaoMT03() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

@@ -77,12 +77,14 @@ export function QuestaoMT01() {
         <View style={styles.decorativeBar} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.content}>
+        {/* Conteúdo */}
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
           <Text style={styles.levelText}>Nível 1: Tabuada do 2</Text>
         </View>
+
 
         {/* Cena */}
         <Image
@@ -131,7 +133,7 @@ export function QuestaoMT01() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }
