@@ -62,12 +62,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;2.6.4 [Componentes Internos do Frontend](#264-componentes-internos-do-frontend)  
 &nbsp;&nbsp;&nbsp;&nbsp;2.6.5 [Diagrama de Estados](#265-diagrama-de-estados)  
 &nbsp;&nbsp;&nbsp;&nbsp;2.6.6 [Diagrama de Atividades da Aplicação](#266-diagrama-de-atividades-de-aplicacao)  
-&nbsp;&nbsp;&nbsp;&nbsp;2.6.7 [Diagrama de Classes](#267-diagrama-de-classes) 
+&nbsp;&nbsp;&nbsp;&nbsp;2.6.7 [Diagrama de Classes](#267-diagrama-de-classes)  
    2.7 [Visão de Implementação](#27-visao-de-implementacao)  
    2.8 [Visão de Implantação](#28-visao-de-implantacao)  
    2.9 [Restrições Adicionais](#29-restricoes-adicionais)  
 
-4. [Bibliografia](#bibliografia)
+5. [Bibliografia](#bibliografia)
 
 
 
