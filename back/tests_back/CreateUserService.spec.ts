@@ -1,9 +1,15 @@
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env.test" });
+
+
 import { AppDataSource } from "../src/database";
 import { ClassUsersRepository } from "../src/repositories/ClassUsersRepository";
 import { CreateUserService } from "../src/service/CreateUserService";
 
-describe("CreateUserService (integração)", () => {
-  beforeAll(async () => {
+
+
+ beforeAll(async () => {
     if (!AppDataSource.isInitialized) {
       await AppDataSource.initialize();
     }
@@ -19,9 +25,13 @@ describe("CreateUserService (integração)", () => {
     }
   });
 
+describe("CreateUserService (integração)", () => {
+ 
   it("cria um novo usuário com sucesso", async () => {
     const repository = new ClassUsersRepository(AppDataSource);
     const service = new CreateUserService(repository);
+
+    
 
     const result = await service.execute({
       name: "João da Silva",

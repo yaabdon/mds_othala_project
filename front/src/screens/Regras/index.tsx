@@ -17,7 +17,7 @@ const abrirDocs = () => {
 
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="regras-screen"> 
       <View style={styles.backButton}>
         <BackButton/>
       </View>

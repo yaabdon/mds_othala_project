@@ -20,7 +20,7 @@ export function Home() {
   }, []);
 
   return (
-      <View style={styles.container}>
+      <View style={styles.container} testID="home-screen">
       <View style={styles.backButton}> 
         <BackButton />
            </View>

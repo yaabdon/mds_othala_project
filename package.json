@@ -14,7 +14,10 @@
     "test:back": "NODE_ENV=test jest --selectProjects back --runInBand",
     "test:front": "jest --selectProjects front",
     "test:watch:back": "NODE_ENV=test jest --selectProjects back --watchAll --runInBand",
-    "test:ci": "NODE_ENV=test jest --runInBand"
+    "test:ci": "NODE_ENV=test jest --runInBand",
+    "test:init-db": "NODE_ENV=test npx ts-node back/src/database/index.ts",
+    "test:sync": "NODE_ENV=test npx ts-node back/scripts/sync.ts",
+    "test:full": "npm run test:init-db && npm run test:sync && npx jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

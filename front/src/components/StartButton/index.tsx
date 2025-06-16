@@ -17,8 +17,13 @@ export function StartButton({
 }: Props) {
   return (
     <TouchableOpacity
-      style={[styles.button, { backgroundColor: color }, style]} // APLICA AQUI
+      style={[styles.button, { backgroundColor: color }, style] } // APLICA AQUI
       onPress={onPress}
+      testID={`start-button-${label
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') 
+      .replace(/\s+/g, '-')}`} 
     >
       <Text style={styles.buttonText}>{label}</Text>
     </TouchableOpacity>

@@ -10,7 +10,7 @@ type Props =  {
 export function Button({title, onPress, disabled = false}:Props) {
   return (
     <View >
-      <TouchableOpacity style={[styles.button, disabled && styles.buttonDisabled]}onPress={disabled ? undefined: onPress} >
+      <TouchableOpacity style={[styles.button, disabled && styles.buttonDisabled]}onPress={disabled ? undefined: onPress} testID={`button-${title.toLowerCase().replace(/\s+/g, '-')}`}>
         <Text style={[styles.buttonText, disabled && styles.buttonDisabledText]}>{title}</Text>
       </TouchableOpacity>
      

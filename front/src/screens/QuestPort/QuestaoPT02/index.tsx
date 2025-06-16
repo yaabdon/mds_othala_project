@@ -8,7 +8,7 @@ export  function QuestaoPT02() {
   const navigation = useNavigation<any>();
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}testID="questao-pt02-screen">
       <BackButton />
       <Text> Portugues2 </Text>
       <Button title="Próxima" onPress={() => navigation.navigate('QuestaoPT03')} />

@@ -10,7 +10,7 @@ export  function PreLogin() {
 
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="prelogin-screen">
 
     <View style={styles.logo}>
     <Image
