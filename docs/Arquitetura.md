@@ -222,11 +222,12 @@ A camada de apresentação é responsável pela interação direta com os usuár
 
 **Protótipos de Baixa Fidelidade:**
 
-![image](https://github.com/user-attachments/assets/dc633f63-67b2-436e-bdaf-345cc6bd53f4) ![image](https://github.com/user-attachments/assets/948b6dd3-bc35-4eab-b6b7-605c82ac5ed3)
+<img width="462" alt="Tela 02" src="https://github.com/user-attachments/assets/535e2f75-36d7-41e0-ba79-70ed6739f5a8" />
+<img width="435" alt="Tela 03" src="https://github.com/user-attachments/assets/3adb0c43-8bad-48f6-8947-cb85528afd03" />
 
 *Imagem 1 - Protótipo A e B - Tela de Login e Criação de conta*
 
-![image](https://github.com/user-attachments/assets/bba215a8-2640-4b9a-9013-e6b5600d3ac2)
+<img width="414" alt="Quiz de Português - Interpretacao Dificil" src="https://github.com/user-attachments/assets/534021d3-5f9a-420a-b0f6-e7656a7f4f1b" />
 
 *Imagem 2 - Protótipo C - Tela de Questão*
 
