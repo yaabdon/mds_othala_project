@@ -16,6 +16,7 @@ import { styles } from './styles';
 export  function QuestaoMT05() {
 const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
 
   const correctKey = 'b';
   const options = [
@@ -28,6 +29,11 @@ const navigation = useNavigation<any>();
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+      if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
   }
 
   function handleNext() {

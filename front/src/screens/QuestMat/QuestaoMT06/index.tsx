@@ -29,6 +29,11 @@ export function QuestaoMT06() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+      if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
   }
 
   function handleNext() {
