@@ -1,130 +1,122 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    position: 'relative',
+    justifyContent: 'flex-start',
+    backgroundColor: "#fff",
   },
 
-  // HEADER
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  leftContainer: {
-    flex: 1,
-    alignItems: 'flex-start',
-  },
-  centerContainer: {
-    flex: 2,
-    alignItems: 'center',
-  },
-  rightContainer: {
-    flex: 1,
-    alignItems: 'flex-end',
-  },
-  headerTitle: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#598E9C',
-  },
-  omega: {
-    width: 170,
-    height: 100,
-    resizeMode: 'contain',
-    marginRight: -60,  
-    marginTop: 10,     
+  backButton:{
+    position: 'absolute',
+    top: 40,
+    left: 20,
+    zIndex: 1,
   },
 
-  // PROFESSOR + BARRA
-  professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-45,
-    marginBottom: 12,
-    paddingHorizontal: 16,
+  //Expressoes Numericas
+  quizTitle: {
+    position: 'absolute',
+    top: 24,
+    left: 134,
+    right: 80,
+    color: "#598E9C",
+    fontSize: 25,
+    fontWeight: 'bold'
   },
-  teacherAvatar: {
-    width: 70,
-    height: 70,
-    borderRadius: 30,
-    marginRight: 6,
+
+    homeMan: {
+    position: 'absolute',
+    width: 116,
+    height: 65,
+    top: -20,
+    left: 17,
+    transform: [{ translateX: -20 }],
   },
-  decorativeBar: {
-    flex: 1,
+
+
+  logo:{
+   width: 155,
+   height: 100,
+   paddingTop: 21,
+   left: 134
+  },
+
+ levelScore:{
+    position: 'absolute',
+    top: 110,
+    left: 100,
+    width: 220,
     height: 12,
-    backgroundColor: '#F2E3B5',
     borderRadius: 6,
+    backgroundColor: "#F2E3B5"
   },
 
-  // CONTEÚDO
-  content: {
-    paddingHorizontal: 16,
-    alignItems: 'center',
+    levelCircle: {
+    position: 'absolute',
+    top: 158,
+    left: 96,
+    width: 18,
+    height: 18,
+    borderRadius: 10,
+    backgroundColor: "#73D7C0",
+
   },
 
-  // NÍVEL
-  levelContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  levelDot: {
-    width: 15,
-    height: 15,
-    backgroundColor: '#73D7C0',
-    borderRadius: 8,
-    marginRight: 8,
-  },
-  levelText: {
+  
+   levelQuiz: {
+    position: 'absolute',
+    top: 156,
+    left: 120,
+    right: 80,
+    color: "#00000",
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '500'
   },
 
-  // CENA
-  sceneImage: {
+  //ImagemDeMatemática
+  MatImage:{
+    position: 'absolute',
     width: width * 0.9,
     height: width * 0.5,
     marginBottom: 16,
+    left: 20,
+    top: 90
+
   },
 
-  // PERGUNTA
-  questionText: {
+  AlternativeParagraph: {
+    position: 'absolute',
     fontSize: 16,
     lineHeight: 22,
-    textAlign: 'center',
-    marginBottom: 24,
+    top: 400,
+    left: 49,
+    textAlign: 'center'
   },
 
-  // OPÇÕES
-  optionButton: {
-    width: '100%',
-    backgroundColor: '#F2E3B5',
-    paddingVertical: 14,
-    paddingHorizontal: 16,
+  alternativeButton: {
+    padding: 14,
     borderRadius: 8,
-    marginBottom: 12,
+    marginVertical: 5,
+    top: 400,
+    marginLeft: 20,
+    marginRight: 20,
   },
-  optionText: {
-    fontSize: 16,
+
+  alternativeText: {
+    fontSize:16,
+
   },
-  optionCorrect: {
-    backgroundColor: '#CFFCDB',
-  },
-  optionIncorrect: {
-    backgroundColor: '#FF4545',
-  },
-  // MENSAGEM DE FEEDBACK
-  feedbackMessage: {
-  fontSize: 18,
-  fontWeight: 'bold',
-  textAlign: 'center',
-  marginTop: 20,
-  color: '#000000',  
-},
+
+  buttonContinue: {
+   top: 411,
+   left: 0,
+   right: 0,
+   alignItems: 'center',
+}
+
+
 
 });
