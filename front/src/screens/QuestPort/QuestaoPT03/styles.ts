@@ -1,138 +1,142 @@
-import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  Linking,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { BackButton } from '../../../components/BackButton';
-import { Button } from '../../../components/Button';
-import { styles } from './styles';
+import { StyleSheet, Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
-export function QuestaoPT03() {
-  const navigation = useNavigation<any>();
-  const [selected, setSelected] = useState<string | null>(null);
-  const [message, setMessage] = useState<string>('');
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF',
+  },
 
-  const correctKey = 'c)';
+  // HEADER
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  leftContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+  },
+  centerContainer: {
+    flex: 2,
+    alignItems: 'center',
+  },
+  rightContainer: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  headerTitle: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#598E9C',
+  },
+  omega: {
+    width: 170,
+    height: 100,
+    resizeMode: 'contain',
+    marginRight: -60,  
+    marginTop: 10,
+  },
 
-  const options = [
-    { key: 'a)', label: 'Alguém desconhecido' },
-    { key: 'b)', label: 'Está na frase, é "mercado"' },
-    { key: 'c)', label: 'Está escondido no verbo, é "eu"' },
-    { key: 'd)', label: 'É “frutas, legumes e arroz”' },
-  ];
+professorBarContainer: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginTop: -35,
+  marginBottom: 12,
+  paddingHorizontal: 16,
+},
 
-  function handleSelect(key: string) {
-    if (selected) return;
-    setSelected(key);
-    if (key === correctKey) {
-      setMessage('Parabéns, você acertou!');
-    } else {
-      setMessage('Que pena, não foi dessa vez.');
-    }
+teacherAvatar: {
+  width: 90, 
+  height: 70,
+  borderRadius: 30,
+  marginRight: 10,
+},
+
+decorativeBar: {
+  flex: 1,
+  height: 12,
+  backgroundColor: '#5C8F84',
+  borderRadius: 6,
+  marginLeft: -50, // 🔥 Empurra a barra para a direita
+},
+
+  // CONTEÚDO
+  content: {
+    paddingHorizontal: 16,
+    alignItems: 'center',
+  },
+
+  // NÍVEL
+  levelContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
   
-  }
+  levelDot: {
+    width: 15,
+    height: 15,
+    backgroundColor:  '#73D7C0',
+    borderRadius: 8,
+    marginRight: 8,
+  },
+   // CENA
+  sceneImage: {
+  width: width * 0.9,  
+  height: width * 0.4, 
+  marginBottom: 8,     
+  resizeMode: 'contain',
+},
+sceneText: {
+  color: '#808080',
+marginTop: 6,
+marginBottom: 26,
+textAlign: 'center',
 
-  function handleNext() {
-    navigation.navigate('QuestaoPT04');
-  }
+},
 
-  function handleOpenDoc() {
-    Linking.openURL('https://seu-link-aqui.com');
-  }
-
-  return (
-    
-    <View style={styles.container}>
-      {/* HEADER */}
-      <View style={styles.header}>
-        <View style={styles.leftContainer}>
-          <BackButton />
-        </View>
-
-        <View style={styles.centerContainer}>
-          <Text style={styles.headerTitle}>Pontuação</Text>
-        </View>
-
-        <View style={styles.rightContainer}>
-          <TouchableOpacity onPress={handleOpenDoc}>
-            <Image
-              source={require('../../../assets/logo_img.png')}
-              style={styles.omega}
-              resizeMode="contain"
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
-      
-
-      {/* Professor + Barra */}
-      <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_girl.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
-      </View>
-
-      
-
-      <ScrollView contentContainerStyle={styles.content}>
-        {/* Nível */}
-        <View style={styles.levelContainer}>
-          <View style={styles.levelDot} />
-          <Text style={styles.levelText}>Nível 3 – Tipo de sujeito (Oculto)
-</Text>
-        </View>
-        {/* Cena */}
-        <Image
-          source={require('../../../assets/Q3_por.png')}
-          style={styles.sceneImage}
-          resizeMode="contain"
-        />
-        <Text style={styles.questionText}>
-  Leia:
-  {'\n'}
-     Leia esta frase:
-“A professora de matemática explicou a lição com paciência.”
-</Text>
-
-        {/* Opções */}
-        {options.map(opt => {
-          const isSelected = selected === opt.key;
-          const bgColor = isSelected
-            ? opt.key === correctKey
-              ? styles.optionCorrect.backgroundColor
-              : styles.optionIncorrect.backgroundColor
-            : styles.optionButton.backgroundColor;
-
-          return (
-            <TouchableOpacity
-              key={opt.key}
-              style={[styles.optionButton, { backgroundColor: bgColor }]}
-              onPress={() => handleSelect(opt.key)}
-              disabled={!!selected}
-            >
-              <Text style={styles.optionText}>
-                {opt.key} {opt.label}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-          {/* Mensagem de feedback */}
-                  {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
-
-        {selected && (
-          <Button
-            title="Próxima"
-            onPress={handleNext}
-          />
-        )}
-      </ScrollView>
-    </View>
-  );
-}
+  levelText: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  
+  // PERGUNTA
+  questionText: {
+    fontSize: 16,
+    lineHeight: 22,
+    textAlign: 'center',
+    marginBottom: 14,
+  },
+  
+  // OPÇÕES
+  optionButton: {
+    width: '100%',
+    backgroundColor: '#5C8F84',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+  },
+  optionText: {
+    fontSize: 16,
+    color: '#FFF', 
+  },
+  optionCorrect: {
+    backgroundColor: '#1ACF41',
+  },
+  optionIncorrect: {
+    backgroundColor: 'EF6B6B',
+  },
+    // MENSAGEM DE FEEDBACK
+  feedbackMessage: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginTop: 20,
+  color: '#000000',  
+},
+  
+});
