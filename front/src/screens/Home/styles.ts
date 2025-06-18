@@ -72,7 +72,7 @@ startButton: {
       height: 210,
       position: 'absolute',
       bottom: 70,
-      left: 65,
+      left: 57,
   },
 
   textJourneyPortuguese: {
@@ -115,7 +115,7 @@ startButton: {
       height: 210,
       position: 'absolute',
       bottom: 75,
-      left: 15,
+      left: 5,
   },
 
 
