@@ -53,8 +53,8 @@ export const styles = StyleSheet.create({
 
   levelCircle: {
     position: 'absolute',
-    top: 148,
-    left: 96,
+    top: 138,
+    left: 108,
     width: 18,
     height: 18,
     borderRadius: 10,
@@ -64,9 +64,9 @@ export const styles = StyleSheet.create({
 
    levelQuiz: {
     position: 'absolute',
-    top: 146,
-    left: 120,
-    right: 80,
+    top: 136,
+    left: 130,
+    right: 60,
     color: "#00000",
     fontSize: 16,
     fontWeight: '500'
@@ -76,18 +76,18 @@ export const styles = StyleSheet.create({
   MatImage:{
    position: 'absolute',
     width: width * 0.9,
-    height: width * 0.5,
+    height: width * 0.48,
     marginBottom: 16,
     left: 20,
-    top: 80
+    top: 65
   },
 
   AlternativeParagraph: {
     position: 'absolute',
     fontSize: 16,
     lineHeight: 22,
-    top: 388,
-    left: 44,
+    top: 345,
+    left: 28,
     textAlign: 'center'
   },
 
@@ -95,7 +95,7 @@ export const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 8,
     marginVertical: 5,
-    top: 400,
+    top: 335,
     marginLeft: 20,
     marginRight: 20,
   },
@@ -107,7 +107,7 @@ export const styles = StyleSheet.create({
   },
 
   buttonContinue: {
-   top: 411,
+   top: 338,
    left: 0,
    right: 0,
    alignItems: 'center',

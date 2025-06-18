@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
   Image,
   Linking,
 } from 'react-native';
@@ -82,11 +81,11 @@ export function QuestaoPT01() {
 
       
 
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
-          <Text style={styles.levelText}> Nível 1: Sujeito (Quem faz a ação?)
+          <Text style={styles.levelText}> Nível 1: Sujeito 
 </Text>
         </View>
         {/* Cena */}
@@ -138,7 +137,7 @@ export function QuestaoPT01() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

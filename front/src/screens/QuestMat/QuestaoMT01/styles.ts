@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 12,//AJUSTADO
+    paddingVertical: 0,//AJUSTADO
   },
   leftContainer: {
     flex: 1,
@@ -47,14 +47,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop:-45,
-    paddingHorizontal: 16,
+    marginRight: 20, //AJUSTADO
+    paddingHorizontal: 30,//AJUSTADO
     //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
   },
   teacherAvatar: {
     width: 70,
     height: 70,
-    borderRadius: 30,
-    marginRight: 6,
+    borderRadius: 35,//AJUSTADO
+    marginRight: 20, //AJUSTADO
+    marginLeft: -12, 
   },
   decorativeBar: {
     flex: 1,
@@ -67,13 +69,14 @@ export const styles = StyleSheet.create({
   content: {
     paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
+    marginTop: -15, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
 
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 12,//AJUSTADO
   },
   levelDot: {
     width: 15,
@@ -89,8 +92,8 @@ export const styles = StyleSheet.create({
 
   // CENA
   sceneImage: {
-    width: width * 0.7, //NOVO TAMANHO PARA IMAGEM
-    height: width * 0.6, //NOVO TAMANHO PARA IMAGEM
+    width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
+    height: width * 0.55, //NOVO TAMANHO PARA IMAGEM
     top: -25 //NOVA PROPRIEDADE AQUI
   },
 
@@ -100,7 +103,7 @@ export const styles = StyleSheet.create({
     lineHeight: 22,
     textAlign: 'center',
     marginBottom: 12,
-    marginTop: -30, //NOVA PROPRIEDADE ADICIONADA AQUI
+    marginTop: -40, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
 
   // OPÇÕES

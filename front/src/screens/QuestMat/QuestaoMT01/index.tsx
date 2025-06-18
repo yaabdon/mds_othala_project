@@ -95,8 +95,8 @@ export function QuestaoMT01() {
 
         {/* Pergunta */}
         <Text style={styles.questionText}>
-          Léo está indo ao parque com seus amigos e cada um leva sua bicicleta.
-          No total, eles estão em 3 crianças. Considerando que cada bicicleta
+          Léo está indo ao parque com seus 3 amigos e cada um leva sua bicicleta.
+          Considerando que cada bicicleta
           tem 2 rodas, quantas rodas há no total?
         </Text>
 

@@ -1,19 +1,20 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative', //NOVA PROPRIEDADE ADICIONADA AQUI
     backgroundColor: '#FFF',
+    justifyContent: 'flex-start',
   },
 
   // HEADER
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 12,//AJUSTADO
+    paddingVertical: 0,//AJUSTADO
   },
   leftContainer: {
     flex: 1,
@@ -37,43 +38,45 @@ export const styles = StyleSheet.create({
     width: 170,
     height: 100,
     resizeMode: 'contain',
-    marginRight: -60,
-    marginTop: 10,
+    marginRight: -60,  
+    marginTop: 10,     
   },
 
-  // PROFESSORA + BARRA
+  // PROFESSOR + BARRA
   professorBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: -35,
-    marginBottom: 12,
-    paddingHorizontal: 16,
+    marginTop:-55,
+    marginRight: 20, //AJUSTADO
+    paddingHorizontal: 30,//AJUSTADO
+    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
   },
   teacherAvatar: {
-    width: 90,
+    width: 70,
     height: 70,
-    borderRadius: 30,
-    marginRight: 10,
+    borderRadius: 35,//AJUSTADO
+    marginRight: -15, //AJUSTADO
+    marginLeft: 20, 
   },
   decorativeBar: {
     flex: 1,
     height: 12,
     backgroundColor: '#5C8F84',
     borderRadius: 6,
-    marginLeft: -50,
   },
 
   // CONTEÚDO
   content: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
+    marginTop: -3, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
 
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 12,//AJUSTADO
   },
   levelDot: {
     width: 15,
@@ -87,19 +90,16 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  // IMAGEM DA CENA
+  // CENA
   sceneImage: {
-    width: width * 0.9,
-    height: width * 0.4,
-    marginBottom: 8,
-    resizeMode: 'contain',
+    width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
+    height: width * 0.45, //NOVO TAMANHO PARA IMAGEM
+    top: -8 //NOVA PROPRIEDADE AQUI
   },
-
-  // TEXTO DA CENA
   sceneText: {
     color: '#808080',
-    marginTop: 6,
-    marginBottom: 26,
+    marginTop: 0,
+    marginBottom: 55,
     textAlign: 'center',
   },
 
@@ -108,10 +108,11 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
-    marginBottom: 14,
+    marginBottom: 12,
+    marginTop: -50, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
 
-  // BOTÕES DE OPÇÃO
+  // OPÇÕES
   optionButton: {
     width: '100%',
     backgroundColor: '#5C8F84',
@@ -121,22 +122,22 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
   },
   optionText: {
+    color: '#FFFFFF',
     fontSize: 16,
-    color: '#FFF',
   },
   optionCorrect: {
     backgroundColor: '#1ACF41',
   },
   optionIncorrect: {
-    backgroundColor: '#EF6B6B',
+    backgroundColor: '#FF4545',
   },
-
-  // FEEDBACK
+  // MENSAGEM DE FEEDBACK
   feedbackMessage: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 20,
-    color: '#000',
-  },
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
+  color: '#000000',  
+},
+
 });

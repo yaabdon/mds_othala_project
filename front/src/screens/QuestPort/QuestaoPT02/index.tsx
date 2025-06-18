@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
   Image,
   Linking,
 } from 'react-native';
@@ -81,11 +80,11 @@ export function QuestaoPT02() {
 
       
 
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
-          <Text style={styles.levelText}>Nível 2:  Pontuação de fala (uso do travessão)
+          <Text style={styles.levelText}>Nível 2:  Predicado
 </Text>
         </View>
         {/* Cena */}
@@ -137,7 +136,7 @@ export function QuestaoPT02() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

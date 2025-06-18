@@ -76,7 +76,7 @@ export  function QuestaoMT08() {
         <View style={styles.levelCircle}></View>
 
         <Text style={styles.levelQuiz}>
-          Nível 2: Com parênteses
+          Nível 2: Parênteses
         </Text>
 
         <View>

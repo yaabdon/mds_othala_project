@@ -3,7 +3,6 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  ScrollView,
   Linking,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -75,7 +74,7 @@ export function QuestaoPT07() {
         <View style={styles.decorativeBar} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -84,7 +83,7 @@ export function QuestaoPT07() {
 
         {/* Imagem da cena */}
         <Image
-          source={require('../../../assets/sol_joao.png')}
+          source={require('../../../assets/Q7_por.png')}
           style={styles.sceneImage}
         />
 
@@ -117,7 +116,7 @@ export function QuestaoPT07() {
         {/* Mensagem e botão */}
         {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
         {selected && <Button title="Próxima" onPress={handleNext} />}
-      </ScrollView>
+      </View>
     </View>
   );
 }

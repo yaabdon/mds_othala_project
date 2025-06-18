@@ -92,7 +92,7 @@ export function QuestaoMT06() {
 
         {/* Pergunta */}
         <Text style={styles.questionText}>
-          Em uma tarde quente, Joana comprou uma caixa com 12 bombons para dividir entre ela e mais 3 amigos. Se todos receberem a mesma quantidade, com quantos bombons ficará cada um?
+          Em uma tarde quente, Joana comprou uma caixa com 12 bombons para dividir entre ela e mais 3 amigos igualmente. Com quantos bombons ficará cada um?
         </Text>
 
         {/* Opções */}

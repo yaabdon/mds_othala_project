@@ -4,15 +4,17 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative', //NOVA PROPRIEDADE ADICIONADA AQUI
     backgroundColor: '#FFF',
+    justifyContent: 'flex-start',
   },
 
   // HEADER
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 12,//AJUSTADO
+    paddingVertical: 0,//AJUSTADO
   },
   leftContainer: {
     flex: 1,
@@ -37,70 +39,62 @@ export const styles = StyleSheet.create({
     height: 100,
     resizeMode: 'contain',
     marginRight: -60,  
-    marginTop: 10,
+    marginTop: 10,     
   },
 
-professorBarContainer: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginTop: -35,
-  marginBottom: 12,
-  paddingHorizontal: 16,
-},
-
-teacherAvatar: {
-  width: 90, 
-  height: 70,
-  borderRadius: 30,
-  marginRight: 10,
-},
-
-decorativeBar: {
-  flex: 1,
-  height: 12,
-  backgroundColor: '#5C8F84',
-  borderRadius: 6,
-  marginLeft: -50, // 🔥 Empurra a barra para a direita
-},
+  // PROFESSOR + BARRA
+  professorBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop:-55,
+    marginRight: 20, //AJUSTADO
+    paddingHorizontal: 30,//AJUSTADO
+    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
+  },
+  teacherAvatar: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,//AJUSTADO
+    marginRight: -15, //AJUSTADO
+    marginLeft: 20, 
+  },
+  decorativeBar: {
+    flex: 1,
+    height: 12,
+    backgroundColor: '#5C8F84',
+    borderRadius: 6,
+  },
 
   // CONTEÚDO
   content: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
+    marginTop: -3, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
 
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 12,//AJUSTADO
   },
-  
   levelDot: {
     width: 15,
     height: 15,
-    backgroundColor:  '#73D7C0',
+    backgroundColor: '#73D7C0',
     borderRadius: 8,
     marginRight: 8,
   },
-   // CENA
-  sceneImage: {
-  width: width * 0.9,  
-  height: width * 0.4, 
-  marginBottom: 8,     
-  resizeMode: 'contain',
-},
-sceneText: {
-  color: '#808080',
-marginTop: 6,
-marginBottom: 26,
-textAlign: 'center',
-
-},
-
   levelText: {
     fontSize: 16,
     fontWeight: '500',
+  },
+
+  // CENA
+  sceneImage: {
+    width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
+    height: width * 0.55, //NOVO TAMANHO PARA IMAGEM
+    top: -25 //NOVA PROPRIEDADE AQUI
   },
   
   // PERGUNTA
@@ -108,9 +102,10 @@ textAlign: 'center',
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
-    marginBottom: 14,
+    marginBottom: 12,
+    marginTop: -35, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
-  
+
   // OPÇÕES
   optionButton: {
     width: '100%',
@@ -121,22 +116,22 @@ textAlign: 'center',
     marginBottom: 12,
   },
   optionText: {
+    color: '#FFFFFF',
     fontSize: 16,
-    color: '#FFF', 
   },
   optionCorrect: {
     backgroundColor: '#1ACF41',
   },
   optionIncorrect: {
-    backgroundColor: 'EF6B6B',
+    backgroundColor: '#FF4545',
   },
-    // MENSAGEM DE FEEDBACK
+  // MENSAGEM DE FEEDBACK
   feedbackMessage: {
   fontSize: 18,
   fontWeight: 'bold',
   textAlign: 'center',
-  marginTop: 20,
+  marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
   color: '#000000',  
 },
-  
+
 });

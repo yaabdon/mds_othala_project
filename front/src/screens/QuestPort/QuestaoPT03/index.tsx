@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
   Image,
   Linking,
 } from 'react-native';
@@ -81,7 +80,7 @@ export function QuestaoPT03() {
 
       
 
-      <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
@@ -94,12 +93,18 @@ export function QuestaoPT03() {
           style={styles.sceneImage}
           resizeMode="contain"
         />
-        <Text style={styles.questionText}>
+        <Text style={styles.sceneText}>
   Leia:
-  {'\n'}
-     Leia esta frase:
-“A professora de matemática explicou a lição com paciência.”
-</Text>
+    {'\n'}
+        Leia atentamente:
+“Fui ao mercado ontem. Comprei frutas, legumes e arroz.”
+
+  </Text>
+  
+          {/* Pergunta */}
+          <Text style={styles.questionText}>
+             Quem fez essas ações? Onde está o sujeito?
+          </Text>
 
         {/* Opções */}
         {options.map(opt => {
@@ -132,7 +137,7 @@ export function QuestaoPT03() {
             onPress={handleNext}
           />
         )}
-      </ScrollView>
+      </View>
     </View>
   );
 }

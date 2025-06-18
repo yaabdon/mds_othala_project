@@ -4,15 +4,17 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative', //NOVA PROPRIEDADE ADICIONADA AQUI
     backgroundColor: '#FFF',
+    justifyContent: 'flex-start',
   },
 
   // HEADER
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 12,//AJUSTADO
+    paddingVertical: 0,//AJUSTADO
   },
   leftContainer: {
     flex: 1,
@@ -45,14 +47,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop:-45,
-    marginBottom: 12,
-    paddingHorizontal: 16,
+    marginRight: 20, //AJUSTADO
+    paddingHorizontal: 30,//AJUSTADO
+    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
   },
   teacherAvatar: {
     width: 70,
     height: 70,
-    borderRadius: 30,
-    marginRight: 6,
+    borderRadius: 35,//AJUSTADO
+    marginRight: 20, //AJUSTADO
+    marginLeft: -12, 
   },
   decorativeBar: {
     flex: 1,
@@ -63,15 +67,16 @@ export const styles = StyleSheet.create({
 
   // CONTEÚDO
   content: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
+    marginTop: -10, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
 
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 12,//AJUSTADO
   },
   levelDot: {
     width: 15,
@@ -87,9 +92,9 @@ export const styles = StyleSheet.create({
 
   // CENA
   sceneImage: {
-    width: width * 0.9,
-    height: width * 0.5,
-    marginBottom: 16,
+    width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
+    height: width * 0.55, //NOVO TAMANHO PARA IMAGEM
+    top: -25 //NOVA PROPRIEDADE AQUI
   },
 
   // PERGUNTA
@@ -97,7 +102,8 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
-    marginBottom: 24,
+    marginBottom: 12,
+    marginTop: -40, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
 
   // OPÇÕES
@@ -123,7 +129,7 @@ export const styles = StyleSheet.create({
   fontSize: 18,
   fontWeight: 'bold',
   textAlign: 'center',
-  marginTop: 20,
+  marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
   color: '#000000',  
 },
 

@@ -81,7 +81,7 @@ const navigation = useNavigation<any>();
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
-          <Text style={styles.levelText}>Nível 1: Metade de algo (com desenho)</Text>
+          <Text style={styles.levelText}>Nível 1: Metades</Text>
         </View>
 
         {/* Cena */}

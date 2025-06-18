@@ -80,7 +80,7 @@ const navigation = useNavigation<any>();
         {/* Nível */}
         <View style={styles.levelContainer}>
           <View style={styles.levelDot} />
-          <Text style={styles.levelText}>Nível 2: Fração com imagem (1/4)</Text>
+          <Text style={styles.levelText}>Nível 2: Frações Simples</Text>
         </View>
 
         {/* Cena */}
