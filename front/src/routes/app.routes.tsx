@@ -35,13 +35,13 @@ export function AppRoutes() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} >
       
-      <Stack.Screen name="QuestaoPT01"  component={QuestaoPT01} />
+      
       <Stack.Screen name="PreLogin"   component={PreLogin}  />  
       <Stack.Screen name="Login"      component={Login}     />  
       <Stack.Screen name="Cadastro"   component={Cadastro}  />
       <Stack.Screen name="Regras"     component={Regras}    />
       <Stack.Screen name="Home"       component={Home}      />
-      
+      <Stack.Screen name="QuestaoPT01"  component={QuestaoPT01} />
       <Stack.Screen name="QuestaoPT02"  component={QuestaoPT02} />
       <Stack.Screen name="QuestaoPT03"  component={QuestaoPT03} />
       <Stack.Screen name="QuestaoPT04"  component={QuestaoPT04} />
