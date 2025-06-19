@@ -6,19 +6,22 @@ import {
   TouchableOpacity,
   ScrollView,
   Linking,
+  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { styles } from './styles';
+import {Strikes,NumeroDstrikes, Resetastrikes} from "../contadorErros";
 
 export function QuestaoMT06() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
+  const [showRetryModal, setShowRetryModal] = useState(false);
 
 
-  const correctKey = 'a';
+  const correctKey = 'b';
   const options = [
     { key: 'a', label: '4' },
     { key: 'b', label: '3' },
@@ -30,15 +33,32 @@ export function QuestaoMT06() {
     if (selected) return;
     setSelected(key);
       if (key === correctKey) {
-      setMessage('Parabéns, você acertou!');
+         if (Strikes >= 2){
+                setShowRetryModal(true)
+                Resetastrikes();
+      }
+      setMessage('Parabéns, você acertou!');  
     } else {
       setMessage('Que pena, não foi dessa vez.');
+      NumeroDstrikes();
+      if (Strikes >= 2){
+                setShowRetryModal(true)
+                Resetastrikes();
+                
+       }
     }
   }
 
   function handleNext() {
     navigation.navigate('QuestaoMT07');
   }
+
+function handleRetry() {
+    Resetastrikes();
+    setShowRetryModal(false); // Fecha o modal
+    navigation.navigate('QuestaoMT04'); // Navega para Questão 4
+  }
+
 
   function handleOpenDoc() {
     Linking.openURL('https://seus-docs-aqui.doc');
@@ -129,6 +149,36 @@ export function QuestaoMT06() {
           />
         )}
       </View>
+        <Modal
+                visible={showRetryModal}
+                transparent={true}
+                animationType="fade"
+                onRequestClose={() => setShowRetryModal(false)}
+              >
+                <View style={styles.modalOverlay}>
+                  <View style={styles.modalContainer}>
+                    <Text style={styles.modalText}>
+                      Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
+                    </Text>
+        
+                    <TouchableOpacity 
+                      style={styles.retryButton} 
+                      onPress={handleRetry}
+                    >
+                      <Text style={styles.retryButtonText}>Tentar novamente</Text>
+                    </TouchableOpacity>
+        
+                    <TouchableOpacity 
+                      style={styles.closeButton} 
+                      onPress={() => setShowRetryModal(false)}
+                    >
+                      <Text style={styles.closeButtonText}>Fechar</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </Modal>
+
+
     </View>
   );
 }

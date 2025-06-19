@@ -6,16 +6,19 @@ import {
   ScrollView,
   Image,
   Linking,
+  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { styles } from './styles';
+import { Strikes,NumeroDstrikes,Resetastrikes } from '../../QuestMat/contadorErros';
 
 export function QuestaoPT09() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
+  const [showRetryModal, setShowRetryModal] = useState(false);
 
   const correctKey = 'b)';
 
@@ -31,19 +34,35 @@ export function QuestaoPT09() {
     setSelected(key);
 
     if (key === correctKey) {
+       NumeroDstrikes();
+                if (Strikes >= 2){
+                          setShowRetryModal(true)
+                          Resetastrikes();
+                      }
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
+       NumeroDstrikes();
+                if (Strikes >= 2){
+                          setShowRetryModal(true)
+                          Resetastrikes();
+                      }
     }
   }
 
   function handleNext() {
-    navigation.navigate('QuestaoPT10');
+    navigation.navigate('QuestaoPT03');
   }
 
   function handleOpenDoc() {
     Linking.openURL('https://seu-link-aqui.com');
   }
+
+  function handleRetry() {
+        Resetastrikes();
+        setShowRetryModal(false); // Fecha o modal
+        navigation.navigate('QuestaoPT07'); // Navega para Questão 1
+      }
 
   return (
     <View style={styles.container}>
@@ -135,6 +154,37 @@ export function QuestaoPT09() {
           />
         )}
       </ScrollView>
+
+        <Modal
+                                visible={showRetryModal}
+                                transparent={true}
+                                animationType="fade"
+                                onRequestClose={() => setShowRetryModal(false)}
+                              >
+                                <View style={styles.modalOverlay}>
+                                  <View style={styles.modalContainer}>
+                                    <Text style={styles.modalText}>
+                                      Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
+                                    </Text>
+                        
+                                    <TouchableOpacity 
+                                      style={styles.retryButton} 
+                                      onPress={handleRetry}
+                                    >
+                                      <Text style={styles.retryButtonText}>Tentar novamente</Text>
+                                    </TouchableOpacity>
+                        
+                                    <TouchableOpacity 
+                                      style={styles.closeButton} 
+                                      onPress={() => setShowRetryModal(false)}
+                                    >
+                                      <Text style={styles.closeButtonText}>Fechar</Text>
+                                    </TouchableOpacity>
+                                  </View>
+                                </View>
+                              </Modal>
+                      
+
     </View>
   );
 }

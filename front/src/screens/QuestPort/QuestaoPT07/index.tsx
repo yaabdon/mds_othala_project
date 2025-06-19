@@ -10,6 +10,7 @@ import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { useState } from 'react';
 import { styles } from './styles';
+import { Resetastrikes,NumeroDstrikes } from '../../QuestMat/contadorErros';
 
 export function QuestaoPT07() {
   const navigation = useNavigation<any>();
@@ -29,10 +30,13 @@ export function QuestaoPT07() {
     if (selected) return;
     setSelected(key);
 
+     Resetastrikes();
+
     if (key === correctKey) {
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
+      NumeroDstrikes();
     }
   }
 

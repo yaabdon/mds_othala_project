@@ -11,6 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { styles } from './styles';
+import {NumeroDstrikes, Resetastrikes} from "../contadorErros";
 
 
 export  function QuestaoMT04() {
@@ -30,10 +31,13 @@ const navigation = useNavigation<any>();
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+    Resetastrikes();
       if (key === correctKey) {
       setMessage('Parabéns, você acertou!');
+      
     } else {
       setMessage('Que pena, não foi dessa vez.');
+      NumeroDstrikes();
     }
   }
 

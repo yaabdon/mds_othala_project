@@ -11,6 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { styles } from './styles';
+import { NumeroDstrikes } from '../contadorErros';
 
 export function QuestaoMT02() {
   const navigation = useNavigation<any>();
@@ -34,6 +35,7 @@ export function QuestaoMT02() {
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
+      NumeroDstrikes();
     }
   }
 

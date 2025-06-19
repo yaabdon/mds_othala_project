@@ -4,6 +4,7 @@ import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import {NumeroDstrikes, Resetastrikes} from "../contadorErros";
 
 export  function QuestaoMT07() {
   const navigation = useNavigation<any>();
@@ -25,17 +26,15 @@ export  function QuestaoMT07() {
   ]
 
   const handlePress = (index: number) => {
+
+    Resetastrikes();
     if(SelectAlternative === null){
       setSelectAlternative(index);
     }
     
     //depois vou inserir a rota do Retry aqui
     if(index!= RightAlternative) {
-      Alert.alert(
-        "Você errou! :(",
-        "Vamos tentar novamente?",
-        [{text: "Sim", onPress: () => {setSelectAlternative(null)}}]
-      )
+      NumeroDstrikes();
     }
   };
 
@@ -115,21 +114,10 @@ export  function QuestaoMT07() {
                  
         </View>
            
-                   {
-                   /* //esse logica fui implementada antes da tela pop-up
-                   {SelectAlternative !== null && SelectAlternative !== RightAlternative && (
-                     <Text style={styles.ErrorMessage}>
-                       Você errou! Tente novamente!
-                     </Text>
-                   )}
-                   */
-                   }
-           
-        {SelectAlternative === RightAlternative && (
+                
           <View style={styles.buttonContinue}>
           <Button title="Próxima" onPress={() => navigation.navigate('QuestaoMT08')}/>
         </View>
-        )}
     </View>
   );
 }

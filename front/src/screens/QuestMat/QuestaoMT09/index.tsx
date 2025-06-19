@@ -1,13 +1,19 @@
-import { View, Text , Image,TouchableOpacity,ScrollView,Linking,} from 'react-native';
+import { View, Text , Image,TouchableOpacity,ScrollView,Linking,Modal} from 'react-native';
 import {styles} from "./styles";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
+import {Strikes,NumeroDstrikes, Resetastrikes} from "../contadorErros";
+
+
+
 
 export  function QuestaoMT09() {
   const navigation = useNavigation<any>();
-    const [selected, serSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
+  const [showRetryModal, setShowRetryModal] = useState(false);
 
 
     const correctKey = 'b';
@@ -20,13 +26,36 @@ export  function QuestaoMT09() {
 
     function handleSelect(key: string) {
       if (selected) return;
-      serSelected(key);
+      setSelected(key);
+
+      if(key === correctKey){
+         if (Strikes >= 2){
+                  setShowRetryModal(true)
+                  Resetastrikes();
+              }
+              setMessage('Parabéns, você acertou!');
+            } else {
+              setMessage('Que pena, não foi dessa vez.');
+              NumeroDstrikes();
+              if (Strikes >= 2){
+                  setShowRetryModal(true)
+                  Resetastrikes();
+                  
+              }
+      }
+
     }
 
     function handleNext(){
       navigation.navigate('QuestaoMT05');
 
     }
+
+    function handleRetry() {
+        Resetastrikes();
+        setShowRetryModal(false); // Fecha o modal
+        navigation.navigate('QuestaoMT07'); // Navega para Questão 7
+      }
 
       function handleOpenDoc() {
         Linking.openURL('https://seus-docs-aqui.doc');
@@ -107,6 +136,8 @@ export  function QuestaoMT09() {
           );
         })}
 
+        {/* Mensagem de feedback */}
+                  {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
 
         {selected && (
           <Button
@@ -115,6 +146,34 @@ export  function QuestaoMT09() {
           />
         )}
         </View>
+        <Modal
+                visible={showRetryModal}
+                transparent={true}
+                animationType="fade"
+                onRequestClose={() => setShowRetryModal(false)}
+              >
+                <View style={styles.modalOverlay}>
+                  <View style={styles.modalContainer}>
+                    <Text style={styles.modalText}>
+                      Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
+                    </Text>
+        
+                    <TouchableOpacity 
+                      style={styles.retryButton} 
+                      onPress={handleRetry}
+                    >
+                      <Text style={styles.retryButtonText}>Tentar novamente</Text>
+                    </TouchableOpacity>
+        
+                    <TouchableOpacity 
+                      style={styles.closeButton} 
+                      onPress={() => setShowRetryModal(false)}
+                    >
+                      <Text style={styles.closeButtonText}>Fechar</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </Modal>
       </View>
   );
 }
