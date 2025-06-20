@@ -1,123 +1,130 @@
-import { View, Text, Image, TouchableOpacity, Linking, Alert} from 'react-native';
-import {styles} from "./styles";
+import { View, Text, Image, TouchableOpacity, Linking} from 'react-native';
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
-import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
-import {NumeroDstrikes} from "../contadorErros";
+import { styles } from './styles';
 
-export  function QuestaoMT08() {
+export function QuestaoMT08() {
   const navigation = useNavigation<any>();
+  const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
 
-  const abrirDocs = () => {
-    const url = 'https://docs.google.com/document/d/1QUDFzqUPuiYLln540dczNVMPKO5sk_XokOs70pTy0y0/edit?tab=t.0#heading=h.innx5uq2u0lc'
-    Linking.openURL(url).catch(err => {
-      console.error("Erro ao abrir o link:", err);
-    });
+
+  const correctKey = 'a';
+  const options = [
+    { key: 'a', label: '10' },
+    { key: 'b', label: '8' },
+    { key: 'c', label: '6' },
+    { key: 'd', label: '12' },
+  ];
+
+  function handleSelect(key: string) {
+    if (selected) return;
+    setSelected(key);
+      if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
   }
 
-  //lógica das alternativas
-  const [SelectAlternative, setSelectAlternative] = useState<number | null>(null);
-  const RightAlternative = 0;
+  function handleNext() {
+    navigation.navigate('QuestaoMT09');
+  }
 
-  const Alternatives = [
-    "a) 10",
-    "b) 8",
-    "c) 6",
-    "d) 12",
-  ]
-
-  //lógica para acerto ou erro das alternativas
-  const handlePress = (index: number) => {
-    if(SelectAlternative === null){
-      setSelectAlternative(index);
-    }
-    
-    //depois vou inserir a rota do Retry aqui
-    if(index!= RightAlternative) {
-      NumeroDstrikes();
-    }
-  };
-
+  function handleOpenDoc() {
+    Linking.openURL('https://seus-docs-aqui.doc');
+  }
 
   return (
-   <View style={styles.container}>
-      <View style={styles.backButton}>
-        <BackButton />
-      </View>
+    <View style={styles.container}>
+      {/* HEADER */}
+      <View style={styles.header}>
+        <View style={styles.leftContainer}>
+          <BackButton />
+        </View>
 
-        <View style={styles.logo}>
-        <TouchableOpacity onPress={abrirDocs}>
+        <View style={styles.centerContainer}>
+          <Text style={styles.headerTitle}>Expressões{"\n"}Numéricas</Text>
+        </View>
+
+        <View style={styles.rightContainer}>
+          <TouchableOpacity onPress={handleOpenDoc}>
             <Image
               source={require('../../../assets/logo_img.png')}
-              style={styles.logo}
-              resizeMode="cover"
+              style={styles.omega}
+              resizeMode="contain"
             />
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Professor + Barra */}
+      <View style={styles.professorBarContainer}>
+        <Image
+          source={require('../../../assets/Home_man.png')}
+          style={styles.teacherAvatar}
+        />
+        <View style={styles.decorativeBar} />
+      </View>
+
+      <View style={styles.content}>
+        {/* Nível */}
+        <View style={styles.levelContainer}>
+          <View style={styles.levelDot} />
+          <Text style={styles.levelText}>Nível 2: Parênteses</Text>
         </View>
 
-      <Text style={styles.quizTitle}>
-        Expressões{"\n"}numéricas
-      </Text>
+        {/* Cena */}
+        <Image
+          source={require('../../../assets/Q8_mat.png')}
+          style={styles.sceneImage}
+          resizeMode="contain"
+        />
 
-        <View>
-          <Image 
-            source={require('../../../assets/Home_man.png')}
-            style={styles.homeMan}
-            resizeMode="cover"
-          />
-        </View>
-
-        <View style={styles.levelScore}></View>
-
-        <View style={styles.levelCircle}></View>
-
-        <Text style={styles.levelQuiz}>
-          Nível 2: Parênteses
-        </Text>
-
-        <View>
-          <Image
-            source={require('../../../assets/Q8_mat.png')}
-            style={styles.MatImage}
-            resizeMode="contain"
-          />
-        </View>
-
-        <Text style={styles.AlternativeParagraph}>
-        Paula resolveu comprar 2 brinquedos
+        {/* Pergunta */}
+        <Text style={styles.questionText}>
+          Paula resolveu comprar 2 brinquedos
         {"\n"}que custam R$2 e R$3 cada. Depois, ela
         {"\n"}decidiu dobrar a quantidade de brinquedos.
         {"\n"}Quanto ela gastou no total? (2 + 3) × 2
         </Text>
 
-        <View>
-        {Alternatives.map((texto, index) => {
-          let backgroundColor = '#F2E3B5';
-
-          if (SelectAlternative !== null) {
-            if (index === SelectAlternative) {
-              backgroundColor = index === RightAlternative ? '#CFFCDB' : '#FF4545';
-            }
-          }
+        {/* Opções */}
+        {options.map(opt => {
+          const isSelected = selected === opt.key;
+          const bgColor = isSelected
+            ? opt.key === correctKey
+              ? styles.optionCorrect.backgroundColor
+              : styles.optionIncorrect.backgroundColor
+            : styles.optionButton.backgroundColor;
 
           return (
             <TouchableOpacity
-              key={index}
-              style={[styles.alternativeButton, { backgroundColor }]}
-              onPress={() => handlePress(index)}
-              disabled={SelectAlternative !== null} 
+              key={opt.key}
+              style={[styles.optionButton, { backgroundColor: bgColor }]}
+              onPress={() => handleSelect(opt.key)}
+              disabled={!!selected}
             >
-              <Text style={styles.alternativeText}>{texto}</Text>
+              <Text style={styles.optionText}>
+                {opt.key}) {opt.label}
+              </Text>
             </TouchableOpacity>
           );
         })}
-      </View>
 
-          <View style={styles.buttonContinue}>
-          <Button title="Próxima" onPress={() => navigation.navigate('QuestaoMT09')}/>
-        </View>
-  
+        {/* Mensagem de feedback */}
+          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+
+
+        {selected && (
+          <Button
+            title="Próxima"
+            onPress={handleNext}
+          />
+        )}
+      </View>
     </View>
   );
 }

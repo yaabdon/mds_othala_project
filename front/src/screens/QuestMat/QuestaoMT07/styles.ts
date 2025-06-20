@@ -1,108 +1,113 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
+    position: 'relative', 
+    backgroundColor: '#FFF',
     justifyContent: 'flex-start',
-    backgroundColor: "#fff",
   },
 
-  //HEADER
-
-  backButton:{
-    position: 'absolute',
-    top: 40,
-    left: 20,
-    zIndex: 1,
+  // HEADER
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 0,
+  },
+  leftContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+  },
+  centerContainer: {
+    flex: 2,
+    alignItems: 'center',
+  },
+  rightContainer: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  headerTitle: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#598E9C',
+  },
+  omega: {
+    width: 170,
+    height: 100,
+    resizeMode: 'contain',
+    marginRight: -60,  
+    marginTop: 10,     
   },
 
-  //Expressoes Numericas
-  quizTitle: {
-    position: 'absolute',
-    top: 24,
-    left: 128,
-    right: 80,
-    color: "#598E9C",
-    fontSize: 25,
-    fontWeight: 'bold'
-  },
-  
-  // "PROFESSOR + BARRA"
-    homeMan: {
-    position: 'absolute',
-    width: 116,
-    height: 65,
-    top: -25,
-    left: 17,
-    transform: [{ translateX: -20 }],
+  // PROFESSOR + BARRA
+  professorBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop:-40,
+    marginRight: 20, 
+    paddingHorizontal: 30,
   },
 
-//"omega"
-  logo:{
-   width: 155,
-   height: 100,
-   paddingTop: 21,
-   left: 123
-
+  teacherAvatar: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    marginRight: 20, 
+    marginLeft: -12, 
   },
 
-//Nível 
- levelScore:{
-    position: 'absolute',
-    top: 105,
-    left: 100,
-    width: 220,
+  decorativeBar: {
+    flex: 1,
     height: 12,
+    backgroundColor: '#F2E3B5',
     borderRadius: 6,
-    backgroundColor: "#F2E3B5"
   },
 
-//"levelDot"
-  levelCircle: {
-    position: 'absolute',
-    top: 140,
-    left: 96,
-    width: 18,
-    height: 18,
-    borderRadius: 10,
-    backgroundColor: "#73D7C0",
-
+  // CONTEÚDO
+  content: {
+    paddingHorizontal: 15, 
+    alignItems: 'center',
+    marginTop: -15,       
   },
 
-//"levelText"
-   levelQuiz: {
-    position: 'absolute',
-    top: 138,
-    left: 120,
-    right: 80,
-    color: "#00000",
+  // NÍVEL
+  levelContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  levelDot: {
+    width: 15,
+    height: 15,
+    backgroundColor: '#73D7C0',
+    borderRadius: 8,
+    marginRight: 8,
+  },
+  levelText: {
     fontSize: 16,
-    fontWeight: '500'
+    fontWeight: '500',
   },
 
-  //ImagemDeMatemática -> "sceneImage"
-  MatImage:{
-    position: 'absolute',
-    width: width * 0.9,
-    height: width * 0.48,
-    marginBottom: 16,
-    left: 20,
-    top: 65
-
+  // CENA
+  sceneImage: {
+    width: width * 0.65, 
+    height: width * 0.55, 
+    top: -25 
   },
 
-//"questionText"
-  AlternativeParagraph: {
-    position: 'absolute',
+  // PERGUNTA
+  questionText: {
     fontSize: 16,
     lineHeight: 22,
-    top: 350,
-    left: 49,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginBottom: 12,
+    marginTop: -40, 
   },
-// OPÇÕES
+
+  // OPÇÕES
   optionButton: {
     width: '100%',
     backgroundColor: '#F2E3B5',
@@ -125,9 +130,51 @@ export const styles = StyleSheet.create({
   fontSize: 18,
   fontWeight: 'bold',
   textAlign: 'center',
-  marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
+  marginTop: -11, 
   color: '#000000',  
 },
+
+
+  //MODAL DE RETRY  
+ 
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalContainer: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    width: '80%',
+    alignItems: 'center',
+  },
+  modalText: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  retryButton: {
+    backgroundColor: '#F2E3B5',
+    padding: 10,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  retryButtonText: {
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  closeButton: {
+    padding: 10,
+    width: '100%',
+    alignItems: 'center',
+  },
+  closeButtonText: {
+    color: '#0000000',
+  }
 
 
 });

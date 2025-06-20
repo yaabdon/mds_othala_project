@@ -1,132 +1,151 @@
+
+  /*const Alternatives = [
+    "a) 9",
+    "b) 7",
+    "c) 8",
+    "d) 10",
+  ]*/
+
+/*<Text style={styles.AlternativeParagraph}>
+Carlos juntou 3 figurinhas pela manhã e{"\n"}
+  mais 5 à tarde.
+Com quantas figurinhas{"\n"}ele ficou no total?
+ </Text>*/
+
+ /*<Text style={styles.levelQuiz}>
+             Nível 1: Soma simples
+           </Text>*/
+
+ //refatorando a questao 07 com a lógica das outras questões
+
 import { View, Text, Image, TouchableOpacity, Linking} from 'react-native';
-import {styles} from "./styles";
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
-import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
+import { styles } from './styles';
 
-export  function QuestaoMT07() {
-const navigation = useNavigation<any>();
+export function QuestaoMT07() {
+  const navigation = useNavigation<any>();
+  const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
 
-  function handleNext(){
+
+  const correctKey = 'a';
+  const options = [
+    { key: 'a', label: '9' },
+    { key: 'b', label: '7' },
+    { key: 'c', label: '8' },
+    { key: 'd', label: '10' },
+  ];
+
+  function handleSelect(key: string) {
+    if (selected) return;
+    setSelected(key);
+      if (key === correctKey) {
+      setMessage('Parabéns, você acertou!');
+    } else {
+      setMessage('Que pena, não foi dessa vez.');
+    }
+  }
+
+  function handleNext() {
     navigation.navigate('QuestaoMT08');
   }
 
-  const abrirDocs = () => {
-      const url = 'https://docs.google.com/document/d/1QUDFzqUPuiYLln540dczNVMPKO5sk_XokOs70pTy0y0/edit?tab=t.0#heading=h.innx5uq2u0lc'
-      Linking.openURL(url).catch(err => {
-        console.error("Erro ao abrir o link:", err);
-      });
-    }
-
-
-  //aplicando a lógica das questões anteriores -> refatorando 
-  const [selected, setSelected] = useState<string | null>(null);
-  const [message, setMessage] = useState<string>('');
-  const correctKey = 'c';
-  const Alternatives = [
-    {key: 'a', label: '9'},
-    {key: 'b', label: '7'},
-    {key: 'c', label: '8'},
-    {key: 'd', label: '10'}
-  ];
-
-  
-  function handleSelect(key: string){
-    if(selected) return;
-    setSelected(key);
-      if (key === correctKey){
-        setMessage('Parabéns, você acertou!');
-      }
-      else {
-        setMessage('Que pena, não foi dessa vez.');
-      }
+  function handleOpenDoc() {
+    Linking.openURL('https://seus-docs-aqui.doc');
   }
 
-
   return (
-   <View style={styles.container}>
-         <View style={styles.backButton}>
-           <BackButton />
-         </View>
-   
-          <View style={styles.logo}>
-           <TouchableOpacity onPress={abrirDocs}>
-               <Image
-                 source={require('../../../assets/logo_img.png')}
-                 style={styles.logo}
-                 resizeMode="cover"
-               />
-           </TouchableOpacity>
-          </View>
-   
-         <Text style={styles.quizTitle}>
-           Expressões{"\n"}numéricas
-         </Text>
-   
-           <View>
-             <Image 
-               source={require('../../../assets/Home_man.png')}
-               style={styles.homeMan}
-               resizeMode="cover"
-             />
-           </View>
-   
-           <View style={styles.levelScore}></View>
-   
-           <View style={styles.levelCircle}></View>
-   
-           <Text style={styles.levelQuiz}>
-             Nível 1: Soma simples
-           </Text>
+    <View style={styles.container}>
+      {/* HEADER */}
+      <View style={styles.header}>
+        <View style={styles.leftContainer}>
+          <BackButton />
+        </View>
 
-           <View>
-              <Image
-                source={require('../../../assets/Q7_mat.png')}
-                style={styles.MatImage}
-                resizeMode="contain"
-                />
-          </View>
-           
-          <Text style={styles.AlternativeParagraph}>
-          Carlos juntou 3 figurinhas pela manhã e{"\n"}
-          mais 5 à tarde.
-          Com quantas figurinhas{"\n"}ele ficou no total?
-          </Text>
-           
-          <View>
-          {Alternatives.map(opt => {
-            const isSelected = selected === opt.key;
-            const bgColor = isSelected
-              ? opt.key === correctKey
-                ? styles.optionCorrect.backgroundColor
-                : styles.optionIncorrect.backgroundColor
-              : styles.optionButton.backgroundColor;
-          
-         return (
+        <View style={styles.centerContainer}>
+          <Text style={styles.headerTitle}>Expressões Numéricas</Text>
+        </View>
+
+        <View style={styles.rightContainer}>
+          <TouchableOpacity onPress={handleOpenDoc}>
+            <Image
+              source={require('../../../assets/logo_img.png')}
+              style={styles.omega}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Professor + Barra */}
+      <View style={styles.professorBarContainer}>
+        <Image
+          source={require('../../../assets/Home_man.png')}
+          style={styles.teacherAvatar}
+        />
+        <View style={styles.decorativeBar} />
+      </View>
+
+      <View style={styles.content}>
+        {/* Nível */}
+        <View style={styles.levelContainer}>
+          <View style={styles.levelDot} />
+          <Text style={styles.levelText}>Nível 1: Soma simples</Text>
+        </View>
+
+        {/* Cena */}
+        <Image
+          source={require('../../../assets/Q7_mat.png')}
+          style={styles.sceneImage}
+          resizeMode="contain"
+        />
+
+        {/* Pergunta */}
+        <Text style={styles.questionText}>
+          Carlos juntou 3 figurinhas pela manhã e{"\n"} mais 5 à tarde. Com quantas figurinhas{"\n"}ele ficou no total?
+        </Text>
+
+        {/* Opções */}
+        {options.map(opt => {
+          const isSelected = selected === opt.key;
+          const bgColor = isSelected
+            ? opt.key === correctKey
+              ? styles.optionCorrect.backgroundColor
+              : styles.optionIncorrect.backgroundColor
+            : styles.optionButton.backgroundColor;
+
+          return (
             <TouchableOpacity
-                key={opt.key}
-                style={[styles.optionButton, { backgroundColor: bgColor }]}
-                onPress={() => handleSelect(opt.key)}
-                disabled={!!selected}
-                >
-                <Text style={styles.optionText}>
-                {opt.key} {opt.label}
-                  </Text>
-                </TouchableOpacity>
-              );
-          })}
-          </View>
-           
-         {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
-           
+              key={opt.key}
+              style={[styles.optionButton, { backgroundColor: bgColor }]}
+              onPress={() => handleSelect(opt.key)}
+              disabled={!!selected}
+            >
+              <Text style={styles.optionText}>
+                {opt.key}) {opt.label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+
+        {/* Mensagem de feedback */}
+          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+
+
         {selected && (
           <Button
-          title="Próxima"
-          onPress={handleNext}
+            title="Próxima"
+            onPress={handleNext}
           />
         )}
+      </View>
     </View>
   );
 }
+
+
+
 
