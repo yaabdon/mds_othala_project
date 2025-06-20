@@ -1,13 +1,16 @@
-import { View, Text, Image, TouchableOpacity, Linking, Alert} from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking} from 'react-native';
 import {styles} from "./styles";
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import {NumeroDstrikes, Resetastrikes} from "../contadorErros";
 
 export  function QuestaoMT07() {
-  const navigation = useNavigation<any>();
+const navigation = useNavigation<any>();
+
+  function handleNext(){
+    navigation.navigate('QuestaoMT08');
+  }
 
   const abrirDocs = () => {
       const url = 'https://docs.google.com/document/d/1QUDFzqUPuiYLln540dczNVMPKO5sk_XokOs70pTy0y0/edit?tab=t.0#heading=h.innx5uq2u0lc'
@@ -15,28 +18,30 @@ export  function QuestaoMT07() {
         console.error("Erro ao abrir o link:", err);
       });
     }
-    const [SelectAlternative, setSelectAlternative] = useState<number | null>(null);
-  const RightAlternative = 2;
 
+
+  //aplicando a lógica das questões anteriores -> refatorando 
+  const [selected, setSelected] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>('');
+  const correctKey = 'c';
   const Alternatives = [
-    "a) 9",
-    "b) 7",
-    "c) 8",
-    "d) 10",
-  ]
+    {key: 'a', label: '9'},
+    {key: 'b', label: '7'},
+    {key: 'c', label: '8'},
+    {key: 'd', label: '10'}
+  ];
 
-  const handlePress = (index: number) => {
-
-    Resetastrikes();
-    if(SelectAlternative === null){
-      setSelectAlternative(index);
-    }
-    
-    //depois vou inserir a rota do Retry aqui
-    if(index!= RightAlternative) {
-      NumeroDstrikes();
-    }
-  };
+  
+  function handleSelect(key: string){
+    if(selected) return;
+    setSelected(key);
+      if (key === correctKey){
+        setMessage('Parabéns, você acertou!');
+      }
+      else {
+        setMessage('Que pena, não foi dessa vez.');
+      }
+  }
 
 
   return (
@@ -90,34 +95,37 @@ export  function QuestaoMT07() {
           </Text>
            
           <View>
-          {Alternatives.map((texto, index) => {
-          let backgroundColor = '#F2E3B5';
-           
-            if (SelectAlternative !== null) {
-              if (index === SelectAlternative) {
-                  backgroundColor = index === RightAlternative ? '#CFFCDB' : '#FF4545';
-              }
-            }
-           
-          return (
+          {Alternatives.map(opt => {
+            const isSelected = selected === opt.key;
+            const bgColor = isSelected
+              ? opt.key === correctKey
+                ? styles.optionCorrect.backgroundColor
+                : styles.optionIncorrect.backgroundColor
+              : styles.optionButton.backgroundColor;
+          
+         return (
             <TouchableOpacity
-              key={index}
-              style={[styles.alternativeButton, { backgroundColor }]}
-              onPress={() => handlePress(index)}
-              disabled={SelectAlternative !== null} 
-              >
-              <Text style={styles.alternativeText}>{texto}</Text>
+                key={opt.key}
+                style={[styles.optionButton, { backgroundColor: bgColor }]}
+                onPress={() => handleSelect(opt.key)}
+                disabled={!!selected}
+                >
+                <Text style={styles.optionText}>
+                {opt.key} {opt.label}
+                  </Text>
                 </TouchableOpacity>
-            );
+              );
           })}
-                 
-                 
-        </View>
+          </View>
            
-                
-          <View style={styles.buttonContinue}>
-          <Button title="Próxima" onPress={() => navigation.navigate('QuestaoMT08')}/>
-        </View>
+         {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
+           
+        {selected && (
+          <Button
+          title="Próxima"
+          onPress={handleNext}
+          />
+        )}
     </View>
   );
 }

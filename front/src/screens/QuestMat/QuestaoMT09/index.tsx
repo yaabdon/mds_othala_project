@@ -140,10 +140,7 @@ export  function QuestaoMT09() {
                   {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
 
         {selected && (
-          <Button
-            title = "Próxima"
-            onPress = {handleNext}
-          />
+          <Button title = "Próxima"onPress = {() => navigation.navigate('Parabens')}/>
         )}
         </View>
         <Modal

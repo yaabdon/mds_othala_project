@@ -9,6 +9,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 
+  //HEADER
+
   backButton:{
     position: 'absolute',
     top: 40,
@@ -26,7 +28,8 @@ export const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold'
   },
-  //Necessario algumas mudanças para encaixar na tela
+  
+  // "PROFESSOR + BARRA"
     homeMan: {
     position: 'absolute',
     width: 116,
@@ -36,7 +39,7 @@ export const styles = StyleSheet.create({
     transform: [{ translateX: -20 }],
   },
 
-
+//"omega"
   logo:{
    width: 155,
    height: 100,
@@ -45,6 +48,7 @@ export const styles = StyleSheet.create({
 
   },
 
+//Nível 
  levelScore:{
     position: 'absolute',
     top: 105,
@@ -55,7 +59,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "#F2E3B5"
   },
 
-    levelCircle: {
+//"levelDot"
+  levelCircle: {
     position: 'absolute',
     top: 140,
     left: 96,
@@ -66,7 +71,7 @@ export const styles = StyleSheet.create({
 
   },
 
-  
+//"levelText"
    levelQuiz: {
     position: 'absolute',
     top: 138,
@@ -77,7 +82,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500'
   },
 
-  //ImagemDeMatemática
+  //ImagemDeMatemática -> "sceneImage"
   MatImage:{
     position: 'absolute',
     width: width * 0.9,
@@ -88,6 +93,7 @@ export const styles = StyleSheet.create({
 
   },
 
+//"questionText"
   AlternativeParagraph: {
     position: 'absolute',
     fontSize: 16,
@@ -96,28 +102,32 @@ export const styles = StyleSheet.create({
     left: 49,
     textAlign: 'center'
   },
-
-  alternativeButton: {
-    padding: 14,
+// OPÇÕES
+  optionButton: {
+    width: '100%',
+    backgroundColor: '#F2E3B5',
+    paddingVertical: 14,
+    paddingHorizontal: 16,
     borderRadius: 8,
-    marginVertical: 5,
-    top: 320,
-    marginLeft: 20,
-    marginRight: 20,
+    marginBottom: 12,
   },
-
-  alternativeText: {
-    fontSize:16,
-
+  optionText: {
+    fontSize: 16,
   },
-
-  buttonContinue: {
-   top: 325,//Precisei subir o botão
-   left: 0,
-   right: 0,
-   alignItems: 'center',
-}
-
+  optionCorrect: {
+    backgroundColor: '#CFFCDB',
+  },
+  optionIncorrect: {
+    backgroundColor: '#FF4545',
+  },
+  // MENSAGEM DE FEEDBACK
+  feedbackMessage: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
+  color: '#000000',  
+},
 
 
 });

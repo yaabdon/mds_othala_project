@@ -22,6 +22,7 @@ import { QuestaoMT06 } from '../screens/QuestMat/QuestaoMT06';
 import { QuestaoMT07 } from '../screens/QuestMat/QuestaoMT07';
 import { QuestaoMT08 } from '../screens/QuestMat/QuestaoMT08';
 import { QuestaoMT09 } from '../screens/QuestMat/QuestaoMT09';
+import { Parabens } from '../screens/Parabens';
 
 
 
@@ -41,6 +42,7 @@ export function AppRoutes() {
       <Stack.Screen name="Cadastro"   component={Cadastro}  />
       <Stack.Screen name="Regras"     component={Regras}    />
       <Stack.Screen name="Home"       component={Home}      />
+      <Stack.Screen name="Parabens"  component={Parabens} />
       <Stack.Screen name="QuestaoPT01"  component={QuestaoPT01} />
       <Stack.Screen name="QuestaoPT02"  component={QuestaoPT02} />
       <Stack.Screen name="QuestaoPT03"  component={QuestaoPT03} />
@@ -50,6 +52,7 @@ export function AppRoutes() {
       <Stack.Screen name="QuestaoPT07"  component={QuestaoPT07} />
       <Stack.Screen name="QuestaoPT08"  component={QuestaoPT08} />
       <Stack.Screen name="QuestaoPT09"  component={QuestaoPT09} />
+     
       
       <Stack.Screen name="QuestaoMT01"  component={QuestaoMT01} />
       <Stack.Screen name="QuestaoMT02"  component={QuestaoMT02} />
