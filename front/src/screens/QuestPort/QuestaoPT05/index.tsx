@@ -9,14 +9,19 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
+import ProgressBar from '../../../components/ProgressBar';
+import { Retry } from '../../../components/Retry-mat';
+import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
 import { styles } from './styles';
-import { NumeroDstrikes } from '../../QuestMat/contadorErros';
 
 
 export function QuestaoPT05() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
+  const [showRetryModal, setShowRetryModal] = useState(false);
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(5);
 
   const correctKey = 'a)';
 
@@ -30,11 +35,16 @@ export function QuestaoPT05() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
+    Resetastrikes();
     if (key === correctKey) {
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
+      if (Strikes >= 2) {
+        setShowRetryModal(true);
+        Resetastrikes();
+      }
     }
   }
   
@@ -45,6 +55,13 @@ export function QuestaoPT05() {
 
   function handleOpenDoc() {
     Linking.openURL('https://seu-link-aqui.com');
+  }
+
+  function handleRetry() {
+    Resetastrikes();
+    setShowRetryModal(false);
+    setSelected(null);
+    setMessage('');
   }
 
   return (
@@ -74,11 +91,7 @@ export function QuestaoPT05() {
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_girl.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
 
       
@@ -138,6 +151,7 @@ export function QuestaoPT05() {
             onPress={handleNext}
           />
         )}
+        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </View>
     </View>
   );

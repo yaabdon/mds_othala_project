@@ -9,14 +9,18 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
+import ProgressBar from '../../../components/ProgressBar';
+import { Retry } from '../../../components/Retry-mat';
 import { styles } from './styles';
-import { Resetastrikes,NumeroDstrikes } from '../../QuestMat/contadorErros';
+import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
 
 export function QuestaoPT04() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
     const [message, setMessage] = useState<string>('');
-  
+    const [showRetryModal, setShowRetryModal] = useState(false);
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(4);
 
   const correctKey = 'c)';
 
@@ -37,9 +41,19 @@ export function QuestaoPT04() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
+      // Retry após 2 erros
+      if (Strikes >= 2) {
+        setShowRetryModal(true);
+        Resetastrikes();
+      }
     }
   }
-  
+  function handleRetry() {
+    Resetastrikes();
+    setShowRetryModal(false);
+    setSelected(null);
+    setMessage('');
+  }
 
   function handleNext() {
     navigation.navigate('QuestaoPT05');
@@ -76,11 +90,7 @@ export function QuestaoPT04() {
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_girl.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
 
       
@@ -133,6 +143,7 @@ export function QuestaoPT04() {
             onPress={handleNext}
           />
         )}
+        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </View>
     </View>
   );

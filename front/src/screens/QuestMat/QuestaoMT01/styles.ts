@@ -44,12 +44,11 @@ export const styles = StyleSheet.create({
 
   // PROFESSOR + BARRA
   professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-45,
-    marginRight: 20, //AJUSTADO
-    paddingHorizontal: 30,//AJUSTADO
-    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:30,
+
   },
   teacherAvatar: {
     width: 70,

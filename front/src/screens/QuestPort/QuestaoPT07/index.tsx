@@ -8,14 +8,19 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
+import ProgressBar from '../../../components/ProgressBar';
+import { Retry } from '../../../components/Retry-mat';
 import { useState } from 'react';
 import { styles } from './styles';
-import { Resetastrikes,NumeroDstrikes } from '../../QuestMat/contadorErros';
+import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
 
 export function QuestaoPT07() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState<string>('');
+  const [showRetryModal, setShowRetryModal] = useState(false);
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(7);
 
   const correctKey = 'b)';
 
@@ -37,7 +42,18 @@ export function QuestaoPT07() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
+      if (Strikes >= 2) {
+        setShowRetryModal(true);
+        Resetastrikes();
+      }
     }
+  }
+
+  function handleRetry() {
+    Resetastrikes();
+    setShowRetryModal(false);
+    setSelected(null);
+    setMessage('');
   }
 
   function handleNext() {
@@ -69,13 +85,9 @@ export function QuestaoPT07() {
         </View>
       </View>
 
-      {/* Avatar + Barra */}
+      {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_girl.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
 
       <View style={styles.content}>
@@ -119,7 +131,13 @@ export function QuestaoPT07() {
 
         {/* Mensagem e botão */}
         {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
-        {selected && <Button title="Próxima" onPress={handleNext} />}
+        {selected && (
+          <Button
+            title="Próxima"
+            onPress={handleNext}
+          />
+        )}
+        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </View>
     </View>
   );

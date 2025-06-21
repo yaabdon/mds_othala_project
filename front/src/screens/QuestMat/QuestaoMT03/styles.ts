@@ -4,17 +4,15 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative', //NOVA PROPRIEDADE ADICIONADA AQUI
+    position: 'relative',
     backgroundColor: '#FFF',
     justifyContent: 'flex-start',
   },
-
-  // HEADER
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,//AJUSTADO
-    paddingVertical: 0,//AJUSTADO
+    paddingHorizontal: 12,
+    paddingVertical: 0,
   },
   leftContainer: {
     flex: 1,
@@ -38,25 +36,21 @@ export const styles = StyleSheet.create({
     width: 170,
     height: 100,
     resizeMode: 'contain',
-    marginRight: -60,  
-    marginTop: 10,     
+    marginRight: -60,
+    marginTop: 10,
   },
-
-  // PROFESSOR + BARRA
   professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-40,
-    marginRight: 20, //AJUSTADO
-    paddingHorizontal: 30,//AJUSTADO
-    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:30,
   },
   teacherAvatar: {
     width: 70,
     height: 70,
-    borderRadius: 35,//AJUSTADO
-    marginRight: 20, //AJUSTADO
-    marginLeft: -12, 
+    borderRadius: 35,
+    marginRight: 20,
+    marginLeft: -12,
   },
   decorativeBar: {
     flex: 1,

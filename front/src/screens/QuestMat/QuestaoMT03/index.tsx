@@ -4,24 +4,22 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  ScrollView,
   Linking,
-  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
-import { Button } from '../../../components/Button';''
+import { HomeButton } from '../../../components/HomeButton';
+import { Button } from '../../../components/Button';
 import { styles } from './styles';
-import {Strikes,NumeroDstrikes, Resetastrikes} from "../contadorErros";
-
-
+import { NumeroDstrikes, Resetastrikes, Strikes } from '../contadorErros';
+import ProgressBar from '../../../components/ProgressBar';
 
 export function QuestaoMT03() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
-
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(3);
 
   const correctKey = 'a';
   const options = [
@@ -34,44 +32,26 @@ export function QuestaoMT03() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
-
+    Resetastrikes();
     if (key === correctKey) {
-      if (Strikes >= 2){
-          setShowRetryModal(true)
-          Resetastrikes();
-      }
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2){
-          setShowRetryModal(true)
-          Resetastrikes();
-          
-      }
-
-
-
     }
   }
 
   function handleNext() {
+    setCurrentQuestion((prev) => (prev < totalQuestions ? prev + 1 : prev));
     navigation.navigate('QuestaoMT04');
   }
-
-function handleRetry() {
-    Resetastrikes();
-    setShowRetryModal(false); // Fecha o modal
-    navigation.navigate('QuestaoMT01'); // Navega para Questão 1
-  }
-
 
   function handleOpenDoc() {
     Linking.openURL('https://seus-docs-aqui.doc');
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="questao-mt03-screen">
       {/* HEADER */}
       <View style={styles.header}>
         <View style={styles.leftContainer}>
@@ -93,15 +73,14 @@ function handleRetry() {
         </View>
       </View>
 
+      <HomeButton />
+
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_man.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
-      {/* Conteúdo da Questão */}
+
+      {/* Conteúdo */}
       <View style={styles.content}>
         {/* Nível */}
         <View style={styles.levelContainer}>
@@ -145,10 +124,9 @@ function handleRetry() {
             </TouchableOpacity>
           );
         })}
-        
-        {/* Mensagem de feedback */}
-          {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
 
+        {/* Mensagem de feedback */}
+        {selected && <Text style={styles.feedbackMessage}>{message}</Text>}
 
         {selected && (
           <Button
@@ -157,34 +135,6 @@ function handleRetry() {
           />
         )}
       </View>
-      <Modal
-        visible={showRetryModal}
-        transparent={true}
-        animationType="fade"
-        onRequestClose={() => setShowRetryModal(false)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
-            <Text style={styles.modalText}>
-              Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
-            </Text>
-
-            <TouchableOpacity 
-              style={styles.retryButton} 
-              onPress={handleRetry}
-            >
-              <Text style={styles.retryButtonText}>Tentar novamente</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-              style={styles.closeButton} 
-              onPress={() => setShowRetryModal(false)}
-            >
-              <Text style={styles.closeButtonText}>Fechar</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
     </View>
   );
 }

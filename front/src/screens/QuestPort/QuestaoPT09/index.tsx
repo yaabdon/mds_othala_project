@@ -11,6 +11,8 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
+import ProgressBar from '../../../components/ProgressBar';
+import { Retry } from '../../../components/Retry-mat';
 import { styles } from './styles';
 import { Strikes,NumeroDstrikes,Resetastrikes } from '../../QuestMat/contadorErros';
 
@@ -19,6 +21,8 @@ export function QuestaoPT09() {
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
   const [showRetryModal, setShowRetryModal] = useState(false);
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(9);
 
   const correctKey = 'b)';
 
@@ -32,26 +36,21 @@ export function QuestaoPT09() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
-
+    Resetastrikes();
     if (key === correctKey) {
-       NumeroDstrikes();
-                if (Strikes >= 2){
-                          setShowRetryModal(true)
-                          Resetastrikes();
-                      }
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
-       NumeroDstrikes();
-                if (Strikes >= 2){
-                          setShowRetryModal(true)
-                          Resetastrikes();
-                      }
+      NumeroDstrikes();
+      if (Strikes >= 2) {
+        setShowRetryModal(true);
+        Resetastrikes();
+      }
     }
   }
 
   function handleNext() {
-    navigation.navigate('QuestaoPT03');
+    navigation.navigate('Parabens');
   }
 
   function handleOpenDoc() {
@@ -59,10 +58,11 @@ export function QuestaoPT09() {
   }
 
   function handleRetry() {
-        Resetastrikes();
-        setShowRetryModal(false); // Fecha o modal
-        navigation.navigate('QuestaoPT07'); // Navega para Questão 1
-      }
+    Resetastrikes();
+    setShowRetryModal(false);
+    setSelected(null);
+    setMessage('');
+  }
 
   return (
     <View style={styles.container}>
@@ -89,11 +89,7 @@ export function QuestaoPT09() {
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_girl.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -155,35 +151,7 @@ export function QuestaoPT09() {
         )}
       </ScrollView>
 
-        <Modal
-                                visible={showRetryModal}
-                                transparent={true}
-                                animationType="fade"
-                                onRequestClose={() => setShowRetryModal(false)}
-                              >
-                                <View style={styles.modalOverlay}>
-                                  <View style={styles.modalContainer}>
-                                    <Text style={styles.modalText}>
-                                      Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
-                                    </Text>
-                        
-                                    <TouchableOpacity 
-                                      style={styles.retryButton} 
-                                      onPress={handleRetry}
-                                    >
-                                      <Text style={styles.retryButtonText}>Tentar novamente</Text>
-                                    </TouchableOpacity>
-                        
-                                    <TouchableOpacity 
-                                      style={styles.closeButton} 
-                                      onPress={() => setShowRetryModal(false)}
-                                    >
-                                      <Text style={styles.closeButtonText}>Fechar</Text>
-                                    </TouchableOpacity>
-                                  </View>
-                                </View>
-                              </Modal>
-                      
+      <Retry visible={showRetryModal} onRetry={handleRetry} />
 
     </View>
   );

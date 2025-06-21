@@ -4,12 +4,10 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative', 
+    position: 'relative',
     backgroundColor: '#FFF',
     justifyContent: 'flex-start',
   },
-
-  // HEADER
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -38,41 +36,34 @@ export const styles = StyleSheet.create({
     width: 170,
     height: 100,
     resizeMode: 'contain',
-    marginRight: -60,  
-    marginTop: 10,     
+    marginRight: -60,
+    marginTop: 10,
   },
-
-  // PROFESSOR + BARRA
   professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-40,
-    marginRight: 20, 
-    paddingHorizontal: 30,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:30,
   },
-
   teacherAvatar: {
     width: 70,
     height: 70,
     borderRadius: 35,
-    marginRight: 20, 
-    marginLeft: -12, 
+    marginRight: 20,
+    marginLeft: -12,
   },
-
   decorativeBar: {
     flex: 1,
     height: 12,
     backgroundColor: '#F2E3B5',
     borderRadius: 6,
   },
-
   // CONTEÚDO
   content: {
-    paddingHorizontal: 15, 
+    paddingHorizontal: 15,
     alignItems: 'center',
-    marginTop: -15,       
+    marginTop: -8,
   },
-
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
@@ -90,23 +81,20 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-
   // CENA
   sceneImage: {
-    width: width * 0.65, 
-    height: width * 0.55, 
-    top: -25 
+    width: width * 0.65,
+    height: width * 0.55,
+    top: -25
   },
-
   // PERGUNTA
   questionText: {
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
     marginBottom: 12,
-    marginTop: -40, 
+    marginTop: -40,
   },
-
   // OPÇÕES
   optionButton: {
     width: '100%',
@@ -127,16 +115,13 @@ export const styles = StyleSheet.create({
   },
   // MENSAGEM DE FEEDBACK
   feedbackMessage: {
-  fontSize: 18,
-  fontWeight: 'bold',
-  textAlign: 'center',
-  marginTop: -11, 
-  color: '#000000',  
-},
-
-
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: -11,
+    color: '#000000',
+  },
   //MODAL DE RETRY  
- 
   modalOverlay: {
     flex: 1,
     justifyContent: 'center',
@@ -175,6 +160,4 @@ export const styles = StyleSheet.create({
   closeButtonText: {
     color: '#0000000',
   }
-
-
 });

@@ -5,7 +5,8 @@ import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import {Strikes,NumeroDstrikes, Resetastrikes} from "../contadorErros";
-
+import ProgressBar from '../../../components/ProgressBar';
+import { HomeButton } from '../../../components/HomeButton';
 
 
 
@@ -14,6 +15,8 @@ export  function QuestaoMT09() {
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
   const [showRetryModal, setShowRetryModal] = useState(false);
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(9);
 
 
     const correctKey = 'b';
@@ -47,8 +50,8 @@ export  function QuestaoMT09() {
     }
 
     function handleNext(){
-      navigation.navigate('QuestaoMT05');
-
+      setCurrentQuestion((prev) => (prev < totalQuestions ? prev + 1 : prev));
+      navigation.navigate('Parabens');
     }
 
     function handleRetry() {
@@ -83,15 +86,12 @@ export  function QuestaoMT09() {
           </TouchableOpacity>
         </View>
         </View>
+        <HomeButton />
 
         {/* professor + barra */}
         <View style={styles.professorBarContainer}>
-          <Image
-            source={require('../../../assets/Home_man.png')}
-            style={styles.teacherAvatar}
-            />
-            <View style={styles.decorativeBar}  />
-          </View>
+          <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
+        </View>
 
         <View style={styles.content}>
         {/* Questao */}

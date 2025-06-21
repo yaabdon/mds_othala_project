@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     justifyContent: 'flex-start',
   },
-
   // HEADER
   header: {
     flexDirection: 'row',
@@ -41,15 +40,12 @@ export const styles = StyleSheet.create({
     marginRight: -60,  
     marginTop: 10,     
   },
-
   // PROFESSOR + BARRA
   professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-55,
-    marginRight: 20, //AJUSTADO
-    paddingHorizontal: 30,//AJUSTADO
-    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:30,
   },
   teacherAvatar: {
     width: 70,
@@ -64,14 +60,12 @@ export const styles = StyleSheet.create({
     backgroundColor: '#5C8F84',
     borderRadius: 6,
   },
-
   // CONTEÚDO
   content: {
     paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
     marginTop: -3, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
-
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
@@ -89,29 +83,29 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-
   // CENA
   sceneImage: {
-    width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
-    height: width * 0.45, //NOVO TAMANHO PARA IMAGEM
-    top: -8 //NOVA PROPRIEDADE AQUI
+    width: width * 0.65, // Mantém responsivo
+    height: width * 0.60, // Altura mais equilibrada
+    resizeMode: 'contain', // Garante que a imagem não distorça
+    alignSelf: 'center', // Centraliza a imagem
+    marginVertical: 10, // Espaçamento superior e inferior
+    top: -10 // Ajuste para evitar sobreposição
   },
   sceneText: {
     color: '#808080',
-    marginTop: 0,
-    marginBottom: 55,
+    marginTop:-40,
+    marginBottom: 42,
     textAlign: 'center',
   },
-
   // PERGUNTA
   questionText: {
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
     marginBottom: 12,
-    marginTop: -50, //NOVA PROPRIEDADE ADICIONADA AQUI
+    marginTop: -40, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
-
   // OPÇÕES
   optionButton: {
     width: '100%',
@@ -139,47 +133,5 @@ export const styles = StyleSheet.create({
   marginTop: -11, //NOVA PROPRIEDADE MODIFICADA AQUI
   color: '#000000',  
 },
-
-//MODAL DE RETRY  
- 
-  modalOverlay: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  modalContainer: {
-    backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
-    width: '80%',
-    alignItems: 'center',
-  },
-  modalText: {
-    fontSize: 18,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  retryButton: {
-    backgroundColor: '#F2E3B5',
-    padding: 10,
-    borderRadius: 5,
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  retryButtonText: {
-    color: 'black',
-    fontWeight: 'bold',
-  },
-  closeButton: {
-    padding: 10,
-    width: '100%',
-    alignItems: 'center',
-  },
-  closeButtonText: {
-    color: '#0000000',
-  }
-
 
 });

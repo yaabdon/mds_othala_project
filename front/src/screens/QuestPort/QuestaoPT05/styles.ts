@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     justifyContent: 'flex-start',
   },
-
   // HEADER
   header: {
     flexDirection: 'row',
@@ -41,15 +40,12 @@ export const styles = StyleSheet.create({
     marginRight: -60,  
     marginTop: 10,     
   },
-
   // PROFESSOR + BARRA
   professorBarContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop:-55,
-    marginRight: 20, //AJUSTADO
-    paddingHorizontal: 30,//AJUSTADO
-    //REMOÇÃO DE PROPRIEDADE AQUI -> retirei marginBottom
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:30,
   },
   teacherAvatar: {
     width: 70,
@@ -64,14 +60,12 @@ export const styles = StyleSheet.create({
     backgroundColor: '#5C8F84',
     borderRadius: 6,
   },
-
   // CONTEÚDO
   content: {
     paddingHorizontal: 15, //AJUSTADO
     alignItems: 'center',
     marginTop: -3, //NOVA PROPRIEDADE ADICIONADA AQUI               
   },
-
   // NÍVEL
   levelContainer: {
     flexDirection: 'row',
@@ -89,7 +83,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-
   // CENA
   sceneImage: {
     width: width * 0.65, //NOVO TAMANHO PARA IMAGEM
@@ -99,19 +92,17 @@ export const styles = StyleSheet.create({
   sceneText: {
     color: '#808080',
     marginTop:-40,
-    marginBottom: 55,
+    marginBottom: 42,
     textAlign: 'center',
   },
-
   // PERGUNTA
   questionText: {
     fontSize: 16,
     lineHeight: 22,
     textAlign: 'center',
     marginBottom: 12,
-    marginTop: -50, //NOVA PROPRIEDADE ADICIONADA AQUI
+    marginTop: -40, //NOVA PROPRIEDADE ADICIONADA AQUI
   },
-
   // OPÇÕES
   optionButton: {
     width: '100%',

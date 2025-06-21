@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
+import { HomeButton } from '../../../components/HomeButton';
 import { Button } from '../../../components/Button';
+import ProgressBar from '../../../components/ProgressBar';
 import { styles } from './styles';
 import {NumeroDstrikes, Resetastrikes} from "../contadorErros";
 
@@ -18,7 +20,8 @@ export  function QuestaoMT04() {
 const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  
+  const totalQuestions = 9;
+  const [currentQuestion, setCurrentQuestion] = useState(4);
 
   const correctKey = 'b';
   const options = [
@@ -42,6 +45,7 @@ const navigation = useNavigation<any>();
   }
 
   function handleNext() {
+    setCurrentQuestion((prev) => (prev < totalQuestions ? prev + 1 : prev));
     navigation.navigate('QuestaoMT05');
   }
 
@@ -71,14 +75,11 @@ const navigation = useNavigation<any>();
           </TouchableOpacity>
         </View>
       </View>
+      <HomeButton />
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
-        <Image
-          source={require('../../../assets/Home_man.png')}
-          style={styles.teacherAvatar}
-        />
-        <View style={styles.decorativeBar} />
+        <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
       </View>
       {/* CONTEÚDO */}
       <View style={styles.content}>
