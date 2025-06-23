@@ -4,14 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { AppRoutes } from '../src/routes/app.routes';
 import { api } from '../src/services/api';
 
-// Mock da API
 jest.mock('../src/services/api', () => ({
   api: {
     get: jest.fn(),
   },
 }));
 
-// Ignorar erro de navegação não inicializada
 const originalError = console.error;
 beforeAll(() => {
   console.error = (...args) => {
@@ -24,87 +22,88 @@ beforeAll(() => {
     originalError.call(console, ...args);
   };
 });
-
 afterAll(() => {
   console.error = originalError;
 });
 
-jest.setTimeout(30000); // Aumenta o timeout dos testes
+jest.setTimeout(30000);
 
-describe('Fluxo da Jornada de Português até a QuestaoPT01', () => {
+describe('Fluxo completo da Jornada de Português até Parabéns', () => {
   beforeEach(() => {
     (api.get as jest.Mock).mockResolvedValue({
       data: [{ name: 'usuario_teste', password: 'senha_teste' }],
     });
   });
 
-  it('Deve navegar PreLogin → Login → Regras → Home → QuestaoPT01', async () => {
-    const { 
-      getByText, 
-      getAllByText, 
-      getByTestId, 
-      getByPlaceholderText, 
-      getAllByTestId 
-    } = render(
+  it('Deve executar todo o fluxo até a tela de Parabéns', async () => {
+    const utils = render(
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>
     );
 
-    //  PreLogin
-    await waitFor(() => {
-      expect(getByTestId('prelogin-screen')).toBeTruthy();
-    });
+    // Etapa 1: PreLogin → Login
+    await waitFor(() => expect(utils.getByTestId('prelogin-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('Entrar'));
+    await waitFor(() => expect(utils.getByTestId('login-screen')).toBeTruthy());
+    fireEvent.changeText(utils.getByPlaceholderText('Usuário'), 'usuario_teste');
+    fireEvent.changeText(utils.getByPlaceholderText('Senha'), 'senha_teste');
+    const botoesLogin = utils.getAllByText('Login');
+    fireEvent.press(botoesLogin[1]);
 
-    const botaoEntrar = getByText('Entrar');
-    fireEvent.press(botaoEntrar);
+    // Etapa 2: Regras → Home
+    await waitFor(() => expect(utils.getByTestId('regras-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('Continuar'));
+    await waitFor(() => expect(utils.getByTestId('home-screen')).toBeTruthy());
 
-    await waitFor(() => {
-      expect(getByTestId('login-screen')).toBeTruthy();
-    });
+    // Etapa 3: QuestaoPT01
+    const botoesIniciar = utils.getAllByTestId('start-button-iniciar');
+    fireEvent.press(botoesIniciar[0]);
+    await waitFor(() => expect(utils.getByTestId('questao-pt01-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('c) O menino'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    //  Login
-    fireEvent.changeText(getByPlaceholderText('Usuário'), 'usuario_teste');
-    fireEvent.changeText(getByPlaceholderText('Senha'), 'senha_teste');
+    // Etapa 4: QuestaoPT02
+    await waitFor(() => expect(utils.getByTestId('questao-pt02-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('b) Explicou a lição com paciência'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    const botoesLogin = getAllByText('Login');
-    const botaoLogin = botoesLogin[1]; // [0] é título, [1] é botão
-    fireEvent.press(botaoLogin);
+    // Etapa 5: QuestaoPT03
+    await waitFor(() => expect(utils.getByTestId('questao-pt03-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('c) Está escondido no verbo, é "eu"'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    await waitFor(() => {
-      expect(getByTestId('regras-screen')).toBeTruthy();
-    });
+    // Etapa 6: QuestaoPT04
+    await waitFor(() => expect(utils.getByTestId('questao-pt04-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('c) Hoje é terça-feira.'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    //  Regras → Home
-    const botaoContinuar = getByText('Continuar');
-    fireEvent.press(botaoContinuar);
+    // Etapa 7: QuestaoPT05
+    await waitFor(() => expect(utils.getByTestId('questao-pt05-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('a) Maria disse — quero ir embora.'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    await waitFor(() => {
-      expect(getByTestId('home-screen')).toBeTruthy();
-    });
+    // Etapa 8: QuestaoPT06
+    await waitFor(() => expect(utils.getByTestId('questao-pt06-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('b) Comprei pão, leite, queijo e frutas.'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    //  Home → QuestaoPT01
-    const botoesIniciar = getAllByTestId('start-button-iniciar');
-    const botaoIrParaPortugues = botoesIniciar[0]; // Primeiro botão é Jornada de Português
-    fireEvent.press(botaoIrParaPortugues);
+    // Etapa 9: QuestaoPT07
+    await waitFor(() => expect(utils.getByTestId('questao-pt07-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('d) Foi à escola'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    await waitFor(() => {
-      expect(getByTestId('questao-pt01-screen')).toBeTruthy();
-    });
+    // Etapa 10: QuestaoPT08
+    await waitFor(() => expect(utils.getByTestId('questao-pt08-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('c) Para o mercado'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    // Fim do teste — Para na QuestaoPT01
-    expect(getByTestId('questao-pt01-screen')).toBeTruthy();
+    // Etapa 11: QuestaoPT09
+    await waitFor(() => expect(utils.getByTestId('questao-pt09-screen')).toBeTruthy());
+    fireEvent.press(utils.getByText('b) Uma opinião'));
+    fireEvent.press(utils.getByText('Próxima'));
 
-    console.log('Teste finalizado até a QuestaoPT01 com sucesso!');
-
-    const utils = render(
-    <NavigationContainer>
-        <AppRoutes />
-    </NavigationContainer>
-    );
-
-    expect(getByTestId('questao-pt01-screen')).toBeTruthy();
-    await waitFor(() => {});
-    utils.unmount();
-    });
+    // Tela de Parabéns
+    await waitFor(() => expect(utils.getByTestId('parabens-screen')).toBeTruthy());
+  });
 });

@@ -43,7 +43,7 @@ export function QuestaoMT08() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="questao-mt08-screen">
       {/* HEADER */}
       <View style={styles.header}>
         <View style={styles.leftContainer}>

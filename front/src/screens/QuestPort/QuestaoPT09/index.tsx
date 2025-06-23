@@ -65,7 +65,7 @@ export function QuestaoPT09() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="questao-pt09-screen">
       {/* HEADER */}
       <View style={styles.header}>
         <View style={styles.leftContainer}>

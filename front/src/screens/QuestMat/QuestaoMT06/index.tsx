@@ -70,7 +70,7 @@ function handleRetry() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="questao-mt06-screen">
       {/* HEADER */}
       <View style={styles.header}>
         <View style={styles.leftContainer}>

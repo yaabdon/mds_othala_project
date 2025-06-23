@@ -13,7 +13,7 @@ export function Parabens() {
 
 
   return (
-    <View style={styles.container}> 
+    <View style={styles.container} testID="parabens-screen"> 
       <View style={styles.backButton}>
         <BackButton />
       </View>

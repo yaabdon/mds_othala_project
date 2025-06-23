@@ -33,7 +33,7 @@ describe('Tela QuestaoMT01', () => {
     expect(getByText('Nível 1: Tabuada do 2')).toBeTruthy();
     expect(
       getByText(
-        /Léo está indo ao parque com seus amigos e cada um leva sua bicicleta/i
+        /Léo está indo ao parque com seus 3 amigos/i
       )
     ).toBeTruthy();
 
@@ -47,7 +47,6 @@ describe('Tela QuestaoMT01', () => {
     const { getByText } = render(<QuestaoMT01 />);
 
     const opcaoCorreta = getByText('b) 6');
-
     fireEvent.press(opcaoCorreta);
 
     await waitFor(() => {
@@ -60,7 +59,6 @@ describe('Tela QuestaoMT01', () => {
     const { getByText } = render(<QuestaoMT01 />);
 
     const opcaoErrada = getByText('a) 4');
-
     fireEvent.press(opcaoErrada);
 
     await waitFor(() => {
@@ -76,7 +74,6 @@ describe('Tela QuestaoMT01', () => {
     fireEvent.press(opcaoCorreta);
 
     const botaoProxima = await waitFor(() => getByText('Próxima'));
-
     fireEvent.press(botaoProxima);
 
     expect(navigateMock).toHaveBeenCalledWith('QuestaoMT02');
