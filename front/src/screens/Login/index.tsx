@@ -58,8 +58,8 @@ export  function Login() {
             onChangeText={setPassword}
             />
             <View>
-            <TouchableOpacity style={styles.esqueciSenha}>
-            <Text style={styles.esqueciSenhaText}>Esqueceu a senha?</Text>
+            <TouchableOpacity style={styles.esqueciSenha} onPress={() => navigation.navigate('EsqueciSenha')}>
+            <Text style={styles.esqueciSenhaText}>Esqueci a senha</Text>
             </TouchableOpacity>
             </View>
             <View style={styles.button}> 

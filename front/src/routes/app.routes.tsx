@@ -23,14 +23,9 @@ import { QuestaoMT07 } from '../screens/QuestMat/QuestaoMT07';
 import { QuestaoMT08 } from '../screens/QuestMat/QuestaoMT08';
 import { QuestaoMT09 } from '../screens/QuestMat/QuestaoMT09';
 import { Parabens } from '../screens/Parabens';
-
-
-
-
+import { EsqueciSenha } from '../screens/EsqueciSenha';
 
 const Stack = createNativeStackNavigator();
-
-
 
 export function AppRoutes() {
   return (
@@ -63,6 +58,7 @@ export function AppRoutes() {
       <Stack.Screen name="QuestaoMT07"  component={QuestaoMT07} />
       <Stack.Screen name="QuestaoMT08"  component={QuestaoMT08} />
       <Stack.Screen name="QuestaoMT09"  component={QuestaoMT09} />
+      <Stack.Screen name="EsqueciSenha" component={EsqueciSenha} />
       
       
 
