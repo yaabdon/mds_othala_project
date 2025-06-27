@@ -59,7 +59,7 @@ export  function Login() {
             />
             <View>
             <TouchableOpacity style={styles.esqueciSenha} onPress={() => navigation.navigate('EsqueciSenha')}>
-            <Text style={styles.esqueciSenhaText}>Esqueci a senha</Text>
+            <Text style={styles.esqueciSenhaText}>Esqueci minha senha</Text>
             </TouchableOpacity>
             </View>
             <View style={styles.button}> 
