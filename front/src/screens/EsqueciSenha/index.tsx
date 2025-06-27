@@ -47,7 +47,7 @@ export function EsqueciSenha() {
       </View>
       <View style={styles.container}>
         <View style={styles.card}>
-          <Text style={styles.title}>Esqueci Senha</Text>
+          <Text style={styles.title}>Nova Senha</Text>
           <TextInput
             placeholder='Digite seu e-mail'
             style={styles.input}

@@ -62,7 +62,7 @@ export function QuestaoPT01() {
   }
 
   function handleOpenDoc() {
-    Linking.openURL('https://seu-link-aqui.com');
+    Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
   }
 
   return (

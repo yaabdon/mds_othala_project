@@ -66,7 +66,7 @@ function handleRetry() {
 
 
   function handleOpenDoc() {
-    Linking.openURL('https://seus-docs-aqui.doc');
+    Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
   }
 
   return (

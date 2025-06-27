@@ -85,8 +85,8 @@ export const styles = StyleSheet.create({
   },
   // CENA
   sceneImage: {
-    width: width * 0.65, // NOVO TAMANHO PARA IMAGEM
-    height: width * 0.40, // NOVO TAMANHO PARA IMAGEM
+    width: width * 0.65, // Mantém responsivo
+    height: width * 0.60, // Altura mais equilibrada
     resizeMode: 'contain', // Garante que a imagem não distorça
     alignSelf: 'center', // Centraliza a imagem
     marginVertical: 10, // Espaçamento superior e inferior

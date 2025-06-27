@@ -61,7 +61,7 @@ export function QuestaoPT07() {
   }
 
   function handleOpenDoc() {
-    Linking.openURL('https://seu-link-aqui.com'); // ajuste se necessário
+    Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'); // ajuste se necessário
   }
 
   return (
@@ -102,6 +102,12 @@ export function QuestaoPT07() {
           source={require('../../../assets/Q7_por.png')}
           style={styles.sceneImage}
         />
+
+        {/* Cena textual */}
+                <Text style={styles.sceneText}>
+                  João saiu de casa e foi brincar com seus amigos.
+                </Text>
+
 
         {/* Pergunta */}
         <Text style={styles.questionText}>O que João fez?</Text>

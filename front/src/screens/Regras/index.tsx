@@ -9,7 +9,7 @@ const navigation = useNavigation<any>();
 
 //logica para abrir o docs apertando o OMEGA
 const abrirDocs = () => {
-  const url = 'https://docs.google.com/document/d/1QUDFzqUPuiYLln540dczNVMPKO5sk_XokOs70pTy0y0/edit?tab=t.0#heading=h.innx5uq2u0lc'
+  const url = 'https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton';
   Linking.openURL(url).catch(err => {
     console.error("Erro ao abrir o link:", err);
   });
