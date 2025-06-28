@@ -6,21 +6,19 @@ import {
   ScrollView,
   Image,
   Linking,
-  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import ProgressBar from '../../../components/ProgressBar';
-import { Retry } from '../../../components/Retry-mat';
 import { styles } from './styles';
 import { Strikes,NumeroDstrikes,Resetastrikes } from '../../QuestMat/contadorErros';
+import { HomeButton } from '../../../components/HomeButton';
 
 export function QuestaoPT09() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(9);
 
@@ -42,10 +40,6 @@ export function QuestaoPT09() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2) {
-        setShowRetryModal(true);
-        Resetastrikes();
-      }
     }
   }
 
@@ -55,13 +49,6 @@ export function QuestaoPT09() {
 
   function handleOpenDoc() {
     Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
-  }
-
-  function handleRetry() {
-    Resetastrikes();
-    setShowRetryModal(false);
-    setSelected(null);
-    setMessage('');
   }
 
   return (
@@ -86,6 +73,7 @@ export function QuestaoPT09() {
           </TouchableOpacity>
         </View>
       </View>
+      <HomeButton />
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
@@ -150,8 +138,6 @@ export function QuestaoPT09() {
           />
         )}
       </ScrollView>
-
-      <Retry visible={showRetryModal} onRetry={handleRetry} />
 
     </View>
   );

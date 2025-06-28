@@ -10,16 +10,15 @@ import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import ProgressBar from '../../../components/ProgressBar';
-import { Retry } from '../../../components/Retry-mat';
 import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
 import { styles } from './styles';
+import { HomeButton } from '../../../components/HomeButton';
 
 
 export function QuestaoPT05() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(5);
 
@@ -41,10 +40,6 @@ export function QuestaoPT05() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2) {
-        setShowRetryModal(true);
-        Resetastrikes();
-      }
     }
   }
   
@@ -55,13 +50,6 @@ export function QuestaoPT05() {
 
   function handleOpenDoc() {
     Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
-  }
-
-  function handleRetry() {
-    Resetastrikes();
-    setShowRetryModal(false);
-    setSelected(null);
-    setMessage('');
   }
 
   return (
@@ -87,8 +75,7 @@ export function QuestaoPT05() {
           </TouchableOpacity>
         </View>
       </View>
-      
-
+      <HomeButton />
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
         <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
@@ -151,7 +138,6 @@ export function QuestaoPT05() {
             onPress={handleNext}
           />
         )}
-        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </View>
     </View>
   );

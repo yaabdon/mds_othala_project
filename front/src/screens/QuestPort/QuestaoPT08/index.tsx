@@ -13,13 +13,12 @@ import { useState } from 'react';
 import { styles } from './styles';
 import { NumeroDstrikes, Resetastrikes, Strikes } from '../../QuestMat/contadorErros';
 import ProgressBar from '../../../components/ProgressBar';
-import { Retry } from '../../../components/Retry-mat';
+import { HomeButton } from '../../../components/HomeButton';
 
 export function QuestaoPT08() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(8);
 
@@ -41,18 +40,7 @@ export function QuestaoPT08() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2) {
-        setShowRetryModal(true);
-        Resetastrikes();
-      }
     }
-  }
-
-  function handleRetry() {
-    Resetastrikes();
-    setShowRetryModal(false);
-    setSelected(null);
-    setMessage('');
   }
 
   function handleNext() {
@@ -85,6 +73,7 @@ export function QuestaoPT08() {
           </TouchableOpacity>
         </View>
       </View>
+      <HomeButton />
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
@@ -143,7 +132,6 @@ export function QuestaoPT08() {
             onPress={handleNext}
           />
         )}
-        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </ScrollView>
     </View>
   );

@@ -5,22 +5,20 @@ import {
   TouchableOpacity,
   Image,
   Linking,
-  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import ProgressBar from '../../../components/ProgressBar';
-import { Retry } from '../../../components/Retry-mat';
 import { styles } from './styles';
 import { Strikes,NumeroDstrikes,Resetastrikes } from '../../QuestMat/contadorErros';
+import { HomeButton } from '../../../components/HomeButton';
 
 
 export function QuestaoPT03() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(3);
 
@@ -42,12 +40,7 @@ export function QuestaoPT03() {
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2) {
-        setShowRetryModal(true);
-        Resetastrikes();
-      }
     }
-  
   }
 
   function handleNext() {
@@ -56,7 +49,6 @@ export function QuestaoPT03() {
 
   function handleRetry() {
     Resetastrikes();
-    setShowRetryModal(false);
     setSelected(null);
     setMessage('');
   }
@@ -88,8 +80,7 @@ export function QuestaoPT03() {
           </TouchableOpacity>
         </View>
       </View>
-      
-
+      <HomeButton />
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
         <ProgressBar currentQuestion={currentQuestion} totalQuestions={totalQuestions} />
@@ -153,7 +144,6 @@ export function QuestaoPT03() {
           />
         )}
       </View>
-        <Retry visible={showRetryModal} onRetry={handleRetry} />
       
     </View>
   );

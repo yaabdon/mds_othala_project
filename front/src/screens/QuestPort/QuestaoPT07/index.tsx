@@ -9,16 +9,15 @@ import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
 import { Button } from '../../../components/Button';
 import ProgressBar from '../../../components/ProgressBar';
-import { Retry } from '../../../components/Retry-mat';
 import { useState } from 'react';
 import { styles } from './styles';
 import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
+import { HomeButton } from '../../../components/HomeButton';
 
 export function QuestaoPT07() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(7);
 
@@ -34,26 +33,13 @@ export function QuestaoPT07() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
-
-     Resetastrikes();
-
+    Resetastrikes();
     if (key === correctKey) {
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
       NumeroDstrikes();
-      if (Strikes >= 2) {
-        setShowRetryModal(true);
-        Resetastrikes();
-      }
     }
-  }
-
-  function handleRetry() {
-    Resetastrikes();
-    setShowRetryModal(false);
-    setSelected(null);
-    setMessage('');
   }
 
   function handleNext() {
@@ -84,6 +70,7 @@ export function QuestaoPT07() {
           </TouchableOpacity>
         </View>
       </View>
+      <HomeButton />
 
       {/* Professor + Barra */}
       <View style={styles.professorBarContainer}>
@@ -143,7 +130,6 @@ export function QuestaoPT07() {
             onPress={handleNext}
           />
         )}
-        <Retry visible={showRetryModal} onRetry={handleRetry} />
       </View>
     </View>
   );
