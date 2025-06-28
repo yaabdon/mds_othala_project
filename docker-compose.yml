@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: user
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    working_dir: /app
+    command: sh -c "npx ts-node --transpile-only ./node_modules/typeorm/cli.js migration:run --dataSource src/DataSource.ts && npm run dev"
+    environment:
+      TYPEORM_HOST: db
+      TYPEORM_PORT: 5432
+      TYPEORM_USERNAME: postgres
+      TYPEORM_PASSWORD: senha
+      TYPEORM_DATABASE: user
+      TYPEORM_ENTITIES: src/entities/*.ts
+      TYPEORM_MIGRATIONS: src/database/migrations/*.ts
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - ./back:/app
+
+volumes:
+  pgdata:

@@ -1,0 +1,9 @@
+node_modules
+
+.idea
+
+.expo
+
+.~lock.get-pip.py#
+
+.vscode
