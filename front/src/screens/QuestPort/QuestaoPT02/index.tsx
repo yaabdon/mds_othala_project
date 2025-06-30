@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   Linking,
+  Modal,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../../../components/BackButton';
@@ -13,17 +14,17 @@ import { Button } from '../../../components/Button';
 import { styles } from './styles';
 import ProgressBar from '../../../components/ProgressBar';
 import { Retry } from '../../../components/Retry-mat';
-import { Resetastrikes, NumeroDstrikes, Strikes } from '../../QuestMat/contadorErros';
+import { Strikes, NumeroDstrikes, Resetastrikes } from '../contadorErros';
 
 export function QuestaoPT02() {
   const navigation = useNavigation<any>();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState<string>('');
-  const [showRetryModal, setShowRetryModal] = useState(false);
   const totalQuestions = 9;
   const [currentQuestion, setCurrentQuestion] = useState(2);
-  const correctKey = 'b)';
+  const [showRetryModal, setShowRetryModal] = useState(false);
 
+  const correctKey = 'b)';
   const options = [
     { key: 'a)', label: 'Matemática' },
     { key: 'b)', label: 'Explicou a lição com paciência' },
@@ -34,8 +35,11 @@ export function QuestaoPT02() {
   function handleSelect(key: string) {
     if (selected) return;
     setSelected(key);
-    Resetastrikes();
     if (key === correctKey) {
+      if (Strikes >= 2) {
+        setShowRetryModal(true);
+        Resetastrikes();
+      }
       setMessage('Parabéns, você acertou!');
     } else {
       setMessage('Que pena, não foi dessa vez.');
@@ -52,15 +56,14 @@ export function QuestaoPT02() {
     navigation.navigate('QuestaoPT03');
   }
 
+  function handleOpenDoc() {
+    Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
+  }
+
   function handleRetry() {
     Resetastrikes();
     setShowRetryModal(false);
-    setSelected(null);
-    setMessage('');
-  }
-
-  function handleOpenDoc() {
-    Linking.openURL('https://www.canva.com/design/DAGqij-rjCE/Hr0lKnr4Wya1lrFSckc4bQ/edit?utm_content=DAGqij-rjCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
+    navigation.navigate('QuestaoMT04');
   }
 
   return (
@@ -147,7 +150,33 @@ export function QuestaoPT02() {
             onPress={handleNext}
           />
         )}
-        <Retry visible={showRetryModal} onRetry={handleRetry} />
+        {/* Modal de Retry */}
+        <Modal
+          visible={showRetryModal}
+          transparent={true}
+          animationType="fade"
+          onRequestClose={() => setShowRetryModal(false)}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContainer}>
+              <Text style={styles.modalText}>
+                Você errou mais de duas questões desse módulo! Gostaria de tentar novamente?
+              </Text>
+              <TouchableOpacity
+                style={styles.retryButton}
+                onPress={handleRetry}
+              >
+                <Text style={styles.retryButtonText}>Tentar novamente</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.closeButton}
+                onPress={() => setShowRetryModal(false)}
+              >
+                <Text style={styles.closeButtonText}>Fechar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </View>
     </View>
   );
