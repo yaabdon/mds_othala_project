@@ -42,7 +42,7 @@ export function EsqueciSenha() {
 
   return (
     <>
-      <View style={styles.backButton}>
+      <View style={styles.backButton} testID="esqueci-senha">
         <BackButton />
       </View>
       <View style={styles.container}>
