@@ -140,6 +140,7 @@ Figura 1 – Diagrama de causa e efeito do baixo nível de alfabetização.Fonte
 O quadro abaixo tem como objetivo descrever de forma clara e concisa o objetivo do grupo Othala em relação ao posicionamento do aplicativo Omega (Ω) no mercado, destacando o público-alvo, a necessidade que busca atender, a proposta de valor e o impacto esperado em sua ausência.
 
 Quadro 1 -  Declaração de Posição do Produto 
+
 | | |
 | :--- | :--- |
 | **Para:** | Pessoas de faixa etária de 15 a 21 anos que sejam semi-analfabetas nível básico, que tenham dificuldade com operações matemáticas, dificuldade em escrita correta, interpretação com um nível de leitura básica. |
