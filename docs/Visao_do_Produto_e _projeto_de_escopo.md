@@ -190,6 +190,7 @@ Figura 2 – Diagrama de Ciclo de Vida.Fonte: Os autores.
 O quadro 2 apresenta a organização da equipe envolvida no desenvolvimento do projeto, detalhando os papéis assumidos, as atribuições de cada função, os responsáveis diretos e os participantes colaboradores. A estrutura foi pensada para garantir uma divisão clara de responsabilidades, promovendo o bom andamento do projeto, a integração entre áreas e a entrega eficiente das funcionalidades planejadas.
 
 Quadro 2 - Organização do Projeto 
+
 | Papel | Atribuições | Responsável | Participantes |
 | :--- | :--- | :--- | :--- |
 | **Desenvolvedor Frontend** | Implementação da Interface do Usuário (UI)\<br\>Criação de Componentes Interativos\<br\>Responsividade e Acessibilidade\<br\>Integração com APIs\<br\>Otimização de Performance\<br\>Segurança no Frontend | Arthur Sismene Carvalho | Arthur Sismene Carvalho\<br\>Carlos Henrique de Paiva Munis |
@@ -206,6 +207,7 @@ Fonte: Os autores
 O quadro 3 descreve o planejamento das fases e iterações do projeto, organizadas em sprints. Cada sprint representa um ciclo de desenvolvimento com objetivos específicos, prazos definidos e entregas programadas, seguindo a abordagem ágil do manifesto ágil (Manifesto Ágil, 2025). A tabela detalha o produto ou resultado esperado de cada sprint, as datas de início e fim, os entregáveis previstos, os responsáveis diretos pela execução e o percentual de conclusão associado. Ao final, a soma total das entregas corresponde a 100%, refletindo a integralidade do desenvolvimento planejado.
 
 Quadro 3 -Planejamento das Fases e/ou Iterações do Projeto
+
 | Sprint | Produto (Entrega) | Data Início | Data Fim | Entregável(eis) | Responsáveis | Descrição e % Conclusão |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Sprint 1** | Definiu-se que se trata de um app mobile, de combate ao analfabetismo e anumerismo. | 14/04/2025 | 14/05/2025 | documentação | João Pedro Araújo de Freitas Lyra | Divisão de tarefas início efetivo do projeto; 11,10% |
@@ -238,6 +240,7 @@ Fonte: Os autores.
 O quadro 5, a seguir, detalha o plano de Gerenciamento de Riscos do projeto. Nela, são identificados os principais riscos que podem afetar o andamento dos trabalhos, seu grau de exposição, as ações de mitigação para evitar que ocorram e os planos de contingência para lidar com eles caso se concretizem.
 
 Quadro 5- Gerenciamento de Riscos
+
 | Risco | Grau de Exposição | Mitigação | Plano de Contingência |
 | :--- | :--- | :--- | :--- |
 | Atrasos na entrega | Alto | Estabelecer cronograma com prazos realistas e reuniões de acompanhamento | Priorizar tarefas, focar nas funcionalidades essenciais. |
@@ -265,6 +268,7 @@ Caso um marco (milestone) essencial para o projeto esteja em risco ou seja invi�
 Para um controle de projeto proativo e eficaz, foram definidos critérios quantitativos que funcionam como indicadores de alerta. O quadro 6 abaixo detalha esses critérios, associando cada um a um risco específico e a um plano de ação predefinido. Este plano se divide em ações de mitigação, de caráter preventivo e contínuo, e ações de contingência, a serem executadas caso o critério de alerta seja atingido. O objetivo é formalizar as respostas a desvios, agilizando a tomada de decisão.
 
 Quadro 6 - Critérios relacionados ao cronograma de entregas
+
 | Critério | Descrição | Risco Associado | Plano de Mitigação/Contingência |
 | :--- | :--- | :--- | :--- |
 | Atraso de Sprint | Sprint com menos de 70% das histórias concluídas | Risco de atraso na entrega final | **Mitigação:** Revisão diária do progresso das tarefas\<br\>**Contingência:** Realocação de recursos ou ajuste de escopo |
@@ -280,6 +284,7 @@ Fonte: Os autores
 Para assegurar a aderência do produto aos requisitos e a sua aceitação pelo público-alvo, foram estabelecidos critérios de monitoramento específicos, detalhados no Quadro 7. Esta matriz associa gatilhos quantitativos, como o percentual de alterações no escopo ou o feedback dos usuários, a riscos específicos de qualidade e satisfação. Para cada critério, um plano de mitigação e contingência é definido para orientar a equipe na tomada de ações corretivas e preventivas de forma ágil e estruturada.
 
 Quadro 7 - Critérios relacionados aos requisitos e usabilidade
+
 | Critério | Descrição | Risco associado | Plano de mitigação/Contingência |
 | :--- | :--- | :--- | :--- |
 | Alterações significativas em requisitos | Mudanças que impactam mais de 25% das funcionalidades | Risco de escopo inadequado | **Mitigação:** Validação contínua com stakeholders\<br\>**Contingência:** Congelamento de escopo com priorização |
@@ -295,6 +300,7 @@ Fonte: Os autores
 Com o objetivo de assegurar a qualidade do produto final e minimizar riscos ao longo do desenvolvimento, é essencial estabelecer critérios específicos que orientem a equipe em relação à identificação e mitigação de falhas. O Quadro 8 a seguir apresenta os principais critérios relacionados à qualidade e testes, detalhando suas descrições, os riscos associados e os respectivos planos de mitigação e contingência. Esses critérios foram definidos com base em práticas consolidadas de engenharia de software, como o uso de TDD, revisões de código e estratégias de refatoração, visando garantir entregas mais estáveis, funcionais e alinhadas aos requisitos do projeto.
 
 Quadro 8 - Critérios relacionados à qualidade e testes
+
 | Critérios | Descrição | Risco associado | Plano de mitigação/Contingência |
 | :--- | :--- | :--- | :--- |
 | Taxa de bugs elevadas | Mais de 5 bugs críticos/bloqueadores por Sprint | Risco de instabilidade do produto | **Mitigação:** Práticas TDD e revisão de código\<br\>**Contingência:** Sprint focada em correção de bugs |
@@ -310,6 +316,7 @@ Fonte:Os Autores.
 A equipe envolvida e os recursos disponíveis exercem papel fundamental na viabilidade e continuidade do desenvolvimento de software. Limitações nesse âmbito podem comprometer diretamente a estabilidade do projeto e sua entrega dentro dos prazos estipulados. Dessa forma, o Quadro 9 apresenta os principais critérios relacionados a recursos e recursos humanos, descrevendo os riscos associados e propondo estratégias de mitigação e contingência. Esses critérios foram definidos com o objetivo de antecipar falhas técnicas, garantir a compatibilidade entre sistemas, assegurar a disponibilidade de ferramentas essenciais e promover a adaptação contínua frente a eventuais obstáculos técnicos.
 
 Quadro 9 - Critérios relacionados a recursos humanos
+
 | Critérios | Descrição | Risco associado | Plano de mitigação/Contingência |
 | :--- | :--- | :--- | :--- |
 | Limitações técnicas | Identificação de limitações que comprometam a arquitetura do sistema | Risco de inviabilidade técnica | **Mitigação:** Provas de conceito antecipadas.\<br\>**Contingência:** Redesenho da solução técnica. |
@@ -389,6 +396,7 @@ O backlog do produto foi construído com base em pesquisas sobre a temática da 
 Para garantir a segurança, organização e usabilidade do sistema, é fundamental estabelecer perfis de acesso com permissões específicas para cada tipo de usuário. Essa definição permite o controle adequado sobre as funcionalidades disponíveis a cada grupo, além de facilitar a manutenção e o gerenciamento da aplicação. O quadro 10 apresenta os principais perfis de acesso, com suas respectivas características e permissões, diferenciando, por exemplo, o perfil de Aluno, voltado ao consumo de conteúdo educacional, e o de Administrador, responsável pela gestão de usuários e conteúdos do sistema, porém este é uma simples proposta de melhoria do projeto, não sendo item necessário para o funcionamento do projeto.
 
 Quadro 10 : Perfis de acesso
+
 | # | Nome do perfil | Características do perfil | Permissões de acesso |
 | :--- | :--- | :--- | :--- |
 | `<1/>` | Aluno | Usuário que acessa os conteúdos educacionais. | Acesso às aulas, e as listas de exercícios. |
@@ -401,6 +409,7 @@ Fonte: Os autores
 Durante o desenvolvimento do sistema Omega, foram definidos diferentes cenários funcionais que representam os principais blocos de funcionalidades a serem implementadas ao longo das sprints. Esses cenários orientam o planejamento e a execução das entregas incrementais, garantindo que cada funcionalidade essencial seja abordada de forma estruturada e em conformidade com as prioridades do projeto. O quadro 11 apresenta os cenários funcionais identificados, com sua respectiva numeração, descrição e a sprint prevista para sua realização.
 
 Quadro 11 : Cenários funcionais
+
 | Nº | Cenário                   | Sprint |
 |----|----------------------------|--------|
 | 01 | Cadastro e Login           | 1      |
@@ -416,6 +425,7 @@ Fonte: Os autores
 O backlog do produto é uma lista priorizada de funcionalidades e requisitos necessários para o desenvolvimento do sistema, organizada em sprints e acompanhada de histórias de usuário (user stories) que traduzem as necessidades dos usuários finais. Essa estrutura permite que a equipe compreenda, planeje e implemente as entregas de forma iterativa e incremental. O quadro 12 apresenta o backlog do produto do sistema Omega (Ω), detalhando a numeração dos itens, tipo e prioridade dos requisitos, uma descrição resumida de cada um deles, bem como as histórias de usuário associadas, promovendo uma visão clara e orientada ao valor para o desenvolvimento do sistema.
 
 Quadro 12 -  Backlog do produto
+
 | Numeração (Cenário/ requisito) | Sprint | Nome do requisito | Tipo de requisito (Funcional / não funcional) | Priorização do requisito (Must, Should, Could) | Descrição sucinta do requisito | User stories (U.S.) associadas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1.1** | 1 | Cadastro de Usuário | Funcional | Must | O sistema deve permitir que o aluno crie uma conta com email e senha | Como aluno, quero poder me cadastrar para acessar o conteúdo do aplicativo. |
@@ -473,6 +483,7 @@ Analisar o aplicativo de alfabetização com o propósito de avaliar sua usabili
 A avaliação contínua do desempenho do sistema e do engajamento dos usuários é essencial para validar as entregas realizadas em cada sprint. Por meio de métricas quantitativas e qualitativas, é possível acompanhar a evolução do produto, identificar pontos de melhoria e tomar decisões baseadas em dados. O quadro 13 apresenta as métricas obtidas ao longo das sprints, incluindo indicadores como taxa de conclusão de atividades, tempo médio por sessão, número de acessos, taxa de erro, feedback dos usuários e recursos multimodais utilizados, permitindo uma análise abrangente da eficácia do sistema Omega.
 
 Quadro 13: Métrica da Sprint 1
+
 | Métrica | Tempo/valor | Observações |
 | :--- | :--- | :--- |
 | Tempo da Sprint | 7 dias | Nada significativo nesse tema. |
@@ -484,6 +495,7 @@ Quadro 13: Métrica da Sprint 1
 Fonte: Os autores
 
 Quadro 14: Métrica da Sprint 2
+
 | Métrica | Tempo/valor | Observações |
 | :--- | :--- | :--- |
 | Tempo da Sprint | 7 dias | Nada de significativo neste tema. |
@@ -495,6 +507,7 @@ Quadro 14: Métrica da Sprint 2
 Fonte: Os autores
 
 Quadro 15: Métrica da Sprint 3
+
 | Métrica | Tempo/valor | Observações |
 | :--- | :--- | :--- |
 | Tempo da Sprint | 7 dias | Nada significativo nesse tema. |
@@ -506,6 +519,7 @@ Quadro 15: Métrica da Sprint 3
 Fonte: Os autores
 
 Quadro 16: Métrica da Sprint 4
+
 | Métrica | Tempo/valor | Observações |
 | :--- | :--- | :--- |
 | Tempo da Sprint | 7 dias | Nada significativo nesse tema. |
@@ -517,6 +531,7 @@ Quadro 16: Métrica da Sprint 4
 Fonte: Os autores
 
 Quadro 17: Métrica da Sprints 5
+
 | Métrica | Tempo/valor | Observações |
 | :--- | :--- | :--- |
 | Tempo da Sprint | 7 dias | Nada significativo nesse tema. |
@@ -538,6 +553,7 @@ A definição de uma estratégia de testes eficaz é essencial para assegurar a 
 
 
 Quadro 18 - Níveis de testes
+
 | Nível de Teste | Descrição | Prioridade | Objetivo |
 | :--- | :--- | :--- | :--- |
 | Testes Unitários | Testes isolados de componentes individuais | Alta | Validar o funcionamento correto das funções e métodos específicos que implementam a lógica educacional |
@@ -552,6 +568,7 @@ Fonte: Os autores
 Além da definição dos níveis de testes, é fundamental identificar os diferentes tipos de testes aplicados ao longo do desenvolvimento, cada um voltado à validação de aspectos específicos do sistema. Esses testes abrangem desde a verificação funcional até avaliações mais amplas, como desempenho, segurança, acessibilidade e usabilidade. O quadro 19 apresenta os principais tipos de testes realizados, incluindo suas descrições, as técnicas aplicadas e as ferramentas utilizadas, garantindo uma abordagem abrangente para assegurar a qualidade e a confiabilidade do sistema em múltiplas dimensões.
 
 Quadro 19 - Tipos de testes
+
 | Tipo de Teste | Descrição | Técnicas Aplicadas | Ferramentas |
 | :--- | :--- | :--- | :--- |
 | **Testes Funcionais** | Verificação das funcionalidades específicas | Particionamento de equivalência, análise de valor limite | Jest |
@@ -567,6 +584,7 @@ Fonte: Os autores.
 A realização de testes em diferentes ambientes garante maior confiabilidade no processo de validação do sistema. Cada ambiente possui um propósito específico, com configurações adequadas para o tipo de teste executado e responsabilidades bem definidas entre os membros da equipe. O quadro 20 descreve os principais ambientes de testes utilizados, destacando suas características e responsáveis por sua execução.
 
 Quadro 20- Ambiente de testes
+
 | Ambiente | Propósito | Configuração | Responsável |
 | :--- | :--- | :--- | :--- |
 | **Desenvolvimento** | Execução de testes unitários durante o desenvolvimento | Ambiente local com frameworks de teste | Desenvolvedores |
@@ -580,6 +598,7 @@ Fonte: Os autores
 Para garantir a qualidade contínua do código-fonte, foram utilizadas as métricas fornecidas pela ferramenta SonarQube. Essas métricas permitem identificar falhas, problemas de segurança e pontos de melhoria na manutenibilidade do sistema. O quadro 21 apresenta as principais métricas de análise adotadas, suas descrições, metas estabelecidas e o impacto esperado no projeto.
 
 Quadro 21 - Métricas de Análise do SonarQube
+
 | Métrica | Descrição | Meta | Impacto |
 | :--- | :--- | :--- | :--- |
 | **Cobertura de Código** | Percentual de código coberto por testes unitários | $\ge$ 70% | Garantir que a maioria do código foi testada |
@@ -597,6 +616,7 @@ Fonte: Os autores.
 Para garantir o funcionamento correto dos componentes do sistema de forma isolada, foi elaborado um plano de testes unitários. Cada componente foi mapeado com seus respectivos casos de teste, recursos necessários para simulação (mocks) e critérios de aceitação, assegurando que cada parte do sistema atenda aos requisitos esperados antes da integração com outros módulos. O quadro 22 apresenta os testes unitários planejados por componente, visando validar desde funcionalidades básicas até aspectos de usabilidade e acessibilidade.
 
 Quadro 22 - Plano de Testes Unitários
+
 | Componente | Casos de Teste | Mocks Necessários | Critérios de Aceitação |
 | :--- | :--- | :--- | :--- |
 | **Módulo de português** | Telas de pontuação, sintaxe gramatical e interpretação de texto | API de imagens, serviço de feedback | 100% de assertividade no reconhecimento das temáticas |
@@ -611,6 +631,7 @@ Fonte: Os autores.
 O roteiro de teste detalha a execução prática dos testes planejados, registrando informações como objetivos, pré-condições, critérios de aceitação, resultados obtidos e eventuais reparos realizados. Essa estrutura garante o rastreamento e a repetibilidade dos testes, além de facilitar a análise da estabilidade e qualidade das funcionalidades testadas. O quadro 23 apresenta o roteiro de teste aplicado ao sistema, com dados organizados por ID de teste, nível, tipo e ciclos de execução, contribuindo para um processo de validação completo e documentado.
 
 Quadro 23 - Roteiro de teste
+
 | ID do Teste | Nome do Teste | Objetivo do Teste | Nível | Tipo | Pré-condições | Critério de Aceitação | Resultado / Evidência | Reparos Executados | Ciclos Executados |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **T01** | CreateUserService.spec.ts | Verificar se é possível criar um novo usuário com dados válidos | Unitário | Funcional | Banco de dados disponível, aplicação rodando | Usuário cadastrado com sucesso e resposta HTTP 201 | Teste executado com sucesso dia 08/06/2025 | Correção de erro de autenticação no banco (senha do postgres) | 2 |
@@ -647,6 +668,8 @@ Quadro 23 - Roteiro de teste
 | **T31** | EsqueceuSenha.spec.tsx | Validar renderização dos campos e botão na tela de redefinição de senha | Unitário | Interface (Renderização) | App rodando, dependências instaladas | Tela exibe título, campos de e-mail e nova senha e botão 'Recuperar' | Teste executado com sucesso dia 26/06/2025 | Não houve | 1 |
 | **T32** | EsqueceuSenhaFluxo.spec.ts | Validar fluxo completo de redefinição de senha (navegar, preencher e confirmar) de forma automatizada | Integração | Fluxo de Troca de Senha | App rodando, conta de teste existente | Fluxo executado com sucesso: recuperação de senha concluída e mensagem de confirmação exibida | Teste executado com sucesso dia 29/06/2025 | Não houve | 1 |
 | **T33** | Teste Manual APK (Vídeo) | Validar usabilidade do fluxo de redefinição de senha no APK instalado, incluindo gravação de uso real | Usabilidade | Fluxo Completo (Uso Real) | APK instalado no dispositivo, conta de teste criada | Usuário consegue redefinir a senha e navegar sem dificuldades, conforme esperado | Teste executado com sucesso dia 30/06/2025 (vídeo anexado - [https://youtu.be/ChI2nIlxacg](https://www.google.com/search?q=https://youtu.be/ChI2nIlxacg)) | Não houve | 1 |
+
+Fonte: Os autores
 ---
 
 ## 7.REFERÊNCIAS BIBLIOGRÁFICAS
