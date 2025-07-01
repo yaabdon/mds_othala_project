@@ -145,7 +145,7 @@ Quadro 1 -  Declaração de Posição do Produto
 | :--- | :--- |
 | **Para:** | Pessoas de faixa etária de 15 a 21 anos que sejam semi-analfabetas nível básico, que tenham dificuldade com operações matemáticas, dificuldade em escrita correta, interpretação com um nível de leitura básica. |
 | **Necessidade:** | Por mais que tenha sido reduzida com o passar dos anos, de acordo com o IBGE, ainda existem cerca de 9,3 milhões de brasileiros com algum nível de analfabetismo, então vê-se a necessidade de auxiliar nessa luta com o projeto desenvolvido. |
-| **O Omega:** | O produto é um app mobile com o nome omega ($\Omega$) |
+| **O Omega:** | O produto é um app mobile com o nome omega (Ω) |
 | **Que:** | Acredita-se que o projeto, se bem aplicado, contribuiria significativamente no combate ao analfabetismo e ao anumerismo (a incapacidade de compreender e interpretar informações numéricas e estatísticas no cotidiano). |
 | **Ao contrário:** | Acredita-se que, caso nosso produto não exista, a taxa de analfabetismo continuará a mesma, e nenhuma mudança na situação acontecerá. |
 | **Nosso produto:** | Nosso produto se propõe a ser uma maneira simplificada, rápida, acessível a todos e divertida no aprendizado. |
@@ -226,6 +226,7 @@ Fonte: Os autores
 O quadro 4 apresenta a Matriz de Comunicação do projeto. Ela descreve como as informações importantes serão comunicadas, para quem, com que frequência e quais documentos serão gerados a partir dessas comunicações. O objetivo é garantir que a equipe e as partes interessadas estejam sempre alinhadas sobre o andamento do projeto.
 
 Quadro 4 - Matriz de Comunicação
+
 | Descrição | Área/Envolvidos | Periodicidade | Produtos Gerados |
 | :--- | :--- | :--- | :--- |
 | • Acompanhamento das Atividades em Andamento | • Equipe do Projeto | • Semanal | • Ata de reunião\<br\>• Relatório de situação do projeto |
@@ -433,7 +434,7 @@ Quadro 12 -  Backlog do produto
 | **2.1** | 2 | Questões de português | Funcional | Must | Deve ter 3 questões em cada um dos 3 níveis em português. 1- estrutura gramatical. 2- pontuação e 3- interpretação básica de texto | Como aluno, quero poder realizar questões de portugues. |
 | **2.2** | 2 | Questões de matemática e tela de regras | Funcional | Must | Deve ter 3 questões em cada um dos 3 níveis em matemática. 1- multiplicação (tabuada). 2- divisão/fração. 3- expressão numérica (soma, subtração, divisão, multiplicação) | Como aluno, quero poder realizar questões e aprender matemática básica, também quero entender como obter acesso ao material de estudo. |
 | **3.1** | 3 | Sistema de progresso | Funcional | Could | Deve ser possível recomeçar da atividade onde o usuário parou na última interação com o aplicativo; deve haver uma tela de regras para explicar o funcionamento básico do botão omega ao usuário. | Como aluno, quero poder ter continuidade nos estudos com um sistema de progressão |
-| **3.2** | 3 | Sistema de correção | Funcional | Must | Ao término de cada nível, será dado ao usuário um feedback sobre as atividades, erros e acertos, corretos grifados em verde, errados em grifados vermelha, e se tiver uma taxa de acerto menor que 2, o usuário volta ao início do nível, após o feedback visual, o teórico deverá ser acessado ao clicar no botão omega($\Omega$) disponível na tela de regras e nas atividades. | Como aluno, quero saber quais questões acertei e quais errei. |
+| **3.2** | 3 | Sistema de correção | Funcional | Must | Ao término de cada nível, será dado ao usuário um feedback sobre as atividades, erros e acertos, corretos grifados em verde, errados em grifados vermelha, e se tiver uma taxa de acerto menor que 2, o usuário volta ao início do nível, após o feedback visual, o teórico deverá ser acessado ao clicar no botão omega(Ω) disponível na tela de regras e nas atividades. | Como aluno, quero saber quais questões acertei e quais errei. |
 | **4.1** | 4 | Painel do administrador | Funcional | Should | O administrador deve poder adicionar, editar ou remover atividades dentro dos níveis. Não há acesso direto do administrador aos dados do usuário, apenas ao sistema de questões. | Como administrador, quero atualizar os conteúdos do aplicativo. |
 | **4.2** | 4 | Aba de créditos | Não funcional | Should | O aplicativo deve ter uma aba que indica os créditos de cada questão. | Como aluno, quero saber o material bibliográfico das questões que realizo para aprofundar os estudos |
 | **5.1** | 5 | Testes finais, geração do apk | Funcional | Must | O aplicativo deve funcionar perfeitamente sem bugs ou erros, mesmo havendo testes após cada sprint será feito um teste geral intenso no final. Logo após esse teste intenso será feito o deploy que no caso é a geração do APK. | Como aluno, quero baixar o aplicativo em meu celular (android), ter uma boa experiência com o app, realizando as atividades de forma linear e com as funcionalidades sem bugs. |
@@ -674,7 +675,7 @@ Fonte: Os autores
 
 ## 7.REFERÊNCIAS BIBLIOGRÁFICAS
 
-BECK, Kent. *Extreme Programming Explained: Embrace Change*. 2. ed. Boston: Addison-Wesley, 2004. Disponível em: https://ptgmedia.pearsoncmg.com/images/9780321278654/samplepages/9780321278654.pdf. Acesso em: 29 de jun. 2025.
+BECK, Kent. Extreme Programming Explained: Embrace Change. 2. ed. Boston: Addison-Wesley, 2004. Disponível em: https://ptgmedia.pearsoncmg.com/images/9780321278654/samplepages/9780321278654.pdf. Acesso em: 29 de jun. 2025.
 
 IBGE. Censo 2022: taxa de analfabetismo cai de 9,6% para 7,0% em 12 anos, mas desigualdades persistem. Agência de Notícias IBGE, Rio de Janeiro, 17 maio 2024. Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desigualdades-persistem. Acesso em: 15 abr. 2025
 
@@ -684,8 +685,7 @@ OCDE. Resultados do PISA 2022: O desempenho dos estudantes em matemática, leitu
 
 ONU. Objetivos de Desenvolvimento Sustentável. 2015. Disponível em: https://brasil.un.org/pt-br/sdgs. Acesso em: 22 jun. 2025.
 
-SCRUM GUIDE. Metodologias de desenvolvimento  Scrum. Disponível em: https://scrumguides.org/docs/scrumguide/v1/Scrum-Guide-Portuguese-BR.pdf. Acesso em: 29 jun. 2025.
-
+SCRUM GUIDE. Metodologias de desenvolvimento Scrum. Disponível em: https://scrumguides.org/docs/scrumguide/v1/Scrum-Guide-Portuguese-BR.pdf. Acesso em: 29 jun. 2025.
 
 TOKARNIA, Mariana. Resultados do Pisa reforçam gargalo no ensino de matemática no Brasil. Agência Brasil, Rio de Janeiro, 5 dez. 2023. Disponível em: https://agenciabrasil.ebc.com.br/educacao/noticia/2023-12/resultados-do-pisa-reforcam-gargalo-no-ensino-de-matematica-no-brasil. Acesso em: 15 abr. 2025.
 
